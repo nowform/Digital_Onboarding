@@ -8,8 +8,11 @@
 
 /// Regular font family
 /// @type List
-$text-font-stack: 'Open Sans', 'Helvetica Neue Light', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif !default;
+$text-font-stack: 'Open Sans', sans-serif;
 
+$font-regular:  400 14px $text-font-stack;
+$font-semibold:  600 14px $text-font-stack;
+$font-bold:  700 14px $text-font-stack;
 /// Code (monospace) font family
 /// @type List
 $code-font-stack: 'Courier New', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Monaco', monospace !default;
@@ -20,26 +23,31 @@ $code-font-stack: 'Courier New', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono',
 
 /// Copy text color
 /// @type Color
-$text-color: rgb(34, 34, 34) !default;
+$text-color: #2d2d2d;
 
 /// Main brand color
 /// @type Color
-$brand-color: rgb(229, 0, 80) !default;
+$brand-color: #00b1f2;
 
+$brand-purple: #2a2988;
 /// Light grey
 /// @type Color
-$light-grey: rgb(237, 237, 237) !default;
+$light-grey: #eeeeee;
 
 /// Medium grey
 /// @type Color
-$mid-grey: rgb(153, 153, 153) !default;
+$mid-grey: #8a8a96;
 
 /// Dark grey
 /// @type Color
 $dark-grey: rgb(68, 68, 68) !default;
 
+$gold : #ebb73a;
 
-
+// My main Sass file.
+$mdc-theme-primary: #9c27b0;
+$mdc-theme-secondary: #76ff03;
+$mdc-theme-background: #fff;
 
 
 /// Container's maximum width
@@ -54,10 +62,17 @@ $max-width: 1180px !default;
 /// @prop {String} keys - Keys are identifiers mapped to a given length
 /// @prop {Map} values - Values are actual breakpoints expressed in pixels
 $breakpoints: (
-  'small': 320px,
-  'medium': 768px,
-  'large': 1024px,
+  'small': 768,
+  'medium': 992,
+  'large': 1200,
 ) !default;
+
+$screen-md-min: 768px;
+$screen-sm-max: ($screen-md-min - 1);
+$screen-lg-min: 992px;
+$screen-md-max: ($screen-lg-min - 1);
+$screen-xl-min: 1200px;
+$screen-lg-max: ($screen-xl-min - 1);
 
 
 

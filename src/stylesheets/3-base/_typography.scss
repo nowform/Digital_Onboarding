@@ -5,3 +5,14 @@ body {
   color: $text-color;
   font: normal 125% / 1.4 $text-font-stack;
 }
+p{
+  font: $font-regular;
+}
+h4,h5,h6{
+  font: $font-semibold;
+}
+a,a:hover{
+  cursor: pointer;
+  font: $font-regular;
+  color: $brand-color;
+}

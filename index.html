@@ -1,15 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Frontend Boilerplate</title>
-    <link rel="stylesheet" href="/build/main.css"/>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>SBI - Digital Onboarding</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/build/main.css" />
     <script src="/build/bundle.js"></script>
 </head>
-<body>
-    <h1>Heading</h1>
-    <footer>My footer</footer>
-</body>
+  <body>
+    <!-- Header with Logo -->
+    <header class="do-header do-wrapper">
+      <img src="" alt="" />
+    </header>
+
+    <!-- Sub Header showing reward points -->
+    <section class="do-reward-header">
+        <div class="do-wrapper">
+            <div class="row flex-ac flex">
+                <img  class="col-md-2" src="./assets/images/marginalia-payment-processed-copy.png" alt="" />
+                <h2 class="do-reward-header-text col-md-4 offset-2">Let’s get you onboarded!</h2>
+                <div class=" col-md-3 offset-1">
+                    <div class="do-reward-card">
+                        <span class="reward-star"><img src="/assets/icons/star.svg" alt=""></span>
+                        <span class="reward-number" id="reward-number">0</span>
+                        reward points
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Main Section where steps are listed -->
+    <main class="do-wrapper do-steps-container">
+            <section class="do-step-container row" id="card-activation">
+                <div class="do-step-heading col-md-3">
+                    <div class="do-step-status active">
+                        <span class="done"></span>
+                        <span class="active"></span>
+                    </div>
+                    <span class="do-step-heading-text">
+                            Card Activation
+                    </span>
+                    <svg class="do-step-arrow" xmlns="http://www.w3.org/2000/svg" width="6" height="9" viewBox="0 0 8 11">
+                        <path fill="none" fill-rule="evenodd" stroke="#00B1F2" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M1 1l6 4.33L1 10"/>
+                    </svg>
+                </div>
+                <div class="do-step-body  col-md-8 offset-1">
+                    <h3></h3>
+                    <p>We’ve set your SBI Card as per your needs. 
+                            Read the fraud awareness and prevention script carefully and click below to activate your card ending with 5694.
+                    </p>
+                    <h5>Fraud Awareness and Prevention</h5>
+                    <p>We’ve set your SBI Card as per your needs. 
+                            Read the fraud awareness and prevention script carefully and click below to activate your card ending with 5694.
+                    </p>
+                </div>
+            </section>
+            <a href="#welcome">Open Modal</a>
+
+            <div id="welcome" class="modal ">
+                <div class="modal-body text-center">
+                    <img src="/assets/images/marginalia-payment-processed-copy.png" alt="">
+                    <h2 class="modal-heading">Hi Vikramaditya! Welcome to SBI Card</h2>
+                    <p  class="modal-content">Get onboarded with us and earn upto 200 reward points.
+                            Redeem these rewards for a host of gift items and gift vouchers for yourself and your family.
+                    </p> 
+                    <div class="flex flex-ac flex-jc flex-col">
+                        <a href="#knowMore" class="underlined">Know more</a>
+                        <button class="do-button primary" onClick="window.location.hash = ''" id="onboarded-button">Get Onboarded</button>
+                        <a href="" class="underlined">Skip for now</a>
+                    </div>
+                </div>
+            </div>
+            <div id="knowMore" class="modal ">
+                    <div class="modal-body text-center">
+                    <a class="back" href="#welcome">
+                            <svg class="do-step-arrow" xmlns="http://www.w3.org/2000/svg" width="12" height="18" style="transform: rotate(180deg)" viewBox="0 0 8 11">
+                                <path fill="none" fill-rule="evenodd" stroke="#2d2d2d" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M1 1l6 4.33L1 10"/>
+                            </svg>
+                    </a>
+                    <h2 class="modal-heading subheading">Reward Points</h2>
+                    <p  class="modal-content scrollable">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                            <br>
+                            <br>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                            <br>
+                            <br>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                            <br>
+                            <br>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                            <br>
+                            <br>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                    </p>
+                    <div class="flex flex-ac flex-jc flex-col">
+                        <button class="do-button primary" onClick="window.location.hash = ''"  id="onboarded-button">Get Onboarded</button>
+                        <a href="" class="underlined">Skip for now</a>
+                    </div>
+                </div>
+            </div>
+    </main>
+  </body>
 </html>

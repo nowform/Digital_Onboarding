@@ -1,3 +1,31 @@
 // -----------------------------------------------------------------------------
 // This file contains all styles related to the button component.
 // -----------------------------------------------------------------------------
+.do-button{
+    border: none;
+    box-shadow: none;
+    border-radius: 34px;
+    font: $font-semibold;
+    width: 180px;
+    height: 38px;
+    border: 1px solid transparent;
+    margin-bottom: 20px;
+    cursor: pointer; 
+    outline: none;
+    transition: .3s;
+    &.primary{
+        color: #fff;
+        background-color: $brand-color;
+        &:active,&:focus{
+            background-color: $brand-color;
+        }
+        &:hover{
+            background: lighten($brand-color,10%);
+        }
+    }
+    &.outlined{
+        color: $brand-color;
+        border: 1px solid $brand-color;
+        background-color: #fff;
+    }
+}

@@ -1,3 +1,110 @@
 // -----------------------------------------------------------------------------
 // This file contains styles that are specific to the home page.
 // -----------------------------------------------------------------------------
+.do-reward-card{
+    border-radius: 6px;
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.35);
+    background-color: $brand-purple;
+    color: #fff;
+    padding: 16px 30px;
+    font: $font-bold;
+    display: flex;
+    align-items: center;
+    span.reward-number{
+        padding: 0px 10px;
+        font: $font-bold;
+        font-size: 28px;
+        color: $gold;
+    }
+    span.reward-star img{
+        width: 8px;
+        height: 8px;
+    }
+}
+
+/* CSS for Steps */
+.do-steps-container{
+    padding: 60px 0px;
+}
+.do-step-container{
+    align-items: flex-start;
+}
+.do-step-heading{
+    display: flex;
+    align-items: center;
+    
+    .do-step-heading-text{
+        font: $font-regular;
+        padding: 0px 20px;
+        color: $brand-color;
+    }
+    .do-step-arrow{
+        opacity: 0;
+    }
+}
+.do-step-status{
+    width: 24px;
+    height: 24px;
+    display: inline-flex;
+    border: 1px solid $text-color;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    transition: .3s;
+    position: relative;
+
+    .done,.active{
+        position: absolute;
+    }
+    .done{
+        display: inline-block;
+        width: 6px;
+        height: 12px;
+        margin-top: -2px;
+        border-right: 1px solid #2d2d2d;
+        border-bottom: 1px solid #2d2d2d;
+        transform: rotate(45deg);
+        opacity: 0;
+        top: calc(50% - 5px);
+        left: calc(50% - 3px);
+    }
+    .active{
+        opacity: 0;
+        // display: inline-block;
+        width: 12px;
+        height: 12px;
+        top: calc(50% - 6px);
+        left: calc(50% - 6px);
+        border-radius: 50%;
+        background-color: $brand-color;
+    }
+
+    &.active{
+        border-color: $brand-color;
+        .active{
+            opacity: 1;
+            transition: .3s;
+
+        }
+        ~.do-step-arrow{
+            opacity: 1;
+            color: $brand-color;
+        }
+    }
+    &.done{
+        .done{
+            opacity: 1;
+            transition: .3s;
+        }
+        ~.do-step-arrow{
+            color: $text-color;
+            opacity: 1;
+        }
+    }
+    
+}
+
+
+#onboarded-button{
+    margin: 40px 0px 20px 0px;
+}

@@ -1,3 +1,23 @@
 // -----------------------------------------------------------------------------
 // This file contains all styles related to the header of the site/application.
 // -----------------------------------------------------------------------------
+.do-header{
+    height: 80px;
+}
+.do-reward-header{
+    background-color: #f2f7fd;
+    height: 150px;
+
+    img{
+        height: 150px;
+    }
+    h2,.do-reward-header-text{
+        font: $font-semibold;
+        font-size: 28px;
+        color: $text-color;
+
+    }
+    button{
+        background-color: $brand-purple;
+    }
+}

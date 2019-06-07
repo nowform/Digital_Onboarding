@@ -53,3 +53,30 @@
   position: absolute;
   width: 1px;
 }
+
+.do-wrapper{
+  max-width: 1200px;
+  margin: auto;
+}
+.flex{
+  display: flex;
+
+  &.flex-sb{
+    justify-content: space-between;
+  }
+  &.flex-ac{
+    align-items: center;
+  }
+  &.flex-jc{
+    justify-content: center;
+  }
+  &.flex-col{
+    flex-direction: column;
+  }
+}
+.text-center{
+  text-align: center;
+}
+.underlined{
+  text-decoration: underline;
+}
