@@ -860,7 +860,7 @@ footer {
   box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.35);
   background-color: #2a2988;
   color: #fff;
-  padding: 16px 30px;
+  padding: 9px 30px;
   font: 700 14px "Open Sans", sans-serif;
   display: flex;
   align-items: center; }
@@ -875,18 +875,41 @@ footer {
 
 /* CSS for Steps */
 .do-steps-container {
+  position: relative;
   padding: 60px 0px; }
 
 .do-step-container {
   align-items: flex-start; }
+  .do-step-container.active .do-step-status {
+    border-color: #00b1f2; }
+    .do-step-container.active .do-step-status .active {
+      opacity: 1;
+      transition: .3s; }
+    .do-step-container.active .do-step-status ~ .do-step-arrow {
+      opacity: 1;
+      color: #00b1f2; }
+  .do-step-container.active .do-step-heading .do-step-heading-text {
+    color: #00b1f2; }
+  .do-step-container.active .do-step-body {
+    z-index: 1;
+    opacity: 1; }
+  .do-step-container.done .do-step-status .done {
+    opacity: 1;
+    transition: .3s; }
+  .do-step-container.done .do-step-status ~ .do-step-arrow {
+    color: #2d2d2d;
+    opacity: 1; }
+  .do-step-container.done .do-step-heading .do-step-heading-text {
+    color: #2d2d2d; }
 
 .do-step-heading {
   display: flex;
-  align-items: center; }
+  align-items: center;
+  margin-bottom: 20px; }
   .do-step-heading .do-step-heading-text {
     font: 400 14px "Open Sans", sans-serif;
     padding: 0px 20px;
-    color: #00b1f2; }
+    color: #8a8a96; }
   .do-step-heading .do-step-arrow {
     opacity: 0; }
 
@@ -894,7 +917,7 @@ footer {
   width: 24px;
   height: 24px;
   display: inline-flex;
-  border: 1px solid #2d2d2d;
+  border: 1px solid #8a8a96;
   border-radius: 50%;
   justify-content: center;
   align-items: center;
@@ -922,20 +945,12 @@ footer {
     left: calc(50% - 6px);
     border-radius: 50%;
     background-color: #00b1f2; }
-  .do-step-status.active {
-    border-color: #00b1f2; }
-    .do-step-status.active .active {
-      opacity: 1;
-      transition: .3s; }
-    .do-step-status.active ~ .do-step-arrow {
-      opacity: 1;
-      color: #00b1f2; }
-  .do-step-status.done .done {
-    opacity: 1;
-    transition: .3s; }
-  .do-step-status.done ~ .do-step-arrow {
-    color: #2d2d2d;
-    opacity: 1; }
+
+.do-step-body {
+  position: absolute;
+  z-index: 0;
+  opacity: 0;
+  top: 45px; }
 
 #onboarded-button {
   margin: 40px 0px 20px 0px; }
