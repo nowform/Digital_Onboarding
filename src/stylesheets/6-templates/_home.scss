@@ -27,6 +27,7 @@
     position: relative;
     padding: 60px 0px;
 }
+// Step status styling
 .do-step-container{
     align-items: flex-start;
     &.active{
@@ -70,6 +71,7 @@
         }
     }
 }
+// Step heading 
 .do-step-heading{
     display: flex;
     align-items: center;
@@ -84,6 +86,7 @@
         opacity: 0;
     }
 }
+// step status 
 .do-step-status{
     width: 24px;
     height: 24px;
@@ -122,13 +125,46 @@
     }
     
 }
+// step body
 .do-step-body{
     position: absolute;
     z-index: 0;
     opacity: 0;
-    top: 45px;
+    top: 60px;
+    max-width: calc(66.666667% + 13px);
+    left: -3px;
+    padding-bottom: 60px;
+    .do-step-body-title{
+        font: $font-semibold;
+        font-size: 18px;
+        margin: 0px 0px 40px 0px;
+    }
+    .do-step-body-subtitle{
+        font: $font-semibold;
+        font-size: 14px;
+        margin: 00px 0px 20px 0px;
+    }
+    p{
+        font: $font-regular;
+    }
+    .section-col-5{
+        width: 61.5%;
+        padding: 0px 10px;
+    }
+
+    .section-col-3{
+        width: 35.9%;
+        padding: 0px 10px;
+    }
+    .section-col-full{
+        width: 100%;
+    }
 }
 
 #onboarded-button{
     margin: 40px 0px 20px 0px;
+}
+#do-terms-checkbox{
+    // margin-bottom: 37px;
+    display: inline-block;
 }

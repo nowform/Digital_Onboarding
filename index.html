@@ -35,6 +35,7 @@
 
     <!-- Main Section where steps are listed -->
     <main class="do-wrapper do-steps-container">
+            <!-- Card Activation Step -->
             <section class="do-step-container row active" id="card-activation">
                 <div class="do-step-heading col-md-3">
                     <div class="do-step-status ">
@@ -49,14 +50,37 @@
                     </svg>
                 </div>
                 <div class="do-step-body  col-md-8 offset-4">
-                    
-                    <p>We’ve set your SBI Card as per your needs. 
+                    <h3 class="do-step-body-title">Card Activation</h3>
+                    <div class="section-col-full">
+                        <p>We’ve set your SBI Card as per your needs. 
+                            <br>
                             Read the fraud awareness and prevention script carefully and click below to activate your card ending with 5694.
-                    </p>
-                    <h5>Fraud Awareness and Prevention</h5>
-                    <p>We’ve set your SBI Card as per your needs. 
-                            Read the fraud awareness and prevention script carefully and click below to activate your card ending with 5694.
-                    </p>
+                        </p>
+                        <span class="divider"></span>
+                    </div>
+                    <div class="flex row">
+                        <div class="section-col-5">
+                            <h5 class="do-step-body-subtitle">Fraud Awareness and Prevention</h5>
+                            <p>SBI Card, its employees /authorized representatives never seek your confidential card account details such as Card Number/Expiry date/CVV/OTP/Passwords. Please beware of FAKE SMS, E-mails, Calls asking to redeem Reward points for gifts / Vouchers / Refunds and Do not share or input any credit card details as these may be misused for Fraudulent activities for which the liability will rest with you.
+                            </p>
+                            <label for="do-terms" class="do-input-label" id="do-terms-checkbox">
+                                <input type="checkbox" name="" id="do-terms">
+                                I have read and understood fraud awareness and prevention.
+                            </label>
+                        </div>
+                        <div class="section-col-3 align-bottom">
+                            <img src="./assets/images/card.svg" alt="">
+                        </div>
+                    </div>
+                    <div class="do-button-group space-top" >
+                        <button class="do-button primary" disabled>
+                            Activate
+                        </button>
+                        <button class="do-button outlined">
+                                Next
+                        </button>
+                    </div>
+                    <p class="text-right noMargin"><a href="" class="underlined">Skip for now</a></p>
                 </div>
             </section>
             <section class="do-step-container row" id="generate-pin">

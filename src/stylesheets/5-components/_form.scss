@@ -1,6 +1,8 @@
 // -----------------------------------------------------------------------------
 // This file contains all styles related to the button component.
 // -----------------------------------------------------------------------------
+
+/* BUTTONS */
 .do-button{
     border: none;
     box-shadow: none;
@@ -27,5 +29,43 @@
         color: $brand-color;
         border: 1px solid $brand-color;
         background-color: #fff;
+        &:hover{
+            color: lighten($brand-color,10%);
+            border-color: lighten($brand-color,10%);
+        }
     }
+    &:disabled,
+    &:disabled:hover,
+    &[disabled],&[disabled]:hover{
+        background-color: $light-grey;
+        color: #fff;
+        cursor: not-allowed;
+    }
+}
+.do-button-group{
+    display: flex;
+
+    .do-button{
+        margin-right: 20px;
+        margin-bottom: 0px;
+    }
+
+
+    &.vertical{
+        flex-direction: column;
+        .do-button{
+            margin: 0px 0px 20px 0px;
+        }
+    }
+    &.space-top{
+        margin-top: 40px;
+    }
+}
+
+
+
+
+.do-input-label{
+    font: $font-regular;
+    cursor: pointer;
 }
