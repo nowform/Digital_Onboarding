@@ -518,11 +518,27 @@ a, a:hover {
   .flex.flex-col {
     flex-direction: column; }
 
+.align-bottom {
+  align-self: flex-end; }
+
+.divider {
+  background-color: #f2f2fd;
+  width: 100%;
+  height: 1px;
+  margin: 20px 0px;
+  display: block; }
+
 .text-center {
   text-align: center; }
 
+.text-right {
+  text-align: right; }
+
 .underlined {
   text-decoration: underline; }
+
+.noMargin {
+  margin: 0px; }
 
 .row {
   display: flex;
@@ -755,6 +771,7 @@ footer {
   .do-reward-header button {
     background-color: #2a2988; }
 
+/* BUTTONS */
 .do-button {
   border: none;
   box-shadow: none;
@@ -778,6 +795,29 @@ footer {
     color: #00b1f2;
     border: 1px solid #00b1f2;
     background-color: #fff; }
+    .do-button.outlined:hover {
+      color: #26c5ff;
+      border-color: #26c5ff; }
+  .do-button:disabled, .do-button:disabled:hover, .do-button[disabled], .do-button[disabled]:hover {
+    background-color: #eeeeee;
+    color: #fff;
+    cursor: not-allowed; }
+
+.do-button-group {
+  display: flex; }
+  .do-button-group .do-button {
+    margin-right: 20px;
+    margin-bottom: 0px; }
+  .do-button-group.vertical {
+    flex-direction: column; }
+    .do-button-group.vertical .do-button {
+      margin: 0px 0px 20px 0px; }
+  .do-button-group.space-top {
+    margin-top: 40px; }
+
+.do-input-label {
+  font: 400 14px "Open Sans", sans-serif;
+  cursor: pointer; }
 
 .modal-background {
   bottom: 0;
@@ -950,8 +990,32 @@ footer {
   position: absolute;
   z-index: 0;
   opacity: 0;
-  top: 45px; }
+  top: 60px;
+  max-width: calc(66.666667% + 13px);
+  left: -3px;
+  padding-bottom: 60px; }
+  .do-step-body .do-step-body-title {
+    font: 600 14px "Open Sans", sans-serif;
+    font-size: 18px;
+    margin: 0px 0px 40px 0px; }
+  .do-step-body .do-step-body-subtitle {
+    font: 600 14px "Open Sans", sans-serif;
+    font-size: 14px;
+    margin: 00px 0px 20px 0px; }
+  .do-step-body p {
+    font: 400 14px "Open Sans", sans-serif; }
+  .do-step-body .section-col-5 {
+    width: 61.5%;
+    padding: 0px 10px; }
+  .do-step-body .section-col-3 {
+    width: 35.9%;
+    padding: 0px 10px; }
+  .do-step-body .section-col-full {
+    width: 100%; }
 
 #onboarded-button {
   margin: 40px 0px 20px 0px; }
+
+#do-terms-checkbox {
+  display: inline-block; }
 
