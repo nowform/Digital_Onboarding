@@ -81,6 +81,12 @@
         font: $font-regular;
         padding: 0px 20px;
         color: $mid-grey;
+        .reward-sub-text{
+            display: block;
+            font: $font-regular;
+            font-size: 10px;    
+            color: $gold;
+        }
     }
     .do-step-arrow{
         opacity: 0;

@@ -7,7 +7,6 @@
     <title>SBI - Digital Onboarding</title>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./build/main.css" />
-    <script src="./build/bundle.js"></script>
 </head>
   <body>
     <!-- Header with Logo -->
@@ -63,8 +62,9 @@
                             <h5 class="do-step-body-subtitle">Fraud Awareness and Prevention</h5>
                             <p>SBI Card, its employees /authorized representatives never seek your confidential card account details such as Card Number/Expiry date/CVV/OTP/Passwords. Please beware of FAKE SMS, E-mails, Calls asking to redeem Reward points for gifts / Vouchers / Refunds and Do not share or input any credit card details as these may be misused for Fraudulent activities for which the liability will rest with you.
                             </p>
-                            <label for="do-terms" class="do-input-label" id="do-terms-checkbox">
-                                <input type="checkbox" name="" id="do-terms">
+                            <label for="do-terms" class="do-input-label md-checkbox do-input-checkbox" id="do-terms-checkbox">
+                                <input type="checkbox" name="" id="do-terms" onChange="toggleButton('#step1-activate-button')">
+                                <label></label>
                                 I have read and understood fraud awareness and prevention.
                             </label>
                         </div>
@@ -73,10 +73,10 @@
                         </div>
                     </div>
                     <div class="do-button-group space-top" >
-                        <button class="do-button primary" disabled>
+                        <button class="do-button primary" disabled id="step1-activate-button">
                             Activate
                         </button>
-                        <button class="do-button outlined">
+                        <button class="do-button outlined" onClick="enableButton('#step1-activate-button')">
                                 Next
                         </button>
                     </div>
@@ -116,6 +116,7 @@
                     </div>
                     <span class="do-step-heading-text">
                             E-Statement Subscription
+                            <span class="reward-sub-text"> <img src="./assets/icons/star.svg" alt=""> 100 Reward points</span>
                     </span>
                     <svg class="do-step-arrow" xmlns="http://www.w3.org/2000/svg" width="6" height="9" viewBox="0 0 8 11">
                         <path fill="none" fill-rule="evenodd" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M1 1l6 4.33L1 10"/>
@@ -165,6 +166,8 @@
                     </div>
                     <span class="do-step-heading-text">
                             Confirmation
+                            <span class="reward-sub-text"> <img src="./assets/icons/star.svg" alt=""> 100 Reward points</span>
+
                     </span>
                     <svg class="do-step-arrow" xmlns="http://www.w3.org/2000/svg" width="6" height="9" viewBox="0 0 8 11">
                         <path fill="none" fill-rule="evenodd" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M1 1l6 4.33L1 10"/>
@@ -182,7 +185,6 @@
                 </div>
             </section>
             <!-- Modals -->
-            <a href="#welcome">Open Modal</a>
 
             <div id="welcome" class="modal ">
                 <div class="modal-body text-center">
@@ -230,5 +232,11 @@
                 </div>
             </div>
     </main>
+    <script  type="text/javascript" src="./build/bundle.js"></script>
+    <script>
+        function toggleButton(selector){    
+            document.querySelector(selector).disabled = !document.querySelector(selector).disabled ;
+        }
+    </script>
   </body>
 </html>

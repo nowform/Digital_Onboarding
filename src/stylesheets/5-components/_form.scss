@@ -69,3 +69,102 @@
     font: $font-regular;
     cursor: pointer;
 }
+.do-input-checkbox{
+    input{
+        margin-right: 10px;
+    }
+}
+// Checkbox
+$md-checkbox-checked-color: rgb(51, 122, 183);
+$md-checkbox-border-color: rgba(0, 0, 0, 0.54);
+$md-checkbox-border-color-disabled: rgba(0, 0, 0, 0.26);
+$md-checkbox-checked-color-disabled: rgba(0, 0, 0, 0.26);
+
+$md-checkbox-margin: 1em 0;
+$md-checkbox-size: 1.25em;
+$md-checkbox-padding: .25em;
+$md-checkbox-border-width: 2px;
+$md-checkbox-border-radius: 0.125em;
+$md-checkmark-width: 0.125em;
+$md-checkmark-color: #fff;
+$md-checkbox-label-padding: .75em;
+
+.md-checkbox {
+  position: relative;
+  margin: $md-checkbox-margin;
+  text-align: left;
+
+  &.md-checkbox-inline {
+    display: inline-block;
+  }
+  
+  label {
+    // cursor: pointer;
+    // display: inline;
+    // line-height: $md-checkbox-size;
+    // vertical-align: top;
+    // clear: both;
+    // padding-left: 1px;
+    &:not(:empty) {
+      padding-left: $md-checkbox-label-padding;
+    }
+    
+    &:before, &:after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 2px;
+      z-index: -1;
+    }
+    
+    &:before {
+      // box
+      width: 16px;
+      height: 16px;
+      background: #fff;
+      border: 1px solid $brand-color;
+      border-radius: 1px;
+      cursor: pointer;
+      transition: background .3s;
+    }
+  
+    &:after {
+      // checkmark
+    }    
+  }
+  
+  input[type="checkbox"] {
+    outline: 0;
+    visibility: hidden;
+    width: 16px;
+    margin: 0 10px 0 0;
+    display: inline-flex;
+    font-size: inherit;
+    &:checked {
+        + label:before{
+            background: $brand-color;
+            border:none;
+        }
+        + label:after {
+            transform: translate(3px, 5px) rotate(-45deg);
+            width: 10px;
+            height: 5px;
+            border: 1px solid #fff;
+            border-top-style: none;
+            border-right-style: none;    
+        } 
+    }
+    
+    &:disabled {
+      + label:before{
+        border-color: $md-checkbox-border-color-disabled;
+      }
+      &:checked {
+        + label:before{
+          background: $md-checkbox-checked-color-disabled;
+        }
+      }
+    }
+  }
+ 
+}
