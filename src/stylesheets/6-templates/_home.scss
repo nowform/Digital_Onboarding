@@ -81,16 +81,16 @@
         font: $font-regular;
         padding: 0px 20px;
         color: $mid-grey;
-        .reward-sub-text{
-            display: block;
-            font: $font-regular;
-            font-size: 10px;    
-            color: $gold;
-        }
     }
     .do-step-arrow{
         opacity: 0;
     }
+}
+.reward-sub-text{
+    display: block;
+    font: $font-regular;
+    font-size: 10px;    
+    color: $gold;
 }
 // step status 
 .do-step-status{
@@ -140,6 +140,9 @@
     max-width: calc(66.666667% + 13px);
     left: -3px;
     padding-bottom: 60px;
+    &.hidden{
+        display: none;
+    }
     .do-step-body-title{
         font: $font-semibold;
         font-size: 18px;
@@ -149,6 +152,11 @@
         font: $font-semibold;
         font-size: 14px;
         margin: 00px 0px 20px 0px;
+    }
+    .do-step-body-subtitle-gold{
+        font: $font-regular;
+        font-size: 10px;
+        color: $gold;
     }
     p{
         font: $font-regular;
@@ -167,7 +175,7 @@
     }
 }
 
-#onboarded-button{
+.button-modal-space{
     margin: 40px 0px 20px 0px;
 }
 #do-terms-checkbox{

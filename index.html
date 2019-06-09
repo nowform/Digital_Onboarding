@@ -35,20 +35,20 @@
     <!-- Main Section where steps are listed -->
     <main class="do-wrapper do-steps-container">
             <!-- Card Activation Step -->
-            <section class="do-step-container row active" id="card-activation">
+            <section class="do-step-container row active" id="step-card-activation">
                 <div class="do-step-heading col-md-3">
                     <div class="do-step-status ">
                         <span class="done"></span>
                         <span class="active"></span>
                     </div>
-                    <span class="do-step-heading-text">
+                    <span class="do-step-heading-text" id="card-activation-text">
                             Card Activation
                     </span>
                     <svg class="do-step-arrow" xmlns="http://www.w3.org/2000/svg" width="6" height="9" viewBox="0 0 8 11">
                         <path fill="none" fill-rule="evenodd" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M1 1l6 4.33L1 10"/>
                     </svg>
                 </div>
-                <div class="do-step-body  col-md-8 offset-4">
+                <div class="do-step-body col-md-8 offset-4" id="body-not-activated">
                     <h3 class="do-step-body-title">Card Activation</h3>
                     <div class="section-col-full">
                         <p>We’ve set your SBI Card as per your needs. 
@@ -72,43 +72,123 @@
                             <img src="./assets/images/card.svg" alt="">
                         </div>
                     </div>
-                    <div class="do-button-group space-top" >
-                        <button class="do-button primary" disabled id="step1-activate-button">
+                    <div class="do-button-group space-top">
+                        <button class="do-button primary" disabled id="step1-activate-button" onClick="activateCard()">
                             Activate
                         </button>
-                        <button class="do-button outlined" onClick="enableButton('#step1-activate-button')">
+                        <button class="do-button outlined" onClick="changeStep('2')" >
                                 Next
                         </button>
                     </div>
-                    <p class="text-right noMargin"><a href="" class="underlined">Skip for now</a></p>
+                    <p class="text-right noMargin"><a href="#skipOnboarding" class="underlined">Skip for now</a></p>
                 </div>
+                <div class="do-step-body hidden col-md-8 offset-4"  id="body-activated">
+                        <h3 class="do-step-body-title">Card Activated</h3>
+                        <div class="flex row">
+                            <div class="section-col-5">
+                                <p>
+                                    Your SBI Card is active. 
+                                    <br>
+                                    Service Request Number for card activation is <b>98765432</b>.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="do-button-group space-top" >
+                            <button class="do-button primary" disabled id="step1-activated-button">
+                                Activated
+                            </button>
+                            <button class="do-button outlined" onClick="changeStep('2')">
+                                    Next
+                            </button>
+                        </div>
+                        <p class="text-right noMargin"><a href="#skipOnboarding" class="underlined">Skip for now</a></p>
+                    </div>
             </section>
-            <section class="do-step-container row" id="generate-pin">
+            <section class="do-step-container row " id="step-generate-pin">
                     <div class="do-step-heading col-md-3">
                     <div class="do-step-status">
                         <span class="done"></span>
                         <span class="active"></span>
                     </div>
-                    <span class="do-step-heading-text">
+                    <span class="do-step-heading-text" id="generate-pin-text">
                             Generate Pin
                     </span>
                     <svg class="do-step-arrow" xmlns="http://www.w3.org/2000/svg" width="6" height="9" viewBox="0 0 8 11">
                         <path fill="none" fill-rule="evenodd" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M1 1l6 4.33L1 10"/>
                     </svg>
                 </div>
-                <div class="do-step-body  col-md-8 offset-4">
-                    
-                    <p>We’ve set your SBI Card as per your needs. 
-                            Read the fraud awareness and prevention script carefully and click below to activate your card ending with 5694.
-                    </p>
-                    <h5>Fraud Awareness and Prevention</h5>
-                    <p>We’ve set your SBI Card as per your needs. 
-                            Read the fraud awareness and prevention script carefully and click below to activate your card ending with 5694.
-                    </p>
+                <div class="do-step-body  col-md-8 offset-4 " id="body-before-otp">
+                    <h3 class="do-step-body-title">Generate PIN</h3>
+                    <div class="flex row">
+                        <div class="section-col-5">
+                            <p>Set custom PIN for your SBI Card and stay secure.
+                                <br>
+                                <br>
+                                Do not share your SBI card PIN with anyone. SBI Card or its representatives will never ask for PIN.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="do-button-group space-top" >
+                        <button class="do-button primary" id="step2-otp-button" onClick="generateOtp()">
+                            Generate OTP
+                        </button>
+                        <button class="do-button outlined" onClick="changeStep('3')">
+                                Next
+                        </button>
+                    </div>
+                </div>
+                <div class="do-step-body  col-md-8 offset-4 hidden" id="body-after-otp">
+                    <h3 class="do-step-body-title">Generate PIN</h3>
+                    <div class="flex row">
+                        <div class="section-col-5">
+                            <p>Set custom PIN for your SBI Card and stay secure.
+                                <br>
+                                <br>
+                                Do not share your SBI card PIN with anyone. SBI Card or its representatives will never ask for PIN.
+                            </p>
+                            <div class="do-input-group vertical space-top-30">
+                                <label for="do-terms" class="do-input-label do-input-text"  id="new-pin-input">
+                                    <input type="text" name="new-pin-input" id="" required onKeyUp="validatePin()">
+                                    <span class="placeholder">New Pin</span>
+                                </label>
+                                <label for="do-terms" class="do-input-label do-input-text" id="confirm-pin-input">
+                                    <input type="text" name="confirm-pin-input" id=""required  onKeyUp="validatePin()">
+                                    <span class="placeholder">Re-enter PIN</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="do-button-group space-top" >
+                        <button class="do-button primary" disabled id="step2-pin-button" onClick="generatePin()">
+                            Generate
+                        </button>
+                        <button class="do-button outlined" onClick="changeStep('3')">
+                                Next
+                        </button>
+                    </div>
+                </div>
+                <div class="do-step-body  col-md-8 offset-4 hidden" id="body-pin-generated">
+                    <h3 class="do-step-body-title">PIN Generated</h3>
+                    <div class="flex row">
+                        <div class="section-col-5">
+                            <p>Your SBI Card PIN is generated. 
+                                <br>
+                                Service Request Number for generating PIN is <b>987654321.</b>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="do-button-group space-top" >
+                        <button class="do-button primary" disabled >
+                            Generated
+                        </button>
+                        <button class="do-button outlined" onClick="changeStep('3')">
+                                Next
+                        </button>
+                    </div>
                 </div>
             </section>
 
-            <section class="do-step-container row" id="estate-sub">
+            <section class="do-step-container row " id="step-estate-sub">
                     <div class="do-step-heading col-md-3">
                     <div class="do-step-status">
                         <span class="done"></span>
@@ -123,18 +203,44 @@
                     </svg>
                 </div>
                 <div class="do-step-body  col-md-8 offset-4">
-                    
-                    <p>We’ve set your SBI Card as per your needs. 
-                            Read the fraud awareness and prevention script carefully and click below to activate your card ending with 5694.
-                    </p>
-                    <h5>Fraud Awareness and Prevention</h5>
-                    <p>We’ve set your SBI Card as per your needs. 
-                            Read the fraud awareness and prevention script carefully and click below to activate your card ending with 5694.
-                    </p>
+                    <h3 class="do-step-body-title">
+                            E-Statement Subscription
+                            <span class="reward-sub-text">
+                                   <img src="./assets/icons/star.svg" alt=""> Eligible for 100 reward points
+                            </span>
+                    </h3>
+                    <div class="flex row">
+                        <div class="section-col-5">
+                            <p>
+                                Subscribe to e-statement and get your statements in your inbox, instantly on your registered e-mail ID subahlakshmi@domain.com.
+                                <br>
+                                <br>
+                                Do you want to update your E-mail ID? <a>Update E-mail ID </a>
+                            </p>
+                            <div class="do-input-group vertical space-top-30">
+                                    <label for="do-terms" class="do-input-label do-input-text wide"  id="subscribe-email">
+                                        <input type="email" name="new-pin-input" >
+                                        <span class="placeholder">Email</span>
+                                    </label>
+                                    <label for="do-terms" class="do-input-label do-input-checkbox md-checkbox">
+                                        <input type="checkbox" name="confirm-pin-input" id="subscribe-checkbox">
+                                        <label for="subscribe-checkbox">Subscribe to E-statement</label>
+                                    </label>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="do-button-group space-top" >
+                        <button class="do-button primary">
+                            Subscribe
+                        </button>
+                        <button class="do-button outlined" onClick="changeStep('4')">
+                            Next
+                        </button>
+                    </div>
                 </div>
             </section>
 
-            <section class="do-step-container row" id="international-usage">
+            <section class="do-step-container row" id="step-international-usage">
                     <div class="do-step-heading col-md-3">
                     <div class="do-step-status">
                         <span class="done"></span>
@@ -186,7 +292,8 @@
             </section>
             <!-- Modals -->
 
-            <div id="welcome" class="modal ">
+            <!-- Welcome Modal -->
+            <div id="welcome" class="modal " role="dialog" >
                 <div class="modal-body text-center">
                     <img src="/assets/images/marginalia-payment-processed-copy.png" alt="">
                     <h2 class="modal-heading">Hi Vikramaditya! Welcome to SBI Card</h2>
@@ -195,12 +302,15 @@
                     </p> 
                     <div class="flex flex-ac flex-jc flex-col">
                         <a href="#knowMore" class="underlined">Know more</a>
-                        <button class="do-button primary" onClick="window.location.hash = ''" id="onboarded-button">Get Onboarded</button>
+                        <button class="do-button primary button-modal-space" onClick="window.location.hash = ''" id="onboarded-button">Get Onboarded</button>
                         <a href="" class="underlined">Skip for now</a>
                     </div>
                 </div>
             </div>
-            <div id="knowMore" class="modal ">
+
+            <!-- Know More Rewards Modal -->
+
+            <div id="knowMore" class="modal " role="dialog" >
                     <div class="modal-body text-center">
                     <a class="back" href="#welcome">
                             <svg class="do-step-arrow" xmlns="http://www.w3.org/2000/svg" width="12" height="18" style="transform: rotate(180deg)" viewBox="0 0 8 11">
@@ -231,12 +341,52 @@
                     </div>
                 </div>
             </div>
+            <!-- Skip onboarding Modal -->
+
+            <div id="skipOnboarding" class="modal " role="dialog" >
+                    <div class="modal-body text-center">
+                            <img src="/assets/images/marginalia-payment-processed-copy.png" alt="">
+                  
+                    <h2 class="modal-heading subheading">Leaving Already?</h2>
+                    <p  class="modal-content ">
+                            <b>100</b> reward points are awarded on completing the onboarding process.
+                    </p>
+                    <p>
+                            You can come back any time to complete the onboarding by clicking ‘Digital Onboarding’ from your dashboard.
+                    </p>
+                    <div class="flex flex-ac flex-jc flex-col">
+                        <button class="do-button primary button-modal-space" onClick="window.location.hash = ''" >I’ll do it later</button>
+                        <a href="#" class="underlined">I want to continue</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Generate OTP -->
+            <div id="generateOtp" class="modal " role="dialog" >
+                <div class="modal-body text-center">
+                    <h2 class="modal-heading">One Time Verification</h2>
+                    <p  class="modal-content">Enter the four digit code sent on your mobile number 
+                        <br>
+                            <span class="text-blue">+91 9650585010</span>
+                    </p> 
+                    <div class="flex flex-ac flex-jc flex-col">
+                            <label for="do-terms" class="do-input-label do-split-input" id="otp-input">
+                                <input type="text" name="" id="" maxlength="6" required onKeyUp="validateOtp(this)" onkeypress='return event.charCode >= 48 && event.charCode <= 57'    >
+                                <svg height="2px" width="100%">
+                                <line x1="0" y1="0" x2="200" y2="0" style="stroke:#8a8a96;stroke-width:2;stroke-dasharray:18px" />
+                                </svg>
+                            </label>
+                              
+                        <a class="underlined space-top-40">Resend Code</a>
+                        <a href="#" class="underlined space-top-40">Cancel</a>
+                    </div>
+                </div>
+            </div>
     </main>
     <script  type="text/javascript" src="./build/bundle.js"></script>
     <script>
-        function toggleButton(selector){    
-            document.querySelector(selector).disabled = !document.querySelector(selector).disabled ;
-        }
+        (function(){
+            window.location.hash = "#welcome"
+        }())
     </script>
   </body>
 </html>
