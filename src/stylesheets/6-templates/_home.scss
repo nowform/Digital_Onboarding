@@ -87,6 +87,11 @@
         padding: 0px 20px;
         color: $mid-grey;
         line-height: 24px;
+        pointer-events: none;
+        &.clickable{
+            cursor: pointer;
+            pointer-events: all;
+        }
     }
     .do-step-arrow{
         opacity: 0;

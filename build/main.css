@@ -790,7 +790,7 @@ footer {
   font: 400 14px "Open Sans", sans-serif;
   font-size: 10px;
   margin-bottom: 5px;
-  display: inline-block; }
+  display: block; }
 
 .do-reward-card {
   border-radius: 6px;
@@ -817,7 +817,7 @@ footer {
     height: auto; }
     .do-reward-header img {
       width: auto;
-      margin-left: 30px; }
+      margin-left: 20px; }
     .do-reward-header h2, .do-reward-header .do-reward-header-text {
       width: auto;
       margin: 0px;
@@ -826,11 +826,17 @@ footer {
       background-color: #2a2988; }
   .reward-points {
     margin: 0px;
-    padding: 60px 30px;
+    padding: 40px 30px 60px 30px;
     padding-bottom: 0px;
     background: #fff; }
   .reward-star img {
     margin: 0px; } }
+
+@media (max-width: 400px) {
+  .do-reward-header img {
+    height: 120px; }
+  .do-reward-header h2, .do-reward-header .do-reward-header-text {
+    font-size: 24px; } }
 
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
@@ -1158,7 +1164,11 @@ input[type=number]::-webkit-outer-spin-button {
     font: 400 14px "Open Sans", sans-serif;
     padding: 0px 20px;
     color: #8a8a96;
-    line-height: 24px; }
+    line-height: 24px;
+    pointer-events: none; }
+    .do-step-heading .do-step-heading-text.clickable {
+      cursor: pointer;
+      pointer-events: all; }
   .do-step-heading .do-step-arrow {
     opacity: 0;
     height: 24px; }

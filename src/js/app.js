@@ -41,6 +41,7 @@ import {modal}  from "./custom/modal";
                 else{
                     document.querySelector("#step-card-activation").classList.add('done');
                     document.querySelector("#step-card-activation").classList.remove('in-progress','active');
+                    document.querySelector("#step-card-activation .do-step-heading-text").classList.add('clickable');
                     document.querySelector("#step-generate-pin").classList.add('in-progress','active');
                 }
 
@@ -54,6 +55,7 @@ import {modal}  from "./custom/modal";
                 else{
                     document.querySelector("#step-generate-pin").classList.add('done');
                     document.querySelector("#step-generate-pin").classList.remove('in-progress');
+                    document.querySelector("#step-generate-pin .do-step-heading-text").classList.add('clickable');
                     document.querySelector("#step-estate-sub").classList.add('in-progress','active');
                 }
                 break;
@@ -62,6 +64,7 @@ import {modal}  from "./custom/modal";
                     // change from step 1 to 2
                 document.querySelector("#step-estate-sub").classList.add('done');
                 document.querySelector("#step-estate-sub").classList.remove('in-progress');
+                document.querySelector("#step-estate-sub .do-step-heading-text").classList.add('clickable');
                 document.querySelector("#step-international-usage").classList.add('in-progress');
                 break;
                     

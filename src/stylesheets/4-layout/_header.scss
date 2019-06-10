@@ -30,7 +30,7 @@
     font: $font-regular;
     font-size: 10px;
     margin-bottom: 5px;
-    display: inline-block;
+    display: block;
 }
 .do-reward-card{
     border-radius: 6px;
@@ -61,7 +61,7 @@
         height: auto;
         img{
             width: auto;
-            margin-left: 30px;
+            margin-left: 20px;
         }
         h2,.do-reward-header-text{
          width: auto;
@@ -74,7 +74,7 @@
     }
     .reward-points{
         margin: 0px;
-        padding: 60px 30px;
+        padding: 40px 30px 60px 30px;
         padding-bottom: 0px;
         background: #fff;
     }
@@ -82,5 +82,13 @@
         img{
             margin: 0px;
         }
+    }
+}
+@media (max-width: 400px) {
+    .do-reward-header img{
+        height: 120px;
+    }   
+    .do-reward-header h2, .do-reward-header .do-reward-header-text{
+        font-size: 24px;
     }
 }
