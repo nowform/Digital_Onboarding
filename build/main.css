@@ -557,9 +557,14 @@ body {
 .full-width {
   width: 100%; }
 
+.sm-visible {
+  display: none; }
+
 @media (max-width: 767px) {
   .sm-hidden {
     display: none; }
+  .sm-visible {
+    display: block; }
   body {
     overflow-x: hidden; }
   .full-width-sm {
@@ -1282,6 +1287,13 @@ input[type=number]::-webkit-outer-spin-button {
   position: absolute;
   right: 0px;
   bottom: 80px; }
+
+.skip-link-mobile {
+  position: relative;
+  display: block;
+  margin-top: 60px;
+  text-align: center;
+  margin-bottom: 190px; }
 
 #do-terms-checkbox {
   margin: 10px 0px;

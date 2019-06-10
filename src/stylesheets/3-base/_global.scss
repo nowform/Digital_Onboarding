@@ -112,9 +112,15 @@ body{
 .full-width{
   width: 100%;
 }
+.sm-visible{
+  display: none;
+}
 @media (max-width: $screen-sm-max) {
   .sm-hidden{
     display: none;
+  }
+  .sm-visible{
+    display: block;
   }
   body{
     overflow-x: hidden;
