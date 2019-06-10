@@ -89,7 +89,7 @@ input[type=number]::-webkit-outer-spin-button {
     }
     input{
       margin-bottom: 30px;
-
+      
     }
   }
 }
@@ -283,6 +283,7 @@ $md-checkbox-label-padding: .75em;
 .do-button-group{
   &.vertical-sm{
       flex-direction: column;
+
       .do-button{
           width: 100%;
           margin: 0px 0px 20px 0px;
@@ -291,5 +292,10 @@ $md-checkbox-label-padding: .75em;
           }
       }
   }
+}
+.do-input-group.vertical{
+  .do-input-text{
+     width: 100%;
+    }
 }
 }

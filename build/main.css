@@ -1013,7 +1013,9 @@ input[type=number]::-webkit-outer-spin-button {
       width: 100%;
       margin: 0px 0px 20px 0px; }
       .do-button-group.vertical-sm .do-button:last-of-type {
-        margin-bottom: 0px; } }
+        margin-bottom: 0px; }
+  .do-input-group.vertical .do-input-text {
+    width: 100%; } }
 
 .modal-background {
   bottom: 0;
