@@ -480,6 +480,9 @@ body {
   width: 100%;
   /* 1 */ }
 
+.relative {
+  position: relative; }
+
 /**
  * Hide text while making it readable for screen readers
  * 1. Needed in WebKit-based browsers because of an implementation bug;
@@ -1225,6 +1228,14 @@ input[type=number]::-webkit-outer-spin-button {
 
 #do-terms-checkbox {
   display: inline-block; }
+
+.card-error-text {
+  position: absolute;
+  font-size: 10px;
+  width: 78px;
+  left: 208px;
+  top: 80px;
+  color: #f74747; }
 
 @media (max-width: 767px) {
   .do-steps-container {
