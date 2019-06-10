@@ -3,6 +3,11 @@
 // -----------------------------------------------------------------------------
 .do-header{
     height: 80px;
+    display: flex;
+    align-items: center;
+    >img{
+        height: 24px;
+    }
 }
 .do-reward-header{
     background-color: #f2f7fd;
@@ -48,6 +53,9 @@
     }
 }
 @media (max-width: $screen-sm-max) {
+    .do-header{
+        padding: 0px 30px;
+    }
     .do-reward-header{
         // padding: 0px 30px;
         height: auto;

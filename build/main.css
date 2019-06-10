@@ -767,7 +767,11 @@ footer {
   background: pink; }
 
 .do-header {
-  height: 80px; }
+  height: 80px;
+  display: flex;
+  align-items: center; }
+  .do-header > img {
+    height: 24px; }
 
 .do-reward-header {
   background-color: #f2f7fd;
@@ -807,6 +811,8 @@ footer {
     height: 8px; }
 
 @media (max-width: 767px) {
+  .do-header {
+    padding: 0px 30px; }
   .do-reward-header {
     height: auto; }
     .do-reward-header img {
@@ -881,7 +887,7 @@ input[type=number]::-webkit-outer-spin-button {
   margin-top: 40px; }
 
 .space-top-30 {
-  margin-top: 40px; }
+  margin-top: 30px; }
 
 /* Inputs */
 .do-input-group {
@@ -1245,6 +1251,7 @@ input[type=number]::-webkit-outer-spin-button {
   bottom: 80px; }
 
 #do-terms-checkbox {
+  margin: 10px 0px;
   display: inline-block; }
 
 .card-error-text {
