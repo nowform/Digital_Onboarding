@@ -16,6 +16,9 @@
     img{
         height: 150px;
         padding-top: 20px;
+        max-width: 201px;
+        position: absolute;
+        bottom: 0px;
     }
     h2,.do-reward-header-text{
         font: $font-semibold;
@@ -51,11 +54,19 @@
     span.reward-star img{
         width: 8px;
         height: 8px;
+        padding: 0px;
+        position: relative;
     }
+}
+#reward-header-container{
+    height: 150px;
 }
 @media (max-width: $screen-sm-max) {
     .do-header{
         padding: 0px 30px;
+    }
+    #reward-header-container{
+        height: auto;
     }
     .do-reward-header{
         // padding: 0px 30px;
@@ -63,6 +74,7 @@
         img{
             width: auto;
             margin-left: 20px;
+            position: relative;
         }
         h2,.do-reward-header-text{
          width: auto;
@@ -78,6 +90,9 @@
         padding: 40px 30px 60px 30px;
         padding-bottom: 0px;
         background: #fff;
+        width: 100vw;
+        max-width: 100vw;
+        margin: 0px -20px;
     }
     .reward-star{
         img{
@@ -85,7 +100,7 @@
         }
     }
 }
-@media (max-width: 400px) {
+@media (max-width: 460px) {
     .do-reward-header img{
         width: 150px;
         height: auto;

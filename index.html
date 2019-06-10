@@ -17,9 +17,9 @@
     <!-- Sub Header showing reward points -->
     <section class="do-reward-header">
         <div class="do-wrapper">
-            <div class="row flex-ac flex">
-                <img  class="col-md-2" src="./assets/images/header_image_1x.png" alt="" />
-                <h2 class="do-reward-header-text col-md-4 offset-2">Let’s get you onboarded!</h2>
+            <div class="row flex-ac flex relative" id="reward-header-container" >
+                <img  src="./assets/images/header_image_1x.png" alt="" />
+                <h2 class="do-reward-header-text col-md-4 offset-4">Let’s get you onboarded!</h2>
                 <div class=" col-md-3 offset-1 reward-points">
                     <span class="reward-points-subtext">You have</span>
                     <div class="do-reward-card">
@@ -34,7 +34,8 @@
     </section>
 
     <!-- Main Section where steps are listed -->
-    <main class="do-wrapper do-steps-container">
+    <main class="do-wrapper ">
+        <div class="do-steps-container">
             <!-- Card Activation Step -->
             <section class="do-step-container row active in-progress" id="step-card-activation">
                 <div class="do-step-heading col-md-3">
@@ -77,7 +78,7 @@
                             <span class="card-error-text">It is important to
                                     keep your CVV
                                     confidential. </span>
-                            <img class="full-width-sm" src="./assets/images/card.svg" alt="">
+                            <img class="full-width" src="./assets/images/card.svg" alt="">
                         </div>
                     </div>
                     <div class="do-button-group space-top vertical-sm">
@@ -393,7 +394,9 @@
                     </div>
                 </div>
             </div>
-    </main>
+    
+        </div>
+        </main>
     <script  type="text/javascript" src="./build/bundle.js"></script>
     <script>
         (function(){
