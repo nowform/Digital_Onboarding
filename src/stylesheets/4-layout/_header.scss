@@ -7,7 +7,7 @@
 .do-reward-header{
     background-color: #f2f7fd;
     height: 150px;
-
+    overflow-x: hidden;
     img{
         height: 150px;
     }
@@ -21,7 +21,32 @@
         background-color: $brand-purple;
     }
 }
-
+.reward-points-subtext{
+    font: $font-regular;
+    font-size: 10px;
+    margin-bottom: 5px;
+    display: inline-block;
+}
+.do-reward-card{
+    border-radius: 6px;
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.35);
+    background-color: $brand-purple;
+    color: #fff;
+    padding: 9px 20px;
+    font: $font-bold;
+    display: flex;
+    align-items: center;
+    span.reward-number{
+        padding: 0px 10px;
+        font: $font-bold;
+        font-size: 28px;
+        color: $gold;
+    }
+    span.reward-star img{
+        width: 8px;
+        height: 8px;
+    }
+}
 @media (max-width: $screen-sm-max) {
     .do-reward-header{
         // padding: 0px 30px;
@@ -44,5 +69,10 @@
         padding: 60px 30px;
         padding-bottom: 0px;
         background: #fff;
+    }
+    .reward-star{
+        img{
+            margin: 0px;
+        }
     }
 }

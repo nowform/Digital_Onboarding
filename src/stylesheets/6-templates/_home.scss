@@ -1,26 +1,7 @@
 // -----------------------------------------------------------------------------
 // This file contains styles that are specific to the home page.
 // -----------------------------------------------------------------------------
-.do-reward-card{
-    border-radius: 6px;
-    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.35);
-    background-color: $brand-purple;
-    color: #fff;
-    padding: 9px 30px;
-    font: $font-bold;
-    display: flex;
-    align-items: center;
-    span.reward-number{
-        padding: 0px 10px;
-        font: $font-bold;
-        font-size: 28px;
-        color: $gold;
-    }
-    span.reward-star img{
-        width: 8px;
-        height: 8px;
-    }
-}
+
 
 /* CSS for Steps */
 .do-steps-container{
@@ -236,9 +217,10 @@
         padding: 60px 30px;
     }
     .do-step-container{
-        border: 1px solid $light-grey;
+        border: none;
+        border-bottom: 1px solid $light-grey;
         padding: 30px 15px;
-        border-radius: 4px; 
+        border-radius: 0px; 
 
         &.active{
             .do-step-body{
@@ -254,6 +236,11 @@
             border: none;
             border-top: 1px solid $light-grey;
             border-radius: 0px;
+        }
+        &.in-progress{
+            border: 1px solid $light-grey;
+            padding: 30px 15px;
+            border-radius: 4px; 
         }
     }
     .do-step-heading{

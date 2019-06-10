@@ -557,7 +557,9 @@ body {
   .sm-hidden {
     display: none; }
   body {
-    overflow-x: hidden; } }
+    overflow-x: hidden; }
+  .full-width-sm {
+    width: 100%; } }
 
 .row {
   display: flex;
@@ -769,7 +771,8 @@ footer {
 
 .do-reward-header {
   background-color: #f2f7fd;
-  height: 150px; }
+  height: 150px;
+  overflow-x: hidden; }
   .do-reward-header img {
     height: 150px; }
   .do-reward-header h2, .do-reward-header .do-reward-header-text {
@@ -778,6 +781,30 @@ footer {
     color: #2d2d2d; }
   .do-reward-header button {
     background-color: #2a2988; }
+
+.reward-points-subtext {
+  font: 400 14px "Open Sans", sans-serif;
+  font-size: 10px;
+  margin-bottom: 5px;
+  display: inline-block; }
+
+.do-reward-card {
+  border-radius: 6px;
+  box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.35);
+  background-color: #2a2988;
+  color: #fff;
+  padding: 9px 20px;
+  font: 700 14px "Open Sans", sans-serif;
+  display: flex;
+  align-items: center; }
+  .do-reward-card span.reward-number {
+    padding: 0px 10px;
+    font: 700 14px "Open Sans", sans-serif;
+    font-size: 28px;
+    color: #ebb73a; }
+  .do-reward-card span.reward-star img {
+    width: 8px;
+    height: 8px; }
 
 @media (max-width: 767px) {
   .do-reward-header {
@@ -795,7 +822,9 @@ footer {
     margin: 0px;
     padding: 60px 30px;
     padding-bottom: 0px;
-    background: #fff; } }
+    background: #fff; }
+  .reward-star img {
+    margin: 0px; } }
 
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
@@ -869,12 +898,14 @@ input[type=number]::-webkit-outer-spin-button {
   cursor: pointer; }
 
 .do-input-checkbox input {
-  margin-right: 10px; }
+  width: 0px;
+  height: 0px; }
 
 .md-checkbox {
   position: relative;
   margin: 1em 0;
-  text-align: left; }
+  text-align: left;
+  padding-left: 30px; }
   .md-checkbox.md-checkbox-inline {
     display: inline-block; }
   .md-checkbox label:not(:empty) {
@@ -899,7 +930,10 @@ input[type=number]::-webkit-outer-spin-button {
     width: 16px;
     margin: 0 10px 0 0;
     display: inline-flex;
-    font-size: inherit; }
+    font-size: inherit;
+    width: 0px;
+    height: 0px;
+    margin: 0px; }
     .md-checkbox input[type="checkbox"]:checked + label:before {
       background: #00b1f2;
       border: none; }
@@ -1067,24 +1101,6 @@ input[type=number]::-webkit-outer-spin-button {
       margin-top: 0px;
       padding: 40px 20px; } }
 
-.do-reward-card {
-  border-radius: 6px;
-  box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.35);
-  background-color: #2a2988;
-  color: #fff;
-  padding: 9px 30px;
-  font: 700 14px "Open Sans", sans-serif;
-  display: flex;
-  align-items: center; }
-  .do-reward-card span.reward-number {
-    padding: 0px 10px;
-    font: 700 14px "Open Sans", sans-serif;
-    font-size: 28px;
-    color: #ebb73a; }
-  .do-reward-card span.reward-star img {
-    width: 8px;
-    height: 8px; }
-
 /* CSS for Steps */
 .do-steps-container {
   position: relative;
@@ -1241,9 +1257,10 @@ input[type=number]::-webkit-outer-spin-button {
   .do-steps-container {
     padding: 60px 30px; }
   .do-step-container {
-    border: 1px solid #eeeeee;
+    border: none;
+    border-bottom: 1px solid #eeeeee;
     padding: 30px 15px;
-    border-radius: 4px; }
+    border-radius: 0px; }
     .do-step-container.active .do-step-body {
       opacity: 1;
       display: block; }
@@ -1254,6 +1271,10 @@ input[type=number]::-webkit-outer-spin-button {
       border: none;
       border-top: 1px solid #eeeeee;
       border-radius: 0px; }
+    .do-step-container.in-progress {
+      border: 1px solid #eeeeee;
+      padding: 30px 15px;
+      border-radius: 4px; }
   .do-step-heading {
     margin-bottom: 0px; }
   .do-step-body {
