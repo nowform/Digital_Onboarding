@@ -15,6 +15,7 @@
     overflow-x: hidden;
     img{
         height: 150px;
+        padding-top: 20px;
     }
     h2,.do-reward-header-text{
         font: $font-semibold;
@@ -86,7 +87,8 @@
 }
 @media (max-width: 400px) {
     .do-reward-header img{
-        height: 120px;
+        width: 150px;
+        height: auto;
     }   
     .do-reward-header h2, .do-reward-header .do-reward-header-text{
         font-size: 24px;
