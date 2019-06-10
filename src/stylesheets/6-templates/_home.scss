@@ -212,7 +212,11 @@
 }
 
 @media (max-width: $screen-sm-max) {
-
+    .card-error-text{
+        right: 46px;
+        top: 101px;
+        left: unset;
+    }
     .do-steps-container{
         padding: 60px 30px;
     }

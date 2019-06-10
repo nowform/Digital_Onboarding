@@ -1254,6 +1254,10 @@ input[type=number]::-webkit-outer-spin-button {
   color: #f74747; }
 
 @media (max-width: 767px) {
+  .card-error-text {
+    right: 46px;
+    top: 101px;
+    left: unset; }
   .do-steps-container {
     padding: 60px 30px; }
   .do-step-container {
