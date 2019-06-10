@@ -26,11 +26,12 @@
 .do-steps-container{
     position: relative;
     padding: 60px 0px;
+    // overflow-x: hidden;
 }
 // Step status styling
 .do-step-container{
     align-items: flex-start;
-    &.active{
+    &.in-progress{
         .do-step-status{
             border-color: $brand-color;
             .active{
@@ -48,10 +49,10 @@
                 color: $brand-color;
             }
         }
-        .do-step-body{
-            z-index: 1;
-            opacity: 1;
-        }
+        // .do-step-body{
+        //     z-index: 1;
+        //     opacity: 1;
+        // }
     }
     &.done{
         .do-step-status{
@@ -70,20 +71,45 @@
             }
         }
     }
+    &.active{
+        .do-step-heading .do-step-heading-text{
+            color: $brand-color;
+        }
+        .do-step-status{
+            border-color: $brand-color;
+            .done{
+                border-color: $brand-color;
+            } 
+            ~.do-step-arrow{
+                opacity: 1;
+                color: $brand-color;
+            }
+        }
+        .do-step-body{
+                opacity: 1;
+                z-index: 1;
+            &.hidden{
+                z-index: 0;
+                opacity: 0;
+            }
+        }
+    }
 }
 // Step heading 
 .do-step-heading{
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     margin-bottom: 20px;
     
     .do-step-heading-text{
         font: $font-regular;
         padding: 0px 20px;
         color: $mid-grey;
+        line-height: 24px;
     }
     .do-step-arrow{
         opacity: 0;
+        height: 24px;
     }
 }
 .reward-sub-text{
@@ -139,9 +165,17 @@
     top: 60px;
     max-width: calc(66.666667% + 13px);
     left: -3px;
+    min-height: 580px;
     padding-bottom: 60px;
+    transition: 1s;
+    z-index: 0;
+    opacity: 0;
+    background: #fff;
     &.hidden{
-        display: none;
+        z-index: 0;
+        opacity: 0;
+        transition: 0s;
+
     }
     .do-step-body-title{
         font: $font-semibold;
@@ -178,7 +212,71 @@
 .button-modal-space{
     margin: 40px 0px 20px 0px;
 }
+.skip-link{
+    position: absolute;
+    right: 0px;
+    bottom: 80px;
+}
 #do-terms-checkbox{
     // margin-bottom: 37px;
     display: inline-block;
+}
+
+@media (max-width: $screen-sm-max) {
+
+    .do-steps-container{
+        padding: 60px 30px;
+    }
+    .do-step-container{
+        border: 1px solid $light-grey;
+        padding: 30px 15px;
+        border-radius: 4px; 
+
+        &.active{
+            .do-step-body{
+                opacity: 1;
+                display: block;
+                &.hidden{
+                    display: none;
+                    opacity: 1;
+                }
+            }
+        }
+        &.done{
+            border: none;
+            border-top: 1px solid $light-grey;
+            border-radius: 0px;
+        }
+    }
+    .do-step-heading{
+        margin-bottom: 0px;
+    }
+    .do-step-body{
+        position: relative;
+        top: 0;
+        left: 0;
+        max-width: 100%;
+        width: 100%;
+        min-height: unset;
+        height: auto;
+        display: none;
+        padding-top: 30px;
+        padding-bottom: 0px;
+        max-width: 380px;
+        margin: auto;
+        .section-col-5,.section-col-3,.section-col-full{
+            width: 100%;
+        }
+        &.hidden{
+            display: none;
+            opacity: 1;
+        }
+        &.active{
+            display: block;
+            opacity: 1;
+        }
+        .do-step-body-title{
+            display: none;
+        }
+    }
 }

@@ -10,6 +10,10 @@
   content: '';
   display: table;
 }
+body{
+  width:100%;
+  height: 100%;
+}
 
 /**
  * Main content containers
@@ -98,4 +102,15 @@
 }
 .noMargin{
   margin: 0px;
+}
+.sm-hidden{
+  display: inherit;
+}
+@media (max-width: $screen-sm-max) {
+  .sm-hidden{
+    display: none;
+  }
+  body{
+    overflow-x: hidden;
+  }
 }

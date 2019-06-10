@@ -11,35 +11,58 @@ import {modal}  from "./custom/modal";
         document.querySelector('#body-not-activated').classList.add('hidden');
         document.querySelector('#body-activated').classList.remove('hidden');
         document.querySelector('#card-activation-text').innerHTML = 'Card Activated';
+        changeStep('2');
     }
 
     function changeStep(num){
+        if(document.querySelector('.do-step-container.active')){
+            document.querySelector('.do-step-container.active').classList.remove('active');
+        }
+        if(document.querySelector('.do-step-container.in-progress')){
+            document.querySelector('.do-step-container.in-progress').classList.remove('in-progress');
+        }
         switch (num) {
             case '1':
                 // not used
-                document.querySelector("#step-card-activation").classList.add('active');
-                document.querySelector("#step-card-activation").classList.remove('done');
+                if(document.querySelector("#step-card-activation").classList.contains('done')){
+                    document.querySelector("#step-card-activation").classList.add('active');
+                }
+                else{
+                    document.querySelector("#step-card-activation").classList.add('in-progress','active');
+                    document.querySelector("#step-card-activation").classList.remove('done');
+                }
                 break;
             
             case '2':
                 // change from step 1 to 2
-                document.querySelector("#step-card-activation").classList.add('done');
-                document.querySelector("#step-card-activation").classList.remove('active');
-                document.querySelector("#step-generate-pin").classList.add('active');
+                if(document.querySelector("#step-generate-pin").classList.contains('done')){
+                    document.querySelector("#step-generate-pin").classList.add('active');                
+                }
+                else{
+                    document.querySelector("#step-card-activation").classList.add('done');
+                    document.querySelector("#step-card-activation").classList.remove('in-progress','active');
+                    document.querySelector("#step-generate-pin").classList.add('in-progress','active');
+                }
+
                 break;
             
             case '3':
                 // change from step 1 to 2
-                document.querySelector("#step-generate-pin").classList.add('done');
-                document.querySelector("#step-generate-pin").classList.remove('active');
-                document.querySelector("#step-estate-sub").classList.add('active');
+                if(document.querySelector("#step-estate-sub").classList.contains('done')){
+                    document.querySelector("#step-estate-sub").classList.add('active');                
+                }
+                else{
+                    document.querySelector("#step-generate-pin").classList.add('done');
+                    document.querySelector("#step-generate-pin").classList.remove('in-progress');
+                    document.querySelector("#step-estate-sub").classList.add('in-progress','active');
+                }
                 break;
             
             case '4':
                     // change from step 1 to 2
                 document.querySelector("#step-estate-sub").classList.add('done');
-                document.querySelector("#step-estate-sub").classList.remove('active');
-                document.querySelector("#step-international-usage").classList.add('active');
+                document.querySelector("#step-estate-sub").classList.remove('in-progress');
+                document.querySelector("#step-international-usage").classList.add('in-progress');
                 break;
                     
                 
@@ -78,7 +101,7 @@ import {modal}  from "./custom/modal";
         document.querySelector('#body-after-otp').classList.add('hidden');
         document.querySelector('#body-pin-generated').classList.remove('hidden');
         document.querySelector('#generate-pin-text').innerHTML = 'PIN Generated';
-
+        changeStep('3');
     }
 
     window.generatePin = generatePin;

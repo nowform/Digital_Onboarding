@@ -20,7 +20,7 @@
             <div class="row flex-ac flex">
                 <img  class="col-md-2" src="./assets/images/marginalia-payment-processed-copy.png" alt="" />
                 <h2 class="do-reward-header-text col-md-4 offset-2">Let’s get you onboarded!</h2>
-                <div class=" col-md-3 offset-1">
+                <div class=" col-md-3 offset-1 reward-points">
                     <div class="do-reward-card">
                         <span class="reward-star"><img src="./assets/icons/star.svg" alt=""></span>
                         <span class="reward-number" id="reward-number">0</span>
@@ -35,26 +35,30 @@
     <!-- Main Section where steps are listed -->
     <main class="do-wrapper do-steps-container">
             <!-- Card Activation Step -->
-            <section class="do-step-container row active" id="step-card-activation">
+            <section class="do-step-container row active in-progress" id="step-card-activation">
                 <div class="do-step-heading col-md-3">
                     <div class="do-step-status ">
                         <span class="done"></span>
                         <span class="active"></span>
                     </div>
-                    <span class="do-step-heading-text" id="card-activation-text">
+                    <a class="do-step-heading-text" id="card-activation-text" onClick="changeStep('1')">
                             Card Activation
-                    </span>
+                    </a>
                     <svg class="do-step-arrow" xmlns="http://www.w3.org/2000/svg" width="6" height="9" viewBox="0 0 8 11">
                         <path fill="none" fill-rule="evenodd" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M1 1l6 4.33L1 10"/>
                     </svg>
                 </div>
                 <div class="do-step-body col-md-8 offset-4" id="body-not-activated">
                     <h3 class="do-step-body-title">Card Activation</h3>
+                    <div class="flex row">
+                        <div class="section-col-5">
+                                <p>We’ve set your SBI Card as per your needs. 
+                                        <br>
+                                        Read the fraud awareness and prevention script carefully and click below to activate your card ending with 5694.
+                                    </p>
+                        </div>
+                    </div>
                     <div class="section-col-full">
-                        <p>We’ve set your SBI Card as per your needs. 
-                            <br>
-                            Read the fraud awareness and prevention script carefully and click below to activate your card ending with 5694.
-                        </p>
                         <span class="divider"></span>
                     </div>
                     <div class="flex row">
@@ -72,7 +76,7 @@
                             <img src="./assets/images/card.svg" alt="">
                         </div>
                     </div>
-                    <div class="do-button-group space-top">
+                    <div class="do-button-group space-top vertical-sm">
                         <button class="do-button primary" disabled id="step1-activate-button" onClick="activateCard()">
                             Activate
                         </button>
@@ -80,7 +84,7 @@
                                 Next
                         </button>
                     </div>
-                    <p class="text-right noMargin"><a href="#skipOnboarding" class="underlined">Skip for now</a></p>
+                    <p class="text-right noMargin skip-link sm-hidden"><a href="#skipOnboarding" class="underlined">Skip for now</a></p>
                 </div>
                 <div class="do-step-body hidden col-md-8 offset-4"  id="body-activated">
                         <h3 class="do-step-body-title">Card Activated</h3>
@@ -93,7 +97,7 @@
                                 </p>
                             </div>
                         </div>
-                        <div class="do-button-group space-top" >
+                        <div class="do-button-group space-top vertical-sm" >
                             <button class="do-button primary" disabled id="step1-activated-button">
                                 Activated
                             </button>
@@ -101,7 +105,7 @@
                                     Next
                             </button>
                         </div>
-                        <p class="text-right noMargin"><a href="#skipOnboarding" class="underlined">Skip for now</a></p>
+                        <p class="text-right noMargin skip-link sm-hidden"><a href="#skipOnboarding" class="underlined">Skip for now</a></p>
                     </div>
             </section>
             <section class="do-step-container row " id="step-generate-pin">
@@ -110,9 +114,9 @@
                         <span class="done"></span>
                         <span class="active"></span>
                     </div>
-                    <span class="do-step-heading-text" id="generate-pin-text">
+                    <a class="do-step-heading-text" id="generate-pin-text" onClick="changeStep('2')">
                             Generate Pin
-                    </span>
+                    </a>
                     <svg class="do-step-arrow" xmlns="http://www.w3.org/2000/svg" width="6" height="9" viewBox="0 0 8 11">
                         <path fill="none" fill-rule="evenodd" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M1 1l6 4.33L1 10"/>
                     </svg>
@@ -128,7 +132,7 @@
                             </p>
                         </div>
                     </div>
-                    <div class="do-button-group space-top" >
+                    <div class="do-button-group space-top vertical-sm" >
                         <button class="do-button primary" id="step2-otp-button" onClick="generateOtp()">
                             Generate OTP
                         </button>
@@ -136,6 +140,7 @@
                                 Next
                         </button>
                     </div>
+                    <p class="text-right noMargin skip-link sm-hidden"><a href="#skipOnboarding" class="underlined">Skip for now</a></p>
                 </div>
                 <div class="do-step-body  col-md-8 offset-4 hidden" id="body-after-otp">
                     <h3 class="do-step-body-title">Generate PIN</h3>
@@ -148,17 +153,17 @@
                             </p>
                             <div class="do-input-group vertical space-top-30">
                                 <label for="do-terms" class="do-input-label do-input-text"  id="new-pin-input">
-                                    <input type="text" name="new-pin-input" id="" required onKeyUp="validatePin()">
+                                    <input type="number" name="new-pin-input" id=""  required onKeyUp="validatePin()">
                                     <span class="placeholder">New Pin</span>
                                 </label>
                                 <label for="do-terms" class="do-input-label do-input-text" id="confirm-pin-input">
-                                    <input type="text" name="confirm-pin-input" id=""required  onKeyUp="validatePin()">
+                                    <input type="number" name="confirm-pin-input" id=""required  onKeyUp="validatePin()">
                                     <span class="placeholder">Re-enter PIN</span>
                                 </label>
                             </div>
                         </div>
                     </div>
-                    <div class="do-button-group space-top" >
+                    <div class="do-button-group space-top vertical-sm" >
                         <button class="do-button primary" disabled id="step2-pin-button" onClick="generatePin()">
                             Generate
                         </button>
@@ -166,6 +171,7 @@
                                 Next
                         </button>
                     </div>
+                    <p class="text-right noMargin skip-link sm-hidden"><a href="#skipOnboarding" class="underlined">Skip for now</a></p>
                 </div>
                 <div class="do-step-body  col-md-8 offset-4 hidden" id="body-pin-generated">
                     <h3 class="do-step-body-title">PIN Generated</h3>
@@ -185,6 +191,7 @@
                                 Next
                         </button>
                     </div>
+                    <p class="text-right noMargin skip-link sm-hidden"><a href="#skipOnboarding" class="underlined">Skip for now</a></p>
                 </div>
             </section>
 
@@ -194,10 +201,10 @@
                         <span class="done"></span>
                         <span class="active"></span>
                     </div>
-                    <span class="do-step-heading-text">
+                    <a class="do-step-heading-text"  id="estate-sub-text" onClick="changeStep('3')">
                             E-Statement Subscription
                             <span class="reward-sub-text"> <img src="./assets/icons/star.svg" alt=""> 100 Reward points</span>
-                    </span>
+                    </a>
                     <svg class="do-step-arrow" xmlns="http://www.w3.org/2000/svg" width="6" height="9" viewBox="0 0 8 11">
                         <path fill="none" fill-rule="evenodd" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M1 1l6 4.33L1 10"/>
                     </svg>
@@ -237,6 +244,7 @@
                             Next
                         </button>
                     </div>
+                    <p class="text-right noMargin skip-link sm-hidden"><a href="#skipOnboarding" class="underlined">Skip for now</a></p>
                 </div>
             </section>
 
@@ -295,7 +303,7 @@
             <!-- Welcome Modal -->
             <div id="welcome" class="modal " role="dialog" >
                 <div class="modal-body text-center">
-                    <img src="/assets/images/marginalia-payment-processed-copy.png" alt="">
+                    <img src="./assets/images/marginalia-payment-processed-copy.png" alt="">
                     <h2 class="modal-heading">Hi Vikramaditya! Welcome to SBI Card</h2>
                     <p  class="modal-content">Get onboarded with us and earn upto 200 reward points.
                             Redeem these rewards for a host of gift items and gift vouchers for yourself and your family.
@@ -335,7 +343,7 @@
                             <br>
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
                     </p>
-                    <div class="flex flex-ac flex-jc flex-col">
+                    <div class="flex flex-ac flex-jc flex-col space-top-40">
                         <button class="do-button primary" onClick="window.location.hash = ''"  id="onboarded-button">Get Onboarded</button>
                         <a href="" class="underlined">Skip for now</a>
                     </div>
@@ -345,7 +353,7 @@
 
             <div id="skipOnboarding" class="modal " role="dialog" >
                     <div class="modal-body text-center">
-                            <img src="/assets/images/marginalia-payment-processed-copy.png" alt="">
+                            <img src="./assets/images/marginalia-payment-processed-copy.png" alt="">
                   
                     <h2 class="modal-heading subheading">Leaving Already?</h2>
                     <p  class="modal-content ">

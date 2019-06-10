@@ -1,6 +1,13 @@
 // -----------------------------------------------------------------------------
 // This file contains all styles related to the button component.
 // -----------------------------------------------------------------------------
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0; 
+}
 
 /* BUTTONS */
 .do-button{
@@ -199,11 +206,12 @@ $md-checkbox-label-padding: .75em;
     font: $font-bold;
     font-size: 18px;  
     letter-spacing: 25.5px;
-    width: 200px;
+    width: 220px;
+    margin-left: 20px;
     padding-left: 3px;
     outline: none;
     +svg{
-      left: 0px;
+      left: 20px;
       position: absolute;
       bottom: 0px;
       width: 100%;
@@ -254,6 +262,7 @@ $md-checkbox-label-padding: .75em;
     top: 0px;
     font-size: 14px;
     left: 0px;
+    pointer-events: none;
     transition: .3s;
     line-height: 20px;
     color: $mid-grey;
@@ -262,4 +271,21 @@ $md-checkbox-label-padding: .75em;
   &.wide{
     width: 380px;
   }
+}
+
+
+// mobile
+@media (max-width: $screen-sm-max) {
+.do-button-group{
+  &.vertical-sm{
+      flex-direction: column;
+      .do-button{
+          width: 100%;
+          margin: 0px 0px 20px 0px;
+          &:last-of-type{
+            margin-bottom: 0px;
+          }
+      }
+  }
+}
 }
