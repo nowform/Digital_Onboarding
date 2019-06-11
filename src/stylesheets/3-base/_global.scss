@@ -61,7 +61,7 @@ body{
 }
 
 .do-wrapper{
-  max-width: 1200px;
+  max-width: 1240px;
   margin: auto;
   padding: 0px 30px;
 }
@@ -80,6 +80,12 @@ body{
   &.flex-col{
     flex-direction: column;
   }
+  .flex-as{
+    align-items: flex-start;
+  }
+  .flex-je{
+    justify-content: flex-end;
+  }
 }
 .align-bottom{
   align-self: flex-end;
@@ -90,6 +96,16 @@ body{
   height: 1px;
   margin: 20px 0px;
   display: block;
+}
+.do-list{
+  padding-left: 15px;
+  // list-style-type: circle;
+  font: $font-regular;
+  line-height:20px;
+  margin: 0px;
+  >li{
+    margin-bottom: 30px;
+  }
 }
 .text-center{
   text-align: center;

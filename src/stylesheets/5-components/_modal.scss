@@ -67,6 +67,18 @@
             top: 50px;
             position: absolute;
         }
+        &.noPadding{
+            padding: 0px;
+        }
+        .modal-padding-wrapper{
+            padding: 40px 100px;
+        }
+    }
+    .modal-footer{
+        background: #f2f7fd;
+        padding: 20px;
+        width: 100%;
+        max-width: 590px;
     }
 }
 
@@ -86,13 +98,20 @@
 @media (max-width: $screen-sm-max){
     .modal{
         padding: 0px;
-
+        flex-direction: column;
         .modal-body{
                 width: 100%;
                 height: 100vh;
                 top: 0px;
                 margin-top: 0px;
                 padding: 40px 20px;
+               
+        }
+        .modal-footer{
+            position: absolute;
+            bottom: 0px;
+            width: 100%;
+            left: 0px;
         }
     }
 }

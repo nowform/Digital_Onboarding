@@ -1,0 +1,39 @@
+.do-card{
+    border-radius: 2px;
+    box-shadow: 1px 2px 6px 0 rgba(213, 213, 234, 0.81);
+    background-color: #ffffff;
+    padding: 20px;
+    text-align: left;
+    // width: 140px;
+    .heading{
+        margin: 0px;
+        font: $font-regular;
+        line-height: 20px;
+        margin-bottom: 10px;
+    }
+    .data{
+        font: $font-bold;
+        font-size: 18px;
+        margin: 0px;
+
+        .sub-text{
+            font: $font-regular;
+            font-size: 10px;
+        }
+    }
+   &.small{
+       width: 100%;
+    max-width: 139.9px;
+    }
+}
+.do-card-container{
+    display: flex;
+    flex-wrap: wrap;
+    .do-card{
+        margin: 0px 20px 40px 0px;
+
+        &:last-of-type{
+            margin-right: 0px;
+        }
+    }
+}

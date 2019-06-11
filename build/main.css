@@ -511,7 +511,7 @@ body {
   width: 1px; }
 
 .do-wrapper {
-  max-width: 1200px;
+  max-width: 1240px;
   margin: auto;
   padding: 0px 30px; }
 
@@ -525,6 +525,10 @@ body {
     justify-content: center; }
   .flex.flex-col {
     flex-direction: column; }
+  .flex .flex-as {
+    align-items: flex-start; }
+  .flex .flex-je {
+    justify-content: flex-end; }
 
 .align-bottom {
   align-self: flex-end; }
@@ -535,6 +539,14 @@ body {
   height: 1px;
   margin: 20px 0px;
   display: block; }
+
+.do-list {
+  padding-left: 15px;
+  font: 400 14px "Open Sans", sans-serif;
+  line-height: 20px;
+  margin: 0px; }
+  .do-list > li {
+    margin-bottom: 30px; }
 
 .text-center {
   text-align: center; }
@@ -907,6 +919,8 @@ input[type=number]::-webkit-outer-spin-button {
   .do-button-group .do-button {
     margin-right: 20px;
     margin-bottom: 0px; }
+  .do-button-group a {
+    align-self: center; }
   .do-button-group.vertical {
     flex-direction: column; }
     .do-button-group.vertical .do-button {
@@ -1051,6 +1065,8 @@ input[type=number]::-webkit-outer-spin-button {
       margin: 0px 0px 20px 0px; }
       .do-button-group.vertical-sm .do-button:last-of-type {
         margin-bottom: 0px; }
+    .do-button-group.vertical-sm a {
+      margin: 20px 0px; }
   .do-input-group.vertical .do-input-text {
     width: 100%; } }
 
@@ -1118,6 +1134,15 @@ input[type=number]::-webkit-outer-spin-button {
       left: 100px;
       top: 50px;
       position: absolute; }
+    .modal .modal-body.noPadding {
+      padding: 0px; }
+    .modal .modal-body .modal-padding-wrapper {
+      padding: 40px 100px; }
+  .modal .modal-footer {
+    background: #f2f7fd;
+    padding: 20px;
+    width: 100%;
+    max-width: 590px; }
 
 .modal:target {
   opacity: 1;
@@ -1132,13 +1157,49 @@ input[type=number]::-webkit-outer-spin-button {
 
 @media (max-width: 767px) {
   .modal {
-    padding: 0px; }
+    padding: 0px;
+    flex-direction: column; }
     .modal .modal-body {
       width: 100%;
       height: 100vh;
       top: 0px;
       margin-top: 0px;
-      padding: 40px 20px; } }
+      padding: 40px 20px; }
+    .modal .modal-footer {
+      position: absolute;
+      bottom: 0px;
+      width: 100%;
+      left: 0px; } }
+
+.do-card {
+  border-radius: 2px;
+  box-shadow: 1px 2px 6px 0 rgba(213, 213, 234, 0.81);
+  background-color: #ffffff;
+  padding: 20px;
+  text-align: left; }
+  .do-card .heading {
+    margin: 0px;
+    font: 400 14px "Open Sans", sans-serif;
+    line-height: 20px;
+    margin-bottom: 10px; }
+  .do-card .data {
+    font: 700 14px "Open Sans", sans-serif;
+    font-size: 18px;
+    margin: 0px; }
+    .do-card .data .sub-text {
+      font: 400 14px "Open Sans", sans-serif;
+      font-size: 10px; }
+  .do-card.small {
+    width: 100%;
+    max-width: 139.9px; }
+
+.do-card-container {
+  display: flex;
+  flex-wrap: wrap; }
+  .do-card-container .do-card {
+    margin: 0px 20px 40px 0px; }
+    .do-card-container .do-card:last-of-type {
+      margin-right: 0px; }
 
 /* CSS for Steps */
 .do-steps-container {
@@ -1190,11 +1251,11 @@ input[type=number]::-webkit-outer-spin-button {
     padding: 0px 20px;
     color: #8a8a96;
     line-height: 24px;
-    flex: 1;
     pointer-events: none; }
     .do-step-heading .do-step-heading-text.clickable {
       cursor: pointer;
-      pointer-events: all; }
+      pointer-events: all;
+      text-decoration: none; }
   .do-step-heading .do-step-arrow {
     opacity: 0;
     height: 24px; }
@@ -1204,8 +1265,11 @@ input[type=number]::-webkit-outer-spin-button {
   font: 400 14px "Open Sans", sans-serif;
   font-size: 10px;
   color: #ebb73a; }
+  .reward-sub-text.grey {
+    color: #eeeeee; }
 
 .do-step-status {
+  min-width: 24px;
   width: 24px;
   height: 24px;
   display: inline-flex;
@@ -1270,15 +1334,52 @@ input[type=number]::-webkit-outer-spin-button {
     font-size: 10px;
     color: #ebb73a; }
   .do-step-body p {
-    font: 400 14px "Open Sans", sans-serif; }
+    font: 400 14px "Open Sans", sans-serif;
+    line-height: 20px; }
+    .do-step-body p.do-text12 {
+      font: 400 14px "Open Sans", sans-serif;
+      font-size: 12px; }
+    .do-step-body p.bold {
+      font-weight: 600; }
+    .do-step-body p.boldest {
+      font-weight: 700; }
   .do-step-body .section-col-5 {
     width: 61.5%;
+    padding: 0px 10px; }
+  .do-step-body .section-col-4 {
+    width: 50%;
     padding: 0px 10px; }
   .do-step-body .section-col-3 {
     width: 35.9%;
     padding: 0px 10px; }
   .do-step-body .section-col-full {
     width: 100%; }
+
+.payment-options-container {
+  justify-content: space-between;
+  flex-wrap: wrap; }
+
+.bottom-box {
+  position: fixed;
+  background: #f2f7fd;
+  bottom: 0px;
+  width: 100vw;
+  z-index: 99;
+  left: 0px;
+  padding: 30px 30px;
+  display: none; }
+  .bottom-box .bottom-box-container {
+    width: 100%; }
+  .bottom-box.show {
+    display: flex; }
+  .bottom-box span {
+    font: 400 14px "Open Sans", sans-serif;
+    line-height: 20px;
+    color: #666666;
+    margin-right: auto; }
+
+.payment-options img {
+  width: 80px; }
 
 .button-modal-space {
   margin: 40px 0px 20px 0px; }
@@ -1295,6 +1396,10 @@ input[type=number]::-webkit-outer-spin-button {
   text-align: center;
   margin-bottom: 190px; }
 
+.named-card > img {
+  max-width: 341px;
+  width: 100%; }
+
 #do-terms-checkbox {
   margin: 10px 0px;
   display: inline-block; }
@@ -1303,6 +1408,9 @@ input[type=number]::-webkit-outer-spin-button {
   margin-bottom: 40px;
   width: 100%;
   max-width: 276px; }
+
+#body-do-confirmation {
+  padding-bottom: 160px; }
 
 .card-error-text {
   position: absolute;
@@ -1313,7 +1421,19 @@ input[type=number]::-webkit-outer-spin-button {
   left: auto;
   color: #f74747; }
 
+.e-call-card {
+  width: 200px;
+  height: 192px;
+  border: solid 1px #e0e0e0;
+  background-color: #ffffff;
+  padding: 24px 20px; }
+
 @media (max-width: 767px) {
+  .bottom-box .bottom-box-container {
+    flex-direction: column;
+    padding: 20px 30px; }
+    .bottom-box .bottom-box-container span {
+      margin-bottom: 40px; }
   .card-error-text {
     right: 46px;
     top: 101px;
@@ -1335,6 +1455,8 @@ input[type=number]::-webkit-outer-spin-button {
       border: none;
       border-top: 1px solid #eeeeee;
       border-radius: 0px; }
+      .do-step-container.done.active {
+        border: 1px solid #eeeeee; }
     .do-step-container.in-progress {
       border: 1px solid #eeeeee;
       padding: 30px 15px;
@@ -1354,7 +1476,7 @@ input[type=number]::-webkit-outer-spin-button {
     padding-bottom: 0px;
     max-width: 380px;
     margin: auto; }
-    .do-step-body .section-col-5, .do-step-body .section-col-3, .do-step-body .section-col-full {
+    .do-step-body .section-col-5, .do-step-body .section-col-3, .do-step-body .section-col-full, .do-step-body .section-col-4 {
       width: 100%; }
     .do-step-body.hidden {
       display: none;

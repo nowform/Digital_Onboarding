@@ -8,6 +8,8 @@ import {modal}  from "./custom/modal";
     }
 
     function activateCard(){
+        // Activat card code here
+
         document.querySelector('#body-not-activated').classList.add('hidden');
         document.querySelector('#body-activated').classList.remove('hidden');
         document.querySelector('#card-activation-text').innerHTML = 'Card Activated';
@@ -23,7 +25,7 @@ import {modal}  from "./custom/modal";
         }
         switch (num) {
             case '1':
-                // not used
+                // change to 1
                 if(document.querySelector("#step-card-activation").classList.contains('done')){
                     document.querySelector("#step-card-activation").classList.add('active');
                 }
@@ -34,7 +36,7 @@ import {modal}  from "./custom/modal";
                 break;
             
             case '2':
-                // change from step 1 to 2
+                // change to 2
                 if(document.querySelector("#step-generate-pin").classList.contains('done')){
                     document.querySelector("#step-generate-pin").classList.add('active');                
                 }
@@ -48,7 +50,7 @@ import {modal}  from "./custom/modal";
                 break;
             
             case '3':
-                // change from step 1 to 2
+                // change to 3
                 if(document.querySelector("#step-estate-sub").classList.contains('done')){
                     document.querySelector("#step-estate-sub").classList.add('active');                
                 }
@@ -61,11 +63,29 @@ import {modal}  from "./custom/modal";
                 break;
             
             case '4':
-                    // change from step 1 to 2
-                document.querySelector("#step-estate-sub").classList.add('done');
-                document.querySelector("#step-estate-sub").classList.remove('in-progress');
-                document.querySelector("#step-estate-sub .do-step-heading-text").classList.add('clickable');
-                document.querySelector("#step-international-usage").classList.add('in-progress');
+                    // change to 4
+                if(document.querySelector("#step-international-usage").classList.contains('done')){
+                    document.querySelector("#step-international-usage").classList.add('active');                
+                }
+                else{
+                    document.querySelector("#step-estate-sub").classList.add('done');
+                    document.querySelector("#step-estate-sub").classList.remove('in-progress');
+                    document.querySelector("#step-estate-sub .do-step-heading-text").classList.add('clickable');
+                    document.querySelector("#step-international-usage").classList.add('in-progress','active');
+                }
+                break;
+
+            case '5':
+                    // change to 5
+                if(document.querySelector("#step-do-confirmation").classList.contains('done')){
+                    document.querySelector("#step-do-confirmation").classList.add('active');                
+                }
+                else{
+                    document.querySelector("#step-international-usage").classList.add('done');
+                    document.querySelector("#step-international-usage").classList.remove('in-progress');
+                    document.querySelector("#step-international-usage .do-step-heading-text").classList.add('clickable');
+                    document.querySelector("#step-do-confirmation").classList.add('in-progress','active');
+                }
                 break;
                     
                 
@@ -75,6 +95,8 @@ import {modal}  from "./custom/modal";
     }
 
     function generateOtp(){
+        // Generate Otp Here
+
         window.location.hash = "generateOtp";
     }
     function swicthGeneratedPin(){
@@ -82,7 +104,10 @@ import {modal}  from "./custom/modal";
         document.querySelector('#body-after-otp').classList.remove('hidden');
     }
     function validateOtp(inputEl){
+        
         if(inputEl.value.length == 6){
+            // Get Otp Pin here
+
             inputEl.blur();
             window.location.hash = "#";
             swicthGeneratedPin();
@@ -101,12 +126,48 @@ import {modal}  from "./custom/modal";
     }
 
     function generatePin(){
+        // Generate Pin Code here
+
         document.querySelector('#body-after-otp').classList.add('hidden');
         document.querySelector('#body-pin-generated').classList.remove('hidden');
         document.querySelector('#generate-pin-text').innerHTML = 'PIN Generated';
         changeStep('3');
     }
+    function estateSubscription(){
 
+        // activate E statement usage here;
+
+
+        document.querySelector('#body-before-subscription').classList.add('hidden');
+        document.querySelector('#body-after-subscription').classList.remove('hidden');
+        document.querySelector('#estate-sub-text').innerHTML = 
+        `
+            E-Statement Subscribed 
+            <span class="reward-sub-text grey"> <img src="./assets/icons/star-grey.svg" alt=""> 100 Reward points claimed</span>
+        `;
+        window.location.hash = '';
+        changeStep('4');
+    }
+    function activateInternational(){
+        // activate international usage here;
+
+        document.querySelector('#body-before-IUActivation').classList.add('hidden');
+        document.querySelector('#body-after-IUActivation').classList.remove('hidden');
+        document.querySelector('#international-usage-text').innerHTML =  `International Usage Activated`;
+        window.location.hash = '';
+        changeStep('5');
+        document.querySelector('#finish-bottom-box').classList.add('show');
+    }
+    function callMeBack(){
+
+    }
+
+
+
+
+    window.callMeBack = callMeBack;
+    window.activateInternational = activateInternational;
+    window.estateSubscription = estateSubscription;
     window.generatePin = generatePin;
     window.validatePin = validatePin;
     window.validateOtp = validateOtp;
