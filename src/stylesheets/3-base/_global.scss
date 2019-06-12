@@ -136,7 +136,7 @@ body{
     display: none;
   }
   .sm-visible{
-    display: block;
+    display: block !important;
   }
   body{
     overflow-x: hidden;

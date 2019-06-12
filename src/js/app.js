@@ -1,7 +1,7 @@
 import "../stylesheets/main.scss";
 // require('file-loader?name=[name].[ext]!../../index.html');
 
-import {modal}  from "./custom/modal";
+// import {modal}  from "./custom/modal";
 
     function toggleButton(selector){    
         document.querySelector(selector).disabled = !document.querySelector(selector).disabled ;
@@ -96,13 +96,18 @@ import {modal}  from "./custom/modal";
 
     function generateOtp(){
         // Generate Otp Here
-
+        document.querySelector('#otp-input > input').value = '';
         window.location.hash = "generateOtp";
     }
     function swicthGeneratedPin(){
         document.querySelector('#body-before-otp').classList.add('hidden');
+        document.querySelector('#body-pin-generated').classList.add('hidden');
         document.querySelector('#body-after-otp').classList.remove('hidden');
+        document.querySelector('#new-pin-input > input').value = '';
+        document.querySelector('#confirm-pin-input > input').value = '';
     }
+
+
     function validateOtp(inputEl){
         
         if(inputEl.value.length == 6){
@@ -134,7 +139,6 @@ import {modal}  from "./custom/modal";
 
     function generatePin(){
         // Generate Pin Code here
-
         document.querySelector('#body-after-otp').classList.add('hidden');
         document.querySelector('#body-pin-generated').classList.remove('hidden');
         document.querySelector('#generate-pin-text').innerHTML = 'PIN Generated';

@@ -13,7 +13,7 @@
     <header class="do-header do-wrapper flex flex-ac flex-sb">
       <img src="./assets/images/sbi_logo_2x.jpg" alt="" />
                         <!-- <p class="text-right noMargin skip-link sm-hidden"><a href="#skipOnboarding" class="underlined">Skip onboarding for now</a></p> -->
-      <a href="#skipOnboarding" class="underlined flex flex-ac" style="line-height: 20px;">
+      <a href="#skipOnboarding" class="underlined flex flex-ac sm-hidden" style="line-height: 20px;">
         <img src="./assets/icons/cross.svg" alt="" style="padding-right:10px;">  
         Skip onboarding for now</a>
     </header>
@@ -41,7 +41,7 @@
     <main class="do-wrapper ">
         <div class="do-steps-container">
             <!-- Card Activation Step -->
-            <section class="do-step-container row active in-progress" id="step-card-activation">
+            <section class="do-step-container row " id="step-card-activation">
                 <div class="do-step-heading col-md-3">
                     <div class="do-step-status ">
                         <span class="done"></span>
@@ -95,7 +95,7 @@
                                 Skip this step
                         </a>
                     </div>
-                    <p class="text-right noMargin skip-link sm-hidden"><a href="#skipOnboarding" class="underlined">Skip onboarding for now</a></p>
+                    <!-- <p class="text-right noMargin skip-link sm-hidden"><a href="#skipOnboarding" class="underlined">Skip onboarding for now</a></p> -->
                 </div>
                 <div class="do-step-body hidden col-md-8 offset-4"  id="body-activated">
                         <h3 class="do-step-body-title">Card Activated</h3>
@@ -157,7 +157,8 @@
                     <h3 class="do-step-body-title">Generate PIN</h3>
                     <div class="flex row">
                         <div class="section-col-5">
-                            <p>Set custom PIN for your SBI Card and stay secure.
+                            <p>
+                                Set custom PIN for your SBI Card and stay secure.
                                 <br>
                                 <br>
                                 Do not share your SBI card PIN with anyone. SBI Card or its representatives will never ask for PIN.
@@ -188,15 +189,16 @@
                     <h3 class="do-step-body-title">PIN Generated</h3>
                     <div class="flex row">
                         <div class="section-col-5">
-                            <p>Your SBI Card PIN is generated. 
+                            <p> 
+                                Your SBI Card PIN has already been generated.
                                 <br>
-                                Service Request Number for generating PIN is <b>987654321.</b>
+                                To reset you PIN again, click Generate OTP.
                             </p>
                         </div>
                     </div>
                     <div class="do-button-group space-top vertical-sm" >
-                        <button class="do-button primary" disabled >
-                            Generated
+                        <button class="do-button primary" onClick="generateOtp()" >
+                            Generate OTP
                         </button>
                         <a class="underlined" onClick="changeStep('3')" >
                                 Skip this step
@@ -206,7 +208,7 @@
                 </div>
             </section>
 
-            <section class="do-step-container row " id="step-estate-sub">
+            <section class="do-step-container row active in-progress" id="step-estate-sub">
                     <div class="do-step-heading col-md-3">
                     <div class="do-step-status">
                         <span class="done"></span>
@@ -238,8 +240,10 @@
                         <div class="section-col-3">
                             <div class="e-call-card flex flex-ac flex-col flex-jc">
                                 <img src="./assets/icons/call.svg" alt="" srcset="">
-                                <p class="do-text12 bold text-center noMargin" style="margin-top: 20px;margin-bottom:10px">Not your E-mail ID?</p>
-                                <p class="do-text12 text-center noMargin">To update your E-mail ID, call us on 0120-2648888</p>
+                                <div class="e-call-card-content">
+                                    <p class="do-text12 bold text-center noMargin" style="margin-top: 20px;margin-bottom:10px">Not your E-mail ID?</p>
+                                    <p class="do-text12 text-center noMargin">To update your E-mail ID, call us on 0120-2648888</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -433,8 +437,8 @@
                         <p><b>Important:</b> Not paying your minimum/total due card on time will impact your bureau score which may lead to rejection of loan/card application in future.</p>
                 </div>
             </section>
-            <!-- <p class="text-center noMargin skip-link-mobile sm-visible"><a href="#skipOnboarding" class="underlined">Skip onboarding for now</a></p> -->
         </div>
+        <p class="text-center noMargin skip-link-mobile sm-visible"><a href="#skipOnboarding" class="underlined">Skip onboarding for now</a></p>
 
         </main>
 

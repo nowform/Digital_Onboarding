@@ -301,7 +301,27 @@
   padding: 24px 20px;
 }
 @media (max-width: $screen-sm-max) {
+.e-call-card{
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: row !important;
 
+    img{
+        padding-right: 30px;
+    }
+    .e-call-card-content{
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        p{
+            text-align: left;
+        }
+        p:first-child{
+            margin-top: 0 !important;
+        }
+    }
+}
 .bottom-box{
     .bottom-box-container{
         flex-direction: column;
@@ -317,7 +337,7 @@
         left: unset;
     }
     .do-steps-container{
-        padding: 60px 30px;
+        padding: 60px 10px;
     }
     .do-step-container{
         border: none;
