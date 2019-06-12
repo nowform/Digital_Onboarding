@@ -103,10 +103,17 @@ function validateOtp(inputEl){
     if(inputEl.value.length == 6){
         // Get Otp Pin here
 
-        inputEl.blur();
-        window.location.hash = "#";
-        swicthGeneratedPin();
-        // Write code for OTP check here 
+        // validate if it matches the OTP 
+        if(true){
+            // replace true with otp condition as per your requirement
+            inputEl.blur();
+            window.location.hash = "#";
+            swicthGeneratedPin();
+        }
+        else{
+            // incase OTP is not correct
+            document.querySelector('#otp-input > input').value = '';
+        }
     }
 }
 function validatePin(){
@@ -156,6 +163,7 @@ function activateInternational(){
 function callMeBack(){
 
 }
+
 
 
 window.addEventListener('keyup',(e)=>{

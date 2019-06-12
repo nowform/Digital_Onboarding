@@ -69,6 +69,7 @@
         .do-step-body{
                 opacity: 1;
                 z-index: 1;
+                transition: 2s;
             &.hidden{
                 z-index: 0;
                 opacity: 0;
@@ -160,7 +161,7 @@
     left: 0px;
     min-height: 580px;
     padding-bottom: 60px;
-    transition: 1s;
+    transition: 0s;
     z-index: 0;
     opacity: 0;
     background: #fff;
@@ -169,7 +170,6 @@
         z-index: 0;
         opacity: 0;
         transition: 0s;
-
     }
     .do-step-body-title{
         font: $font-semibold;
