@@ -127,13 +127,32 @@ import "../stylesheets/main.scss";
         }
     }
     function validatePin(){
-        if(document.querySelector("#confirm-pin-input > input").value.length >1){
-            if(document.querySelector("#new-pin-input > input").value != document.querySelector("#confirm-pin-input > input").value){
-                document.querySelector("#step2-pin-button").disabled = true;
-                
-            }else{
-                document.querySelector("#step2-pin-button").disabled = false;                
+        const newPinEl = document.querySelector("#new-pin-input > input");
+        const confirmPinEl = document.querySelector("#confirm-pin-input > input");
+        
+        
+        console.log(this);
+        
+        if(newPinEl.value.length >= 4){
+            if(newPinEl.value.length > 4){
+                newPinEl.value = newPinEl.value.slice(0,4);
             }
+            confirmPinEl.focus();
+        }
+
+        if(confirmPinEl.value.length >= 4){
+            if(confirmPinEl.value.length > 4){
+                confirmPinEl.value = confirmPinEl.value.slice(0,4);
+            }
+        }
+        if(newPinEl.value.length == 4 && confirmPinEl.value.length == 4){
+            if(newPinEl.value != confirmPinEl.value){
+                document.querySelector("#step2-pin-button").disabled = true;
+            }else{
+                document.querySelector("#step2-pin-button").disabled = false;  
+                confirmPinEl.blur();
+            }
+            
         }
     }
 
