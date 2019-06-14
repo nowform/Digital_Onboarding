@@ -1344,6 +1344,8 @@ input[type=number]::-webkit-outer-spin-button {
       font-weight: 600; }
     .do-step-body p.boldest {
       font-weight: 700; }
+  .do-step-body b {
+    font-weight: 600; }
   .do-step-body .section-col-5 {
     width: 62.5%;
     padding: 0px 10px; }
@@ -1423,6 +1425,7 @@ input[type=number]::-webkit-outer-spin-button {
   color: #f74747; }
 
 .e-call-card {
+  max-width: 100%;
   width: 200px;
   height: 192px;
   border: solid 1px #e0e0e0;
