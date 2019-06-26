@@ -12,6 +12,7 @@
 // Step status styling
 .do-step-container{
     align-items: flex-start;
+    // overflow: hidden;
     &.in-progress{
         .do-step-status{
             border-color: $brand-color;
@@ -69,7 +70,8 @@
         .do-step-body{
                 opacity: 1;
                 z-index: 1;
-                transition: 2s;
+                transition: 1s;
+                transform: translateX(0);
             &.hidden{
                 z-index: 0;
                 opacity: 0;
@@ -163,7 +165,9 @@
     padding-bottom: 60px;
     transition: 0s;
     z-index: 0;
-    opacity: 0;
+    // opacity: 0;
+    transform: translateX(100%);
+
     background: #fff;
     margin-left: calc(33.33% - 3px);
     &.hidden{
