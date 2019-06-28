@@ -164,9 +164,10 @@
     min-height: 580px;
     padding-bottom: 60px;
     transition: 0s;
+    transition-delay: 1s;
     z-index: 0;
     // opacity: 0;
-    transform: translateX(100%);
+    transform: translateX(calc(100% + 30px));
 
     background: #fff;
     margin-left: calc(33.33% - 3px);
@@ -174,6 +175,7 @@
         z-index: 0;
         opacity: 0;
         transition: 0s;
+        transition-delay: 1s;
     }
     .do-step-body-title{
         font: $font-semibold;
@@ -207,6 +209,12 @@
     }
     b{
         font-weight: 600;
+        &.bold{
+            font-weight: 600;
+        }
+        &.boldest{
+            font-weight: 700;
+        }
     }
     .section-col-5{
         width: 62.5%;
@@ -256,6 +264,7 @@
 }
 .payment-options{
     img{
+        margin-right: 20px;
         width: 80px;
     }
 }
@@ -331,13 +340,17 @@
     }
 }
 .bottom-box{
+    padding: 20px 30px;
     .bottom-box-container{
         flex-direction: column;
-        padding: 20px 30px;
+        padding: 0px;
         span{
             margin-bottom: 40px;
         }
     }
+}
+#finish-buttons{
+    flex-direction: column-reverse;
 }
     .card-error-text{
         right: 46px;
@@ -407,5 +420,14 @@
         .do-step-body-title{
             display: none;
         }
+        // p{
+        //     font-size: 16px;
+        // }
+    }
+    // .do-step-heading .do-step-heading-text{
+    //     font-size: 22px;
+    // }
+    .payment-options{
+        margin-bottom: 40px;
     }
 }

@@ -113,7 +113,7 @@
                                 Activated
                             </button>
                             <a class="underlined" onClick="changeStep('2')" >
-                                    Skip this step
+                                Next
                             </a>
                         </div>
                         <!-- <p class="text-right noMargin skip-link sm-hidden"><a href="#skipOnboarding" class="underlined">Skip onboarding for now</a></p> -->
@@ -201,7 +201,7 @@
                             Generate OTP
                         </button>
                         <a class="underlined" onClick="changeStep('3')" >
-                                Skip this step
+                            Next
                         </a>
                     </div>
                     <!-- <p class="text-right noMargin skip-link sm-hidden"><a href="#skipOnboarding" class="underlined">Skip onboarding for now</a></p> -->
@@ -278,7 +278,7 @@
                                 Subscribe
                             </button>
                             <a class="underlined" onClick="changeStep('4')" >
-                                    Skip this step
+                                Next
                             </a>
                         </div>
                         <!-- <p class="text-right noMargin skip-link sm-hidden"><a href="#skipOnboarding" class="underlined">Skip for now</a></p> -->
@@ -343,7 +343,7 @@
                                     Activate
                                 </button>
                                 <a class="underlined" onClick="changeStep('5')" >
-                                        Skip this step
+                                    Next
                                 </a>
                             </div>
                             <!-- <p class="text-right noMargin skip-link sm-hidden"><a href="#skipOnboarding" class="underlined">Skip for now</a></p> -->
@@ -395,23 +395,23 @@
                             </p>
                         <div class="flex">
                                     <div class="do-card-container section-col-full">
-                                        <div class="do-card small">
+                                        <div class="do-card small sm-full">
                                             <h5 class="heading">First Year Fee</h5>
                                             <p class="data">₹ 600</p>
                                         </div>
-                                        <div class="do-card small">
+                                        <div class="do-card small sm-full"  >
                                             <h5 class="heading">Annual Fee</h5>
                                             <p class="data">₹ 600</p>
                                         </div>
-                                        <div class="do-card small">
+                                        <div class="do-card small sm-full">
                                             <h5 class="heading">Credit Limit</h5>
                                             <p class="data">₹ 10,00,000</p>
                                         </div>
-                                        <div class="do-card small">
+                                        <div class="do-card small sm-full">
                                             <h5 class="heading">Billing Cycle</h5>
                                             <p class="data">12 <span class="sub-text">of every month </span></p>
                                         </div>
-                                        <div class="do-card small">
+                                        <div class="do-card small sm-full">
                                             <h5 class="heading">SBR Amount</h5>
                                             <p class="data">₹ 1,00,000</p>
                                         </div>
@@ -422,15 +422,15 @@
                             </p>
                         <div class="flex section-col-full payment-options-container">
                             <div class="flex flex-ac payment-options">
-                                <img src="./assets/images/marginalia-payment-processed-copy.png" alt="">
+                                <img src="./assets/icons/payment-option-1.png" alt="">
                                 <p class="bold">Online SBI</p>
                             </div>
                             <div class="flex flex-ac payment-options">
-                                <img src="./assets/images/marginalia-payment-processed-copy.png" alt="">
+                                <img src="./assets/icons/payment-option-2.png" alt="">
                                 <p class="bold">NEFT</p>
                             </div>
                             <div class="flex flex-ac payment-options">
-                                <img src="./assets/images/marginalia-payment-processed-copy.png" alt="">
+                                <img src="./assets/icons/payment-option-3.png" alt="">
                                 <p class="bold">Pay via UPI</p>
                             </div>
                         </div>
@@ -445,11 +445,11 @@
         <div class="bottom-box " id="finish-bottom-box">
             <div class="flex bottom-box-container  do-wrapper">
                 <span>
-                        Please review your information and click “Finish”  to claim 100 reward points for completing the onboarding process.
+                        Please review your information and click <b>“Finish”</b>  to claim 100 reward points for completing the onboarding process.
                     <br>
-                        Disagree with any of the information provided? Click “Call me back” and an executive will reach out to you within 24 hrs. 
+                        Disagree with any of the information provided? Click <b>“Call me back”</b> and an executive will reach out to you within 24 hrs. 
                 </span>
-                <div class="do-button-group flex flex-ac vertical-sm">
+                <div class="do-button-group flex flex-ac vertical-sm" id="finish-buttons">
                     <a class="underlined" onClick="callMeBack()" style="    margin-right: 20px;
                     width: 84px;
                     margin-left: 20px;">

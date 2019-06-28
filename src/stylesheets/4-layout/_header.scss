@@ -62,6 +62,9 @@
     height: 150px;
 }
 @media (max-width: $screen-sm-max) {
+    .reward-points-subtext{
+        font-size: 16px;
+    }
     .do-header{
         padding: 0px 30px;
     }

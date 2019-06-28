@@ -105,7 +105,9 @@
                 top: 0px;
                 margin-top: 0px;
                 padding: 40px 20px;
-               
+                .back{
+                    left: 20px;
+                }
         }
         .modal-footer{
             position: absolute;
@@ -113,5 +115,7 @@
             width: 100%;
             left: 0px;
         }
+       
     }
+    
 }

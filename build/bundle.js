@@ -82,12 +82,20 @@
                     document.querySelector("#step-international-usage .do-step-heading-text").classList.add('clickable');
                     document.querySelector("#step-do-confirmation").classList.add('in-progress','active');
                 }
+                document.querySelector('#finish-bottom-box').classList.add('show');
                 break;
                     
                 
             default:
                 break;
         }
+        const targetEle = document.querySelector(".do-step-container.in-progress");
+        if(targetEle  && window.outerWidth < 768){
+            document.querySelector("html").scrollTop = targetEle.offsetTop + 200;
+        }
+        // targetEle.style.marginTop = '20px';
+        // targetEle.scrollIntoView({behaviour:"smooth"})
+        
     }
 
     function generateOtp(){

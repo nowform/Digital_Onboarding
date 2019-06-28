@@ -407,7 +407,8 @@ template {
  * Set up a decent box model on the root element
  */
 html {
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  scroll-behavior: smooth; }
 
 /**
  * Make all elements from the DOM inherit from the parent box-sizing
@@ -574,6 +575,13 @@ body {
 
 .sm-visible {
   display: none !important; }
+
+b {
+  font-weight: 600; }
+  b.bold {
+    font-weight: 600; }
+  b.boldest {
+    font-weight: 700; }
 
 @media (max-width: 767px) {
   .sm-hidden {
@@ -844,6 +852,8 @@ footer {
   height: 150px; }
 
 @media (max-width: 767px) {
+  .reward-points-subtext {
+    font-size: 16px; }
   .do-header {
     padding: 0px 30px; }
   #reward-header-container {
@@ -1168,6 +1178,8 @@ input[type=number]::-webkit-outer-spin-button {
       top: 0px;
       margin-top: 0px;
       padding: 40px 20px; }
+      .modal .modal-body .back {
+        left: 20px; }
     .modal .modal-footer {
       position: absolute;
       bottom: 0px;
@@ -1203,6 +1215,11 @@ input[type=number]::-webkit-outer-spin-button {
     margin: 0px 20px 40px 0px; }
     .do-card-container .do-card:last-of-type {
       margin-right: 0px; }
+
+@media (max-width: 767px) {
+  .do-card.sm-full {
+    max-width: 100%;
+    margin-right: 0px; } }
 
 /* CSS for Steps */
 .do-steps-container {
@@ -1319,15 +1336,17 @@ input[type=number]::-webkit-outer-spin-button {
   min-height: 580px;
   padding-bottom: 60px;
   transition: 0s;
+  transition-delay: 1s;
   z-index: 0;
-  -webkit-transform: translateX(100%);
-          transform: translateX(100%);
+  -webkit-transform: translateX(calc(100% + 30px));
+          transform: translateX(calc(100% + 30px));
   background: #fff;
   margin-left: calc(33.33% - 3px); }
   .do-step-body.hidden {
     z-index: 0;
     opacity: 0;
-    transition: 0s; }
+    transition: 0s;
+    transition-delay: 1s; }
   .do-step-body .do-step-body-title {
     font: 600 14px "Open Sans", sans-serif;
     font-size: 18px;
@@ -1352,6 +1371,10 @@ input[type=number]::-webkit-outer-spin-button {
       font-weight: 700; }
   .do-step-body b {
     font-weight: 600; }
+    .do-step-body b.bold {
+      font-weight: 600; }
+    .do-step-body b.boldest {
+      font-weight: 700; }
   .do-step-body .section-col-5 {
     width: 62.5%;
     padding: 0px 10px; }
@@ -1388,6 +1411,7 @@ input[type=number]::-webkit-outer-spin-button {
     margin-right: auto; }
 
 .payment-options img {
+  margin-right: 20px;
   width: 80px; }
 
 .button-modal-space {
@@ -1454,11 +1478,15 @@ input[type=number]::-webkit-outer-spin-button {
         text-align: left; }
       .e-call-card .e-call-card-content p:first-child {
         margin-top: 0 !important; }
-  .bottom-box .bottom-box-container {
-    flex-direction: column;
+  .bottom-box {
     padding: 20px 30px; }
-    .bottom-box .bottom-box-container span {
-      margin-bottom: 40px; }
+    .bottom-box .bottom-box-container {
+      flex-direction: column;
+      padding: 0px; }
+      .bottom-box .bottom-box-container span {
+        margin-bottom: 40px; }
+  #finish-buttons {
+    flex-direction: column-reverse; }
   .card-error-text {
     right: 46px;
     top: 101px;
@@ -1510,5 +1538,7 @@ input[type=number]::-webkit-outer-spin-button {
       display: block;
       opacity: 1; }
     .do-step-body .do-step-body-title {
-      display: none; } }
+      display: none; }
+  .payment-options {
+    margin-bottom: 40px; } }
 

@@ -134,6 +134,15 @@ body{
 .sm-visible{
   display: none !important; 
 }
+b{
+  font-weight: 600;
+  &.bold{
+      font-weight: 600;
+  }
+  &.boldest{
+      font-weight: 700;
+  }
+}
 @media (max-width: $screen-sm-max) {
   .sm-hidden{
     display: none;
