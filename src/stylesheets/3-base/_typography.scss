@@ -16,3 +16,20 @@ a,a:hover{
   font: $font-regular;
   color: $brand-color;
 }
+
+.do-heading{
+
+}
+.do-subtext{
+  font-size: 10px;
+  color: $mid-grey;
+  // text-align: center;
+}
+.do-text{
+  font-size: 14px;
+  color: $text-color;
+  &.gray{
+    color: $mid-grey;
+  }
+  // text-align: center;
+}

@@ -48,6 +48,9 @@ input[type=number]::-webkit-outer-spin-button {
         color: #fff;
         cursor: not-allowed;
     }
+    &.noMargin{
+      margin-bottom: 0px;
+    }
 }
 .do-button-group{
     display: flex;
@@ -159,9 +162,9 @@ $md-checkbox-label-padding: .75em;
       transition: background .3s;
     }
   
-    &:after {
-      // checkmark
-    }    
+    // &:after {
+    //   // checkmark
+    // }    
   }
   
   input[type="checkbox"] {
@@ -276,6 +279,9 @@ $md-checkbox-label-padding: .75em;
 
   &.wide{
     width: 380px;
+  }
+  &.full{
+    width: 100%;
   }
 }
 

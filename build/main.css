@@ -449,6 +449,16 @@ a, a:hover {
   font: 400 14px "Open Sans", sans-serif;
   color: #00b1f2; }
 
+.do-subtext {
+  font-size: 10px;
+  color: #8a8a96; }
+
+.do-text {
+  font-size: 14px;
+  color: #2d2d2d; }
+  .do-text.gray {
+    color: #8a8a96; }
+
 /**
  * Clear inner floats
  */
@@ -926,6 +936,8 @@ input[type=number]::-webkit-outer-spin-button {
     background-color: #eeeeee;
     color: #fff;
     cursor: not-allowed; }
+  .do-button.noMargin {
+    margin-bottom: 0px; }
 
 .do-button-group {
   display: flex; }
@@ -1069,6 +1081,8 @@ input[type=number]::-webkit-outer-spin-button {
     color: #8a8a96; }
   .do-input-text.wide {
     width: 380px; }
+  .do-input-text.full {
+    width: 100%; }
 
 @media (max-width: 767px) {
   .do-button-group.vertical-sm {
@@ -1188,7 +1202,8 @@ input[type=number]::-webkit-outer-spin-button {
 
 .do-card {
   border-radius: 2px;
-  box-shadow: 1px 2px 6px 0 rgba(213, 213, 234, 0.81);
+  border: 1px solid #d5d5ea;
+  /* box-shadow: 1px 2px 6px 0 rgba(213, 213, 234, 0.81); */
   background-color: #ffffff;
   padding: 20px;
   text-align: left; }
@@ -1264,6 +1279,10 @@ input[type=number]::-webkit-outer-spin-button {
     .do-step-container.active .do-step-body.hidden {
       z-index: 0;
       opacity: 0; }
+  .do-step-container .sets {
+    display: none; }
+    .do-step-container .sets.active {
+      display: block; }
 
 .do-step-heading {
   display: flex;
@@ -1275,6 +1294,8 @@ input[type=number]::-webkit-outer-spin-button {
     color: #8a8a96;
     line-height: 24px;
     pointer-events: none; }
+    .do-step-heading .do-step-heading-text > span.hide {
+      display: none; }
     .do-step-heading .do-step-heading-text.clickable {
       cursor: pointer;
       pointer-events: all;
@@ -1283,13 +1304,15 @@ input[type=number]::-webkit-outer-spin-button {
     opacity: 0;
     height: 24px; }
 
-.reward-sub-text {
+.step-sub-text {
   display: block;
   font: 400 14px "Open Sans", sans-serif;
   font-size: 10px;
   color: #ebb73a; }
-  .reward-sub-text.grey {
-    color: #eeeeee; }
+  .step-sub-text.grey {
+    color: #d5d5ea; }
+  .step-sub-text.hide {
+    display: none; }
 
 .do-step-status {
   min-width: 24px;

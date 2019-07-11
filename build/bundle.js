@@ -8,6 +8,8 @@
 
         document.querySelector('#body-not-activated').classList.add('hidden');
         document.querySelector('#body-activated').classList.remove('hidden');
+        document.querySelector('#body-not-activated-set2').classList.add('hidden');
+        document.querySelector('#body-activated-set2').classList.remove('hidden');
         document.querySelector('#card-activation-text').innerHTML = 'Card Activated';
         changeStep('2');
     }
@@ -103,6 +105,11 @@
         document.querySelector('#otp-input > input').value = '';
         window.location.hash = "generateOtp";
     }
+    function generateOtpEmail(){
+        // Generate Otp Here
+        document.querySelector('#otp-email-input > input').value = '';
+        window.location.hash = "generateOtpEmail";
+    }
     function swicthGeneratedPin(){
         document.querySelector('#body-before-otp').classList.add('hidden');
         document.querySelector('#body-pin-generated').classList.add('hidden');
@@ -128,6 +135,80 @@
                 // incase OTP is not correct
                 document.querySelector('#otp-input > input').value = '';
             }
+        }
+    }
+    function swicthToUpdateEmail(){
+        document.querySelector('#body-before-subscription-set2').classList.add('hidden');
+        document.querySelector('#body-after-subscription-set2').classList.add('hidden');
+        document.querySelector('#body-update-email-set2').classList.remove('hidden');
+
+        document.querySelector('#body-before-subscription-set3').classList.add('hidden');
+        document.querySelector('#body-after-subscription-set3').classList.add('hidden');
+        document.querySelector('#body-update-email-set3').classList.remove('hidden');
+
+        document.querySelector('#body-before-subscription-set4').classList.add('hidden');
+        document.querySelector('#body-after-subscription-set4').classList.add('hidden');
+        document.querySelector('#body-update-email-set4').classList.remove('hidden');
+        document.querySelector('#updated-email > input').value = '';
+    }
+
+    function validateOtpEmail(inputEl){
+        
+        if(inputEl.value.length == 6){
+            // Get Otp Pin here
+
+            // validate if it matches the OTP 
+            if(true){
+                // replace true with otp condition as per your requirement
+                inputEl.blur();
+                window.location.hash = "#";
+                swicthToUpdateEmail();
+            }
+            else{
+                // incase OTP is not correct
+                document.querySelector('#otp-input > input').value = '';
+            }
+        }
+    }
+    function validateUpdatedEmail(el){
+        var re = /\S+@\S+\.\S+/;
+        if(re.test(el.value)){
+            console.log(el);
+            document.querySelector("#update-email-button").disabled = false;
+            document.querySelector("#update-email-button-set4").disabled = false;
+            document.querySelector("#update-email-button-set3").disabled = false;
+        }else{
+            document.querySelector("#update-email-button").disabled = true;
+            document.querySelector("#update-email-button-set4").disabled = true;
+            document.querySelector("#update-email-button-set3").disabled = true;
+        }
+    }
+    function emailUpdated(value){
+
+        document.querySelector('#body-before-subscription-' + value).classList.add('hidden');
+        document.querySelector('#body-after-subscription-' + value).classList.add('hidden');
+        document.querySelector('#body-update-email-' + value).classList.add('hidden');   
+        document.querySelector('#body-after-update-email-' + value).classList.remove('hidden');
+        // changeStep('4');   
+    }
+    function cancelUpdate(value){
+        if(value == 'set2'){
+            document.querySelector('#body-before-subscription-set2').classList.remove('hidden');
+            document.querySelector('#body-after-subscription-set2').classList.add('hidden');
+            document.querySelector('#body-update-email-set2').classList.add('hidden');   
+            document.querySelector('#body-after-update-email-set2').classList.add('hidden');
+        }
+        if(value == 'set3'){
+            document.querySelector('#body-before-subscription-set3').classList.remove('hidden');
+            document.querySelector('#body-after-subscription-set3').classList.add('hidden');
+            document.querySelector('#body-update-email-set3').classList.add('hidden');   
+            document.querySelector('#body-after-update-email-set3').classList.add('hidden');
+        }
+        if(value == 'set4'){
+            document.querySelector('#body-before-subscription-set4').classList.remove('hidden');
+            document.querySelector('#body-after-subscription-set4').classList.add('hidden');
+            document.querySelector('#body-update-email-set4').classList.add('hidden');   
+            document.querySelector('#body-after-update-email-set4').classList.add('hidden');
         }
     }
     function validatePin(){
@@ -181,6 +262,28 @@
         `;
         window.location.hash = '';
         changeStep('4');
+    }
+    function set3Subscribe(){
+        document.querySelector('#body-before-subscription-set3').classList.add('hidden');
+        document.querySelector('#body-after-subscription-set3').classList.remove('hidden');
+        // window.location.hash = '';
+        document.querySelector('.step-link.subscribed').classList.remove('hide');
+        document.querySelector('.step-link.not-subscribed').classList.add('hide');
+        changeStep('4'); 
+    }
+    function set4Subscribe(){
+        document.querySelector('#body-before-subscription-set4').classList.add('hidden');
+        document.querySelector('#body-after-subscription-set4').classList.remove('hidden');
+        document.querySelector('.step-link.subscribed').classList.remove('hide');
+        document.querySelector('.step-link.not-subscribed').classList.add('hide');
+        // window.location.hash = '';
+        changeStep('4'); 
+    }
+    function verifyEsub(){
+        document.querySelector('#body-before-subscription-set2').classList.add('hidden');
+        document.querySelector('#body-after-subscription-set2').classList.remove('hidden');
+        window.location.hash = '';
+        changeStep('4'); 
     }
     function activateInternational(){
         // activate international usage here;
