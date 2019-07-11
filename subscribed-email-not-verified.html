@@ -1,0 +1,1088 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>SBI - Digital Onboarding</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./build/main.css" />
+</head>
+  <body>
+    <!-- Header with Logo -->
+    <header class="do-header do-wrapper flex flex-ac flex-sb">
+      <img src="./assets/images/sbi_logo_2x.jpg" alt="" />
+                        <!-- <p class="text-right noMargin skip-link sm-hidden"><a href="#skipOnboarding" class="underlined">Skip onboarding for now</a></p> -->
+      <a href="#skipOnboarding" class="underlined flex flex-ac sm-hidden" style="line-height: 20px;">
+        <img src="./assets/icons/cross.svg" alt="" style="padding-right:10px;">  
+        Skip onboarding for now</a>
+    </header>
+
+    <!-- Sub Header showing reward points -->
+    <section class="do-reward-header">
+        <div class="do-wrapper">
+            <div class="row flex-ac flex relative" id="reward-header-container" >
+                <img  src="./assets/images/header_image_1x.png" alt="" />
+                <h2 class="do-reward-header-text col-md-4 offset-4">Let’s get you onboarded!</h2>
+                <!-- <div class=" col-md-3 offset-1 reward-points">
+                    <span class="reward-points-subtext">You have</span>
+                    <div class="do-reward-card">
+                        <span class="reward-star"><img src="./assets/icons/star.svg" alt=""></span>
+                        <span class="reward-number" id="reward-number">0</span>
+                        reward points
+                    </div>
+                </div> -->
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Main Section where steps are listed -->
+    <main class="do-wrapper ">
+        <div class="do-steps-container">
+            <!-- Card Activation Step -->
+            <section class="do-step-container row active in-progress" id="step-card-activation">
+                <div class="do-step-heading col-md-3">
+                    <div class="do-step-status ">
+                        <span class="done"></span>
+                        <span class="active"></span>
+                    </div>
+                    <a class="do-step-heading-text" id="card-activation-text" onClick="changeStep('1')">
+                            Card Activation
+                    </a>
+                    <svg class="do-step-arrow" xmlns="http://www.w3.org/2000/svg" width="6" height="9" viewBox="0 0 8 11">
+                        <path fill="none" fill-rule="evenodd" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M1 1l6 4.33L1 10"/>
+                    </svg>
+                </div>
+                <!-- you can hide and show <div> with class 'sets' according to data received from backend -->
+                <!-- add 'active' classs which ever set you want to show -->
+
+                <!-- Below is Case 1/Set 1  'Card Not Activated'-->
+                <div class="sets set-1 active"> 
+                    <div class="do-step-body col-md-8 offset-4" id="body-not-activated">
+                        <h3 class="do-step-body-title">Card Activation</h3>
+                        <div class="flex row">
+                            <div class="section-col-5">
+                                    <p>
+                                            Activate your credit card to begin using it.
+                                            <br>
+                                            <br>
+                                            For security reasons, your card ending with <b>6954</b> was dispatched to you with a temporary block as a default. To remove this temporary block, simply activate your card by clicking ‘Activate’ below.
+                                        </p>
+                            </div>
+                        </div>
+                        <div class="section-col-full">
+                            <span class="divider"></span>
+                        </div>
+                        <div class="flex row">
+                            <div class="section-col-5">
+                                <h5 class="do-step-body-subtitle">Fraud Awareness and Prevention</h5>
+                                <p class="do-text gray">SBI Card, its employees /authorized representatives never seek your confidential card account details such as Card Number/Expiry date/CVV/OTP/Passwords. Do not share or input any credit card details as these may be misused for Fraudulent activities for which the liability will rest with you.
+    
+                                </p>
+                                <label for="do-terms" class="do-input-label md-checkbox do-input-checkbox" id="do-terms-checkbox">
+                                    <input type="checkbox" name="" id="do-terms" onChange="toggleButton('#step1-activate-button')">
+                                    <label></label>
+                                    I have read and understood fraud awareness and prevention.
+                                </label>
+                            </div>
+                            <div class="section-col-3 align-bottom space-top-30 relative">
+                                <div class="full-width">
+                                    <span class="card-error-text">It is important to
+                                            keep your CVV
+                                            confidential. </span>
+                                    <img class="full-width" src="./assets/images/card.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="do-button-group space-top vertical-sm">
+                            <button class="do-button primary" disabled id="step1-activate-button" onClick="activateCard()">
+                                Activate
+                            </button>
+                            <a class="underlined" onClick="changeStep('2')" >
+                                    Skip this step
+                            </a>
+                        </div>
+                        <!-- <p class="text-right noMargin skip-link sm-hidden"><a href="#skipOnboarding" class="underlined">Skip onboarding for now</a></p> -->
+                    </div>
+                    <div class="do-step-body hidden col-md-8 offset-4"  id="body-activated">
+                            <h3 class="do-step-body-title">Card Activated</h3>
+                            <div class="flex row">
+                                <div class="section-col-5">
+                                    <p>
+                                            Your card is activated. You can start using it for POS and online transactions.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="do-button-group space-top vertical-sm" >
+                                <button class="do-button primary" disabled id="step1-activated-button">
+                                    Activated
+                                </button>
+                                <a class="underlined" onClick="changeStep('2')" >
+                                    Next
+                                </a>
+                            </div>
+                            <!-- <p class="text-right noMargin skip-link sm-hidden"><a href="#skipOnboarding" class="underlined">Skip onboarding for now</a></p> -->
+                        </div>
+                </div>
+
+                <!-- Below is Case 2/Set 2  'Card Activated but not confirmed'-->
+                <div class=" sets set-2  "> 
+                        <div class="do-step-body col-md-8 offset-4" id="body-not-activated-set2">
+                            <h3 class="do-step-body-title">Card Activation</h3>
+                            <div class="flex row">
+                                <div class="section-col-5">
+                                        <p>
+                                            Your SBI Card ending with <b>6754</b> is already activate.
+                                        </p>
+                                </div>
+                            </div>
+                            <div class="section-col-full">
+                                <span class="divider"></span>
+                            </div>
+                            <div class="flex row">
+                                <div class="section-col-5">
+                                    <h5 class="do-step-body-subtitle">Fraud Awareness and Prevention</h5>
+                                    <p class="do-text gray">SBI Card, its employees /authorized representatives never seek your confidential card account details such as Card Number/Expiry date/CVV/OTP/Passwords. Do not share or input any credit card details as these may be misused for Fraudulent activities for which the liability will rest with you.
+        
+                                    </p>
+                                    <label for="do-terms-2" class="do-input-label md-checkbox do-input-checkbox" id="do-terms-checkbox">
+                                        <input type="checkbox" name="" id="do-terms-2" onChange="toggleButton('#step1-confirm-button')">
+                                        <label></label>
+                                        I have read and understood fraud awareness and prevention.
+                                    </label>
+                                </div>
+                                <div class="section-col-3 align-bottom space-top-30 relative">
+                                    <div class="full-width">
+                                        <span class="card-error-text">It is important to
+                                                keep your CVV
+                                                confidential. </span>
+                                        <img class="full-width" src="./assets/images/card.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="do-button-group space-top vertical-sm">
+                                <button class="do-button primary" disabled id="step1-confirm-button" onClick="activateCard()">
+                                    Confirm
+                                </button>
+                                <a class="underlined" onClick="changeStep('2')" >
+                                        Skip this step
+                                </a>
+                            </div>
+                            <!-- <p class="text-right noMargin skip-link sm-hidden"><a href="#skipOnboarding" class="underlined">Skip onboarding for now</a></p> -->
+                        </div>
+                        <div class="do-step-body hidden col-md-8 offset-4"  id="body-activated-set2">
+                                <h3 class="do-step-body-title">Card Activated</h3>
+                                <div class="flex row">
+                                    <div class="section-col-5">
+                                        <p>
+                                                Your card is activated. You can start using it for POS and online transactions.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="do-button-group space-top vertical-sm" >
+                                    <button class="do-button primary" disabled id="step1-activated-button">
+                                        Activated
+                                    </button>
+                                    <a class="underlined" onClick="changeStep('2')" >
+                                        Next
+                                    </a>
+                                </div>
+                                <!-- <p class="text-right noMargin skip-link sm-hidden"><a href="#skipOnboarding" class="underlined">Skip onboarding for now</a></p> -->
+                            </div>
+                    </div>
+            </section>
+            <section class="do-step-container row  " id="step-generate-pin">
+                    <div class="do-step-heading col-md-3">
+                    <div class="do-step-status">
+                        <span class="done"></span>
+                        <span class="active"></span>
+                    </div>
+                    <a class="do-step-heading-text" id="generate-pin-text" onClick="changeStep('2')">
+                            Manage PIN
+                    </a>
+                    <svg class="do-step-arrow" xmlns="http://www.w3.org/2000/svg" width="6" height="9" viewBox="0 0 8 11">
+                        <path fill="none" fill-rule="evenodd" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M1 1l6 4.33L1 10"/>
+                    </svg>
+                </div>
+                <div class="do-step-body  col-md-8 offset-4 " id="body-before-otp">
+                    <h3 class="do-step-body-title">Manage PIN</h3>
+                    <div class="flex row">
+                        <div class="section-col-5">
+                            <p>PIN is a 4-digit number that you will need for authorizing transactions at retail outlets or for ATM cash withdrawal. Do not share your PIN with anyone.
+                                <br>
+                                <br>
+                                    To set a PIN of your choice for your credit card, click on ‘Generate OTP’ below.
+                                </p>
+                        </div>
+                    </div>
+                    <div class="do-button-group space-top vertical-sm" >
+                        <button class="do-button primary" id="step2-otp-button" onClick="generateOtp()">
+                            Generate OTP
+                        </button>
+                        <a class="underlined" onClick="changeStep('3')" >
+                                Skip this step
+                        </a>
+                    </div>
+                    <!-- <p class="text-right noMargin skip-link sm-hidden"><a href="#skipOnboarding" class="underlined">Skip onboarding for now</a></p> -->
+                </div>
+                <div class="do-step-body  col-md-8 offset-4 hidden" id="body-after-otp">
+                    <h3 class="do-step-body-title">Manage PIN</h3>
+                    <div class="flex row">
+                        <div class="section-col-5">
+                            <p>
+                                Set a PIN of your choice and stay secure.
+                                <br>
+                                <br>
+                                SBI Card or its representative will never ask you for your PIN. Do not share your PIN with anyone.
+                            </p>
+                            <div class="do-input-group vertical space-top-30">
+                                <label for="do-terms" class="do-input-label do-input-text"  id="new-pin-input">
+                                    <input type="number" name="new-pin-input" id=""  required onKeyUp="validatePin()">
+                                    <span class="placeholder">New Pin</span>
+                                </label>
+                                <label for="do-terms" class="do-input-label do-input-text" id="confirm-pin-input">
+                                    <input type="number" name="confirm-pin-input" id=""required  onKeyUp="validatePin()">
+                                    <span class="placeholder">Re-enter PIN</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="do-button-group space-top vertical-sm" >
+                        <button class="do-button primary" disabled id="step2-pin-button" onClick="generatePin()">
+                            Generate
+                        </button>
+                        <a class="underlined" onClick="changeStep('3')" >
+                                Skip this step
+                        </a>
+                    </div>
+                    <!-- <p class="text-right noMargin skip-link sm-hidden"><a href="#skipOnboarding" class="underlined">Skip onboarding for now</a></p> -->
+                </div>
+                <div class="do-step-body  col-md-8 offset-4 hidden" id="body-pin-generated">
+                    <h3 class="do-step-body-title">PIN Generated</h3>
+                    <div class="flex row">
+                        <div class="section-col-5">
+                            <p> 
+                                Your SBI Card PIN has already been generated.
+                                <br>
+                                To reset you PIN again, click Generate OTP.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="do-button-group space-top vertical-sm" >
+                        <button class="do-button primary" onClick="generateOtp()" >
+                            Generate OTP
+                        </button>
+                        <a class="underlined" onClick="changeStep('3')" >
+                            Next
+                        </a>
+                    </div>
+                    <!-- <p class="text-right noMargin skip-link sm-hidden"><a href="#skipOnboarding" class="underlined">Skip onboarding for now</a></p> -->
+                </div>
+            </section>
+
+            <section class="do-step-container row  " id="step-estate-sub">
+                    <div class="do-step-heading col-md-3">
+                    <div class="do-step-status">
+                        <span class="done"></span>
+                        <span class="active"></span>
+                    </div>
+                    <a class="do-step-heading-text"  id="estate-sub-text" onClick="changeStep('3')">
+                            <span  class="step-link not-subscribed">
+                                E-Statement Subscription
+                            </span>
+                            <span class="step-link subscribed hide">
+                                E-Statement Subscribed
+                            </span>
+                            <!-- you can hide and show <span> with class 'step-sub-text' according to data received from backend -->
+                            <!-- remove 'hide' classs which ever set you want to show -->
+
+                            <span class="step-sub-text set1 hide">E-mail ID Verified</span>
+                            <span class="step-sub-text  set2 grey hide  ">E-mail ID not verified</span>
+                            <span class="step-sub-text set3 hide ">E-mail ID Verified</span>
+                            <span class="step-sub-text grey set4 hide">E-mail ID not Verified</span>
+                    </a>
+                    <svg class="do-step-arrow" xmlns="http://www.w3.org/2000/svg" width="6" height="9" viewBox="0 0 8 11">
+                        <path fill="none" fill-rule="evenodd" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M1 1l6 4.33L1 10"/>
+                    </svg>
+                </div>
+                 <!-- you can hide and show <div> with class 'sets' according to data received from backend -->
+                <!-- add 'active' classs which ever set you want to show -->
+
+                <!-- Below is Case 1/Set 1  'Already subscribed and Verified E-mail ID'-->
+                <div class="sets set-1 "> 
+                <div class="do-step-body  col-md-8 offset-4" id="body-before-subscription">
+                   
+                    <div class="flex row">
+                        <div class="section-col-5">
+                                <h3 class="do-step-body-title">
+                                        E-Statement Subscribed
+                                        <!-- <span class="step-sub-text">
+                                               <img src="./assets/icons/star.svg" alt=""> Eligible for 100 reward points
+                                        </span> -->
+                                </h3>
+                            <p>
+                                    You have already subscribed to the e-statement. 
+                                    The monthly statements for your SBI Card ending <b>4535</b> will be delivered to your registered e-mail address <b>xxxxxxxkshi@gmail.com</b>.
+                            </p>
+                        </div>
+                        <!-- <div class="section-col-3">
+                            <div class="e-call-card flex flex-ac flex-col flex-jc">
+                                <img src="./assets/icons/call.svg" alt="" srcset="">
+                                <div class="e-call-card-content">
+                                    <p class="do-text12 bold text-center noMargin" style="margin-top: 20px;margin-bottom:10px">Not your E-mail ID?</p>
+                                    <p class="do-text12 text-center noMargin">To update your E-mail ID, call us on 0120-2648888</p>
+                                </div>
+                            </div>
+                        </div> -->
+                    </div>
+                    <div class="do-button-group space-top vertical-sm" >
+                        <button class="do-button primary" disabled >
+                            Subscribed
+                        </button>
+                        <a class="underlined" onClick="changeStep('4')" >
+                               Next
+                        </a>
+                    </div>
+                    <!-- <p class="text-right noMargin skip-link sm-hidden"><a href="#skipOnboarding" class="underlined">Skip for now</a></p> -->
+                </div>
+                </div>
+
+
+                <!-- Below is Case 2/Set 2 For estatement   'Already subscribed but E-mail ID not verified'-->
+
+                
+                <div class="sets set-2 active "> 
+                        <div class="do-step-body  col-md-8 offset-4" id="body-before-subscription-set2">
+                           
+                            <div class="flex row">
+                                <div class="section-col-5">
+                                        <h3 class="do-step-body-title">
+                                                E-Statement Subscribed
+                                                <!-- <span class="step-sub-text">
+                                                       <img src="./assets/icons/star.svg" alt=""> Eligible for 100 reward points
+                                                </span> -->
+                                        </h3>
+                                    <p>
+                                        You have already subscribed to the e-statement. 
+                                        <br>
+                                        <br>
+                                        Your e-mail ID <b>xxxxxxkshmi@gmail.com</b> is not verified. Click on ‘Verify’ to verify your e-mail ID.
+                                        <br>
+                                        <br>
+                                        Do you want to update your e-mail ID? <a class="link" onClick="generateOtpEmail()"> Update E-mail ID</a>
+
+                                    </p>
+                                </div>
+                                <!-- <div class="section-col-3">
+                                    <div class="e-call-card flex flex-ac flex-col flex-jc">
+                                        <img src="./assets/icons/call.svg" alt="" srcset="">
+                                        <div class="e-call-card-content">
+                                            <p class="do-text12 bold text-center noMargin" style="margin-top: 20px;margin-bottom:10px">Not your E-mail ID?</p>
+                                            <p class="do-text12 text-center noMargin">To update your E-mail ID, call us on 0120-2648888</p>
+                                        </div>
+                                    </div>
+                                </div> -->
+                            </div>
+                            <div class="do-button-group space-top vertical-sm" >
+                                <button class="do-button primary"  onClick="verifyEsub()">
+                                    Verify
+                                </button>
+                                <a class="underlined" onClick="changeStep('4')" >
+                                        Skip this step
+                                </a>
+                            </div>
+                            <!-- <p class="text-right noMargin skip-link sm-hidden"><a href="#skipOnboarding" class="underlined">Skip for now</a></p> -->
+                        </div>
+                        <div class="do-step-body hidden  col-md-8 offset-4" id="body-after-subscription-set2">
+                           
+                                <div class="flex row">
+                                    <div class="section-col-5">
+                                            <h3 class="do-step-body-title">
+                                                    E-Statement Subscribed
+                                                    <!-- <span class="step-sub-text grey">
+                                                           <img src="./assets/icons/star-grey.svg" alt=""> Claimed your 100 Reward Points
+                                                    </span> -->
+                                            </h3>
+                                        <p>
+                                                You have already subscribed to the e-statement. 
+                                                <br>
+                                                <br>
+                                                Your E-mail ID was verified successfully.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="do-button-group space-top vertical-sm" >
+                                    <button class="do-button primary" disabled>
+                                        Verified
+                                    </button>
+                                    <a class="underlined" onClick="changeStep('4')" >
+                                        Next
+                                    </a>
+                                </div>
+                                <!-- <p class="text-right noMargin skip-link sm-hidden"><a href="#skipOnboarding" class="underlined">Skip for now</a></p> -->
+                            </div>
+                            <div class="do-step-body hidden  col-md-8 offset-4" id="body-update-email-set2">
+                        
+                                <div class="flex row">
+                                    <div class="section-col-5">
+                                            <h3 class="do-step-body-title">
+                                                    E-Statement Subscribed
+                                                    <!-- <span class="step-sub-text grey">
+                                                            <img src="./assets/icons/star-grey.svg" alt=""> Claimed your 100 Reward Points
+                                                    </span> -->
+                                            </h3>
+                                        <p>
+                                                You have already subscribed to the e-statement. 
+                                                <br>
+                                                <br>
+                                                Do you want to update your e-mail ID? <a class="link" onClick="cancelUpdate('set2')"> Cancel update</a>
+        
+                                        </p>
+                                        <div class="do-input-group vertical space-top-30">
+                                                <label for="do-terms" class="do-input-label do-input-text full"  id="updated-email">
+                                                    <input type="text" name="update-email-input" id=""  required onKeyUp="validateUpdatedEmail(this)">
+                                                    <span class="placeholder">New E-mail ID</span>
+                                                </label>
+                                        </div>
+                                        <p class="do-text gray">Note: Our executive will contact you to verify the details.</p>
+                                    </div>
+                                </div>
+                                <div class="do-button-group space-top vertical-sm" >
+                                    <button class="do-button primary" disabled id="update-email-button" onClick="emailUpdated('set2')">
+                                        Update
+                                    </button>
+                                    <a class="underlined" onClick="changeStep('4')" >
+                                        Next
+                                    </a>
+                                </div>
+                                <!-- <p class="text-right noMargin skip-link sm-hidden"><a href="#skipOnboarding" class="underlined">Skip for now</a></p> -->
+                            </div>
+                            <div class="do-step-body hidden  col-md-8 offset-4" id="body-after-update-email-set2">
+                        
+                                    <div class="flex row">
+                                        <div class="section-col-5">
+                                                <h3 class="do-step-body-title">
+                                                        E-Statement Subscribed
+                                                        <!-- <span class="step-sub-text grey">
+                                                                <img src="./assets/icons/star-grey.svg" alt=""> Claimed your 100 Reward Points
+                                                        </span> -->
+                                                </h3>
+                                            <p>
+                                                    You have already subscribed to the e-statement. 
+                                                    <br>
+                                                    <br>
+                                                    Request to update your E-mail ID has been registered. Our executive will contact you shortly to verify your details.
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="do-button-group space-top vertical-sm" >
+                                        <button class="do-button primary" disabled>
+                                            Updated
+                                        </button>
+                                        <a class="underlined" onClick="changeStep('4')" >
+                                            Next
+                                        </a>
+                                    </div>
+                                    <!-- <p class="text-right noMargin skip-link sm-hidden"><a href="#skipOnboarding" class="underlined">Skip for now</a></p> -->
+                                </div>
+                        </div>
+
+
+                        <!-- Below is Case 3/Set 3 For estatement   'Not subscribed but E-mail is verified'-->
+                
+                        <div class="sets set-3 "> 
+                                <div class="do-step-body  col-md-8 offset-4" id="body-before-subscription-set3">
+                                    <div class="flex row">
+                                        <div class="section-col-5">
+                                                <h3 class="do-step-body-title">
+                                                        E-statement Subscription
+                                                </h3>
+                                            <p>
+                                                    Subscribe to e-statement and have your Credit Card statements delivered instantly to your registered e-mail ID <b>xxxxxxxkshmi@gmail.com</b>.
+                                                    <br>
+                                                    <br>
+                                                    Do you want to update your e-mail ID? <a class="link" onClick="generateOtpEmail()"> Update E-mail ID</a>
+                                                    
+                                            </p>
+                                        </div>
+                                        <!-- <div class="section-col-3">
+                                            <div class="e-call-card flex flex-ac flex-col flex-jc">
+                                                <img src="./assets/icons/call.svg" alt="" srcset="">
+                                                <div class="e-call-card-content">
+                                                    <p class="do-text12 bold text-center noMargin" style="margin-top: 20px;margin-bottom:10px">Not your E-mail ID?</p>
+                                                    <p class="do-text12 text-center noMargin">To update your E-mail ID, call us on 0120-2648888</p>
+                                                </div>
+                                            </div>
+                                        </div> -->
+                                    </div>
+                                    <div class="do-button-group space-top vertical-sm" >
+                                        <button class="do-button primary"  onClick="set3Subscribe()">
+                                            Subscribe
+                                        </button>
+                                        <a class="underlined" onClick="changeStep('4')" >
+                                                Skip this step
+                                        </a>
+                                    </div>
+                                    <!-- <p class="text-right noMargin skip-link sm-hidden"><a href="#skipOnboarding" class="underlined">Skip for now</a></p> -->
+                                </div>
+                                <div class="do-step-body hidden  col-md-8 offset-4" id="body-after-subscription-set3">
+                                
+                                        <div class="flex row">
+                                            <div class="section-col-5">
+                                                    <h3 class="do-step-body-title">
+                                                            E-Statement Subscribed
+                                                            <!-- <span class="step-sub-text grey">
+                                                                <img src="./assets/icons/star-grey.svg" alt=""> Claimed your 100 Reward Points
+                                                            </span> -->
+                                                    </h3>
+                                                <p>
+                                                        The monthly statements for your SBI Card ending 4535 will be delivered to your registered e-mail address <b>xxxxxxxkshi@gmail.com</b>.
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="do-button-group space-top vertical-sm" >
+                                            <button class="do-button primary" disabled>
+                                                Verified
+                                            </button>
+                                            <a class="underlined" onClick="changeStep('4')" >
+                                                Next
+                                            </a>
+                                        </div>
+                                        <!-- <p class="text-right noMargin skip-link sm-hidden"><a href="#skipOnboarding" class="underlined">Skip for now</a></p> -->
+                                    </div>
+                                <div class="do-step-body hidden  col-md-8 offset-4" id="body-update-email-set3">
+                                
+                                        <div class="flex row">
+                                            <div class="section-col-5">
+                                                    <h3 class="do-step-body-title">
+                                                            E-Statement Subscription
+                                                            <!-- <span class="step-sub-text grey">
+                                                                    <img src="./assets/icons/star-grey.svg" alt=""> Claimed your 100 Reward Points
+                                                            </span> -->
+                                                    </h3>
+                                                <p>
+                                                        Subscribe to e-statement and have your Credit Card statements delivered instantly to your registered e-mail ID <b>xxxxxxxkshmi@gmail.com</b>.
+                                                        <br>
+                                                        <br>
+                                                        Do you want to update your e-mail ID? <a class="link" onClick="cancelUpdate('set3')"> Cancel update</a>
+                
+                                                </p>
+                                                <div class="do-input-group vertical space-top-30">
+                                                        <label for="do-terms" class="do-input-label do-input-text full"  id="updated-email">
+                                                            <input type="text" name="update-email-input" id=""  required onKeyUp="validateUpdatedEmail(this)">
+                                                            <span class="placeholder">New E-mail ID</span>
+                                                        </label>
+                                                </div>
+                                                <p class="do-text gray">Note: Our executive will contact you to verify the details.</p>
+                                            </div>
+                                        </div>
+                                        <div class="do-button-group space-top vertical-sm" >
+                                            <button class="do-button primary" disabled id="update-email-button-set3" onClick="emailUpdated('set3')">
+                                                Update
+                                            </button>
+                                            <a class="underlined" onClick="changeStep('4')" >
+                                                Next
+                                            </a>
+                                        </div>
+                                        <!-- <p class="text-right noMargin skip-link sm-hidden"><a href="#skipOnboarding" class="underlined">Skip for now</a></p> -->
+                                    </div>
+                                    <div class="do-step-body hidden  col-md-8 offset-4" id="body-after-update-email-set3">
+                                
+                                            <div class="flex row">
+                                                <div class="section-col-5">
+                                                        <h3 class="do-step-body-title">
+                                                                E-Statement Subscription
+                                                                <!-- <span class="step-sub-text grey">
+                                                                        <img src="./assets/icons/star-grey.svg" alt=""> Claimed your 100 Reward Points
+                                                                </span> -->
+                                                        </h3>
+                                                    <p>
+                                                            Request to update your E-mail ID has been registered. Our executive will contact you shortly to verify your details.
+                                                            <br>
+                                                            <br>
+                                                            You can subscribe for E-statement after the verification in done.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="do-button-group space-top vertical-sm" >
+                                                <button class="do-button primary" disabled>
+                                                    Updated
+                                                </button>
+                                                <a class="underlined" onClick="changeStep('4')" >
+                                                    Next
+                                                </a>
+                                            </div>
+                                            <!-- <p class="text-right noMargin skip-link sm-hidden"><a href="#skipOnboarding" class="underlined">Skip for now</a></p> -->
+                                        </div>
+                                </div>
+
+                    <!-- Below is Case 4/Set 4 For estatement   'Not subscribed and E-mail is not verified'-->
+                
+                        <div class="sets set-4 "> 
+                                <div class="do-step-body  col-md-8 offset-4" id="body-before-subscription-set4">
+                                    <div class="flex row">
+                                        <div class="section-col-5">
+                                                <h3 class="do-step-body-title">
+                                                        E-statement Subscription
+                                                </h3>
+                                            <p style="margin-bottom:30px;">
+                                                    Subscribe to e-statement and have your Credit Card statements delivered instantly to your registered e-mail ID <b>xxxxxxxkshmi@gmail.com</b>.
+                                                    <br>
+                                                    <br>
+                                                    Your e-mail ID xxxxxxkshmi@gmail.com is not verified. Click on ‘Verify’ to verify your e-mail ID and subscribe to e-statement.
+                                                    <br>
+                                                    <br>
+                                                    Do you want to update your e-mail ID? <a class="link" onClick="generateOtpEmail()"> Update E-mail ID</a>
+                                                    
+                                            </p>
+                                            <label for="do-verify-email" class="do-input-label md-checkbox do-input-checkbox" id="do-terms-checkbox">
+                                                <input type="checkbox" name="" id="do-verify-email" onChange="toggleButton('#set4-subscribe-button')">
+                                                <label></label>
+                                                Verify your registered E-mail ID
+                                            </label>
+                                        </div>
+                                        <!-- <div class="section-col-3">
+                                            <div class="e-call-card flex flex-ac flex-col flex-jc">
+                                                <img src="./assets/icons/call.svg" alt="" srcset="">
+                                                <div class="e-call-card-content">
+                                                    <p class="do-text12 bold text-center noMargin" style="margin-top: 20px;margin-bottom:10px">Not your E-mail ID?</p>
+                                                    <p class="do-text12 text-center noMargin">To update your E-mail ID, call us on 0120-2648888</p>
+                                                </div>
+                                            </div>
+                                        </div> -->
+                                    </div>
+                                    <div class="do-button-group space-top-20 vertical-sm" >
+                                        <button class="do-button primary" disabled onClick="set4Subscribe()" id="set4-subscribe-button">
+                                            Subscribe
+                                        </button>
+                                        <a class="underlined" onClick="changeStep('4')" >
+                                                Skip this step
+                                        </a>
+                                    </div>
+                                    <!-- <p class="text-right noMargin skip-link sm-hidden"><a href="#skipOnboarding" class="underlined">Skip for now</a></p> -->
+                                </div>
+                                <div class="do-step-body hidden  col-md-8 offset-4" id="body-after-subscription-set4">
+                                
+                                        <div class="flex row">
+                                            <div class="section-col-5">
+                                                    <h3 class="do-step-body-title">
+                                                            E-Statement Subscribed
+                                                            <!-- <span class="step-sub-text grey">
+                                                                <img src="./assets/icons/star-grey.svg" alt=""> Claimed your 100 Reward Points
+                                                            </span> -->
+                                                    </h3>
+                                                <p>
+                                                        The monthly statements for your SBI Card ending <b>4535</b> will be delivered to your registered e-mail address <b>xxxxxxxkshi@gmail.com</b>.
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="do-button-group space-top vertical-sm" >
+                                            <button class="do-button primary" disabled>
+                                                Subcribed
+                                            </button>
+                                            <a class="underlined" onClick="changeStep('4')" >
+                                                Next
+                                            </a>
+                                        </div>
+                                        <!-- <p class="text-right noMargin skip-link sm-hidden"><a href="#skipOnboarding" class="underlined">Skip for now</a></p> -->
+                                    </div>
+                                    <div class="do-step-body hidden  col-md-8 offset-4" id="body-update-email-set4">
+                                
+                                        <div class="flex row">
+                                            <div class="section-col-5">
+                                                    <h3 class="do-step-body-title">
+                                                            E-Statement Subscription
+                                                            <!-- <span class="step-sub-text grey">
+                                                                    <img src="./assets/icons/star-grey.svg" alt=""> Claimed your 100 Reward Points
+                                                            </span> -->
+                                                    </h3>
+                                                <p>
+                                                        Subscribe to e-statement and have your Credit Card statements delivered instantly to your registered e-mail ID <b>xxxxxxxkshmi@gmail.com</b>.
+                                                        <br>
+                                                        <br>
+                                                        Your e-mail ID xxxxxxkshmi@gmail.com is not verified. Click on ‘Verify’ to verify your e-mail ID and subscribe to e-statement.
+                                                        <br>
+                                                        <br>
+                                                        Do you want to update your e-mail ID? <a class="link" onClick="cancelUpdate('set4')"> Cancel update</a>
+                
+                                                </p>
+                                                <div class="do-input-group vertical space-top-30">
+                                                        <label for="do-terms" class="do-input-label do-input-text full"  id="updated-email">
+                                                            <input type="text" name="update-email-input" id=""  required onKeyUp="validateUpdatedEmail(this)">
+                                                            <span class="placeholder">New E-mail ID</span>
+                                                        </label>
+                                                </div>
+                                                <p class="do-text gray">Note: Our executive will contact you to verify the details.</p>
+                                            </div>
+                                        </div>
+                                        <div class="do-button-group space-top vertical-sm" >
+                                            <button class="do-button primary" disabled id="update-email-button-set4" onClick="emailUpdated('set4')">
+                                                Update
+                                            </button>
+                                            <a class="underlined" onClick="changeStep('4')" >
+                                                Next
+                                            </a>
+                                        </div>
+                                        <!-- <p class="text-right noMargin skip-link sm-hidden"><a href="#skipOnboarding" class="underlined">Skip for now</a></p> -->
+                                    </div>
+                                    <div class="do-step-body hidden  col-md-8 offset-4" id="body-after-update-email-set4">
+                                
+                                            <div class="flex row">
+                                                <div class="section-col-5">
+                                                        <h3 class="do-step-body-title">
+                                                                E-Statement Subscription
+                                                                <!-- <span class="step-sub-text grey">
+                                                                        <img src="./assets/icons/star-grey.svg" alt=""> Claimed your 100 Reward Points
+                                                                </span> -->
+                                                        </h3>
+                                                    <p>
+                                                            Request to update your E-mail ID has been registered. Our executive will contact you shortly to verify your details.
+                                                            <br><br>
+                                                            You can subscribe for E-statement after the verification in done.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="do-button-group space-top vertical-sm" >
+                                                <button class="do-button primary" disabled>
+                                                    Updated
+                                                </button>
+                                                <a class="underlined" onClick="changeStep('4')" >
+                                                    Next
+                                                </a>
+                                            </div>
+                                            <!-- <p class="text-right noMargin skip-link sm-hidden"><a href="#skipOnboarding" class="underlined">Skip for now</a></p> -->
+                                        </div>
+                                </div>
+            </section>
+
+            <section class="do-step-container row " id="step-international-usage">
+                    <div class="do-step-heading col-md-3">
+                    <div class="do-step-status">
+                        <span class="done"></span>
+                        <span class="active"></span>
+                    </div>
+                    <a class="do-step-heading-text" id="international-usage-text" onClick="changeStep('4')">
+                            International Usage Activation
+                    </a>
+                    <svg class="do-step-arrow" xmlns="http://www.w3.org/2000/svg" width="6" height="9" viewBox="0 0 8 11">
+                        <path fill="none" fill-rule="evenodd" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M1 1l6 4.33L1 10"/>
+                    </svg>
+                </div>
+                <div class="do-step-body  col-md-8 offset-4" id="body-before-IUActivation">
+                    
+                        <div class="flex row">
+                                <div class="section-col-5">
+                                        <h3 class="do-step-body-title">
+                                                International Usage Activation
+                                        </h3>
+                                        <p>
+                                                Online transactions like Netfix and itunes are classified as international.
+                                                <br>
+                                                <br>
+                                                By clicking on ‘Activate’, you agree that your international limit will be equal to the current retail limit (permanent/temporary) of your SBI Card. Please note this will be the combined limit of your primary card and linked add-on card, if any. </p>
+                                </div>
+                            </div>
+                            <div class="do-button-group space-top vertical-sm" >
+                                <button class="do-button primary" onClick="activateInternational()" >
+                                    Activate
+                                </button>
+                                <a class="underlined" onClick="changeStep('5')" >
+                                        Skip this step
+                                </a>
+                            </div>
+                            <!-- <p class="text-right noMargin skip-link sm-hidden"><a href="#skipOnboarding" class="underlined">Skip for now</a></p> -->
+                        
+                </div>
+                <div class="do-step-body hidden col-md-8 offset-4" id="body-after-IUActivation">
+                    
+                        <div class="flex row">
+                                <div class="section-col-5">
+                                        <h3 class="do-step-body-title">
+                                                International Usage Activated
+                                        </h3>
+                                        <p>
+                                                International Usage on your SBI card is active. 
+
+                                                <br>
+                                                Service Request Number for international usage activation is <b>987654321</b>.
+                                        </p>
+                                </div>
+                            </div>
+                            <div class="do-button-group space-top vertical-sm" >
+                                <button class="do-button primary" disabled >
+                                    Activate
+                                </button>
+                                <a class="underlined" onClick="changeStep('5')" >
+                                    Next
+                                </a>
+                            </div>
+                            <!-- <p class="text-right noMargin skip-link sm-hidden"><a href="#skipOnboarding" class="underlined">Skip for now</a></p> -->
+                        
+                </div>
+            </section>
+            <section class="do-step-container row " id="step-do-confirmation">
+                    <div class="do-step-heading col-md-3">
+                    <div class="do-step-status">
+                        <span class="done"></span>
+                        <span class="active"></span>
+                    </div>
+                    <span class="do-step-heading-text">
+                            Confirmation
+                            <!-- <span class="step-sub-text"> <img src="./assets/icons/star.svg" alt=""> 100 Reward points</span> -->
+
+                    </span>
+                    <svg class="do-step-arrow" xmlns="http://www.w3.org/2000/svg" width="6" height="9" viewBox="0 0 8 11">
+                        <path fill="none" fill-rule="evenodd" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M1 1l6 4.33L1 10"/>
+                    </svg>
+                </div>
+                <div class="do-step-body  col-md-8 offset-4" id="body-do-confirmation">
+                            <h3 class="do-step-body-title">
+                                    Welcome Aboard
+                            <!-- <span class="step-sub-text">
+                                    <img src="./assets/icons/star.svg" alt=""> Claimed your 100 Reward Points
+                            </span> -->
+                            </h3>
+                            <div class="section-col-full text-right named-card sm-visible">
+                                    <img src="./assets/images/named-card.png" alt="" style="width:100%;">
+                                </div>
+                        <div class="flex row">
+                            <div class="section-col-4">
+                                <p class="do-step-body-subtitle">
+                                        Some of the benefits you get along with your SBI Card Prime Credit Card include
+                                </p>
+                                <ul class="do-list">
+                                    <li>Free movie tickets worth Rs. 6,000 every year.</li>
+                                    <li>Earn upto 50,000 Bonus Reward Points worth Rs. 12,500/year.</li>
+                                    <li>Complimentary membership to Club Vistara and Trident Privilege program.</li>
+                                </ul>
+                            </div>
+                            <div class="section-col-4 text-right  flex flex-as flex-je named-card sm-hidden">
+                                <img src="./assets/images/named-card.png" alt="" style="width:100%;">
+                            </div>
+                        </div>
+                        <p class="do-step-body-subtitle">
+                                Your Card Features
+                            </p>
+                        <div class="flex">
+                                    <div class="do-card-container section-col-full">
+                                        <div class="do-card small sm-full">
+                                            <h5 class="heading">First Year Fee</h5>
+                                            <p class="data">₹ 600</p>
+                                        </div>
+                                        <div class="do-card small sm-full"  >
+                                            <h5 class="heading">Annual Fee</h5>
+                                            <p class="data">₹ 600</p>
+                                        </div>
+                                        <div class="do-card small sm-full">
+                                            <h5 class="heading">Credit Limit</h5>
+                                            <p class="data">₹ 10,00,000</p>
+                                        </div>
+                                        <div class="do-card small sm-full">
+                                            <h5 class="heading">Billing Cycle</h5>
+                                            <p class="data">12 <span class="sub-text">of every month </span></p>
+                                        </div>
+                                        <div class="do-card small sm-full">
+                                            <h5 class="heading">SBR Amount</h5>
+                                            <p class="data">₹ 1,00,000</p>
+                                        </div>
+                                </div>
+                        </div>
+                        <p class="do-step-body-subtitle">
+                                Payment Options
+                            </p>
+                        <div class="flex section-col-full payment-options-container">
+                            <div class="flex flex-ac payment-options">
+                                <img src="./assets/icons/payment-option-1.png" alt="">
+                                <p class="bold">Online SBI</p>
+                            </div>
+                            <div class="flex flex-ac payment-options">
+                                <img src="./assets/icons/payment-option-2.png" alt="">
+                                <p class="bold">NEFT</p>
+                            </div>
+                            <div class="flex flex-ac payment-options">
+                                <img src="./assets/icons/payment-option-3.png" alt="">
+                                <p class="bold">Pay via UPI</p>
+                            </div>
+                        </div>
+                        <p class="do-text gray"><b>Important:</b> Not paying your minimum/total due card on time will impact your bureau score which may lead to rejection of loan/card application in future.</p>
+                </div>
+            </section>
+        </div>
+        <p class="text-center noMargin skip-link-mobile sm-visible"><a href="#skipOnboarding" class="underlined">Skip onboarding for now</a></p>
+
+        </main>
+
+        <div class="bottom-box " id="finish-bottom-box">
+            <div class="flex bottom-box-container  do-wrapper">
+                <span>
+                        Please review your information and click <b>“Finish”</b>   to complete the onboarding process.
+                        <br>
+                        Disagree with any of the information provided? Click <b>“Have a query?”</b>
+                        
+                </span>
+                <div class="do-button-group flex flex-ac vertical-sm" id="finish-buttons">
+                    <a class="underlined" onClick="callMeBack()" style="    margin-right: 20px;
+                    margin-left: 20px;">
+                            Have a query?
+                    </a>
+                    <button class="do-button primary" onClick="window.location.hash = 'doConfimation'">
+                        Finish
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Modals -->
+
+            <!-- Welcome Modal -->
+            <div id="welcome" class="modal " role="dialog" >
+                    <div class="modal-body text-center">
+                        <img src="./assets/images/marginalia-payment-processed-copy.png" alt="">
+                        <h2 class="modal-heading">Hi Vikramaditya! <br> Welcome to SBI Card</h2>
+                        <p  class="modal-content">With SBI Card, you enjoy the freedom to manage your Credit Card.
+                            <br>
+                            Complete the onboarding journey in few simple steps to learn about your Credit Card and configure its settings to suit your needs.
+                        </p> 
+                        <div class="flex flex-ac flex-jc flex-col button-modal-space">
+                            <!-- <a href="#knowMore" class="underlined">Know more</a> -->
+                            <button class="do-button primary noMargin" onClick="window.location.hash = ''" id="onboarded-button">Get Started</button>
+                            <!-- <a href="#skipOnboarding" class="underlined">Skip onboarding for now</a> -->
+                        </div>
+                        <p class="do-subtext">SBI Card will never ask you to ‘Redeem Reward Points’ through unsolicited calls, SMS, E-mails or Whatsapp. Never open/respond to suspicious SMS/links.</p>
+                    </div>
+                </div>
+    
+                <!-- Know More Rewards Modal -->
+    
+                <div id="knowMore" class="modal " role="dialog" >
+                        <div class="modal-body text-center">
+                        <a class="back" href="#welcome">
+                                <svg class="do-step-arrow" xmlns="http://www.w3.org/2000/svg" width="12" height="18" style="transform: rotate(180deg)" viewBox="0 0 8 11">
+                                    <path fill="none" fill-rule="evenodd" stroke="#2d2d2d" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M1 1l6 4.33L1 10"/>
+                                </svg>
+                        </a>
+                        <h2 class="modal-heading subheading">Reward Points</h2>
+                        <p  class="modal-content scrollable">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                                <br>
+                                <br>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                                <br>
+                                <br>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+    
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                                <br>
+                                <br>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                                <br>
+                                <br>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                        </p>
+                        <div class="flex flex-ac flex-jc flex-col space-top-40">
+                            <button class="do-button primary" onClick="window.location.hash = ''"  id="onboarded-button">Get Onboarded</button>
+                            <a href="#skipOnboarding" class="underlined">Skip onboarding for now</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Skip onboarding Modal -->
+    
+                <div id="skipOnboarding" class="modal " role="dialog" >
+                        <div class="modal-body text-center">
+                                <img src="./assets/images/leaving-gif.gif"   alt="">
+                      
+                        <h2 class="modal-heading subheading">Leaving Already?</h2>
+                        <p  class="modal-content ">
+                                You can come back any time to complete the onboarding by clicking ‘Digital Onboarding’ from your dashboard.
+                        </p>
+                        <div class="flex flex-ac flex-jc flex-col">
+                            <button class="do-button primary button-modal-space" onClick="window.location.hash = ''" >I’ll do it later</button>
+                            <a href="#" class="underlined">I want to continue</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- E statement Subscription -->
+                <div id="estateSubscribed" class="modal " role="dialog" >
+                        <div class="modal-body text-center">
+                        <h2 class="modal-heading subheading">E-statement Subscription</h2>
+                        <p  class="modal-content ">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                        </p>
+                        <div class="flex flex-ac flex-jc flex-col">
+                            <button class="do-button primary button-modal-space" onClick="estateSubscription()" >Subscribe</button>
+                            <a href="#" class="underlined">Cancel</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Generate OTP -->
+                <div id="generateOtp" class="modal " role="dialog" >
+                    <div class="modal-body text-center">
+                        <h2 class="modal-heading">One Time Verification</h2>
+                        <p  class="modal-content">Enter the four digit code sent on your mobile number 
+                            <br>
+                                <span class="text-blue">+91 9650585010</span>
+                        </p> 
+                        <div class="flex flex-ac flex-jc flex-col">
+                                <label for="do-terms" class="do-input-label do-split-input" id="otp-input">
+                                    <input type="text" name="" id="" maxlength="6" required onKeyUp="validateOtp(this)" onkeypress='return event.charCode >= 48 && event.charCode <= 57'    >
+                                    <svg height="2px" width="100%">
+                                    <line x1="0" y1="0" x2="200" y2="0" style="stroke:#8a8a96;stroke-width:2;stroke-dasharray:18px" />
+                                    </svg>
+                                </label>
+                                  
+                            <a class="underlined space-top-40">Resend Code</a>
+                            <a href="#" class="underlined space-top-40">Cancel</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Generate OTP for Email -->
+                <div id="generateOtpEmail" class="modal " role="dialog" >
+                        <div class="modal-body text-center">
+                            <h2 class="modal-heading">One Time Verification</h2>
+                            <p  class="modal-content">Enter the four digit code sent on your mobile number 
+                                <br>
+                                    <span class="text-blue">+91 9650585010</span>
+                            </p> 
+                            <div class="flex flex-ac flex-jc flex-col">
+                                    <label for="do-terms" class="do-input-label do-split-input" id="otp-email-input">
+                                        <input type="text" name="" id="" maxlength="6" required onKeyUp="validateOtpEmail(this)" onkeypress='return event.charCode >= 48 && event.charCode <= 57'    >
+                                        <svg height="2px" width="100%">
+                                        <line x1="0" y1="0" x2="200" y2="0" style="stroke:#8a8a96;stroke-width:2;stroke-dasharray:18px" />
+                                        </svg>
+                                    </label>
+                                      
+                                <a class="underlined space-top-40">Resend Code</a>
+                                <a href="#" class="underlined space-top-40">Cancel</a>
+                            </div>
+                        </div>
+                    </div>
+        <!-- Welcome Modal -->
+        <div id="doConfimation" class="modal flex flex-col" role="dialog" >
+                <div class="modal-body noPadding text-center">
+                    <div class="modal-padding-wrapper">
+                            <img style="width:100%" src="./assets/images/finish-gif.gif" alt="">
+                            <h2 class="modal-heading">Congratulations!</h2>
+                            <p  class="modal-content">
+                                    You have been successfully onboarded.
+                                    <br>
+                                    You can access and modify all the settings from your dashboard. 
+                                  </p> 
+                            <div class="flex flex-ac flex-jc flex-col">
+                                <button class="do-button primary button-modal-space" onClick="window.location.hash = ''" >Done</button>
+                            </div>
+                    </div>
+                    <div class="modal-footer text-center">
+                        <p>Learn more about your SBI Card Prime Credit Card.</p>
+                        <a href="/" class="underlined">Watch Video</a>
+                    </div>
+                </div>
+            </div>
+    <script  type="text/javascript" src="./build/bundle.js"></script>
+    <script>
+        (function(){
+            window.location.hash = "#welcome"
+        }())
+    </script>
+  </body>
+</html>

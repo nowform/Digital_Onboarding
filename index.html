@@ -67,7 +67,7 @@
                                             Activate your credit card to begin using it.
                                             <br>
                                             <br>
-                                            For security reasons, your card ending with 6954 was dispatched to you with a temporary block as a default. To remove this temporary block, simply activate your card by clicking ‘Activate’ below.
+                                            For security reasons, your card ending with <b>6954</b> was dispatched to you with a temporary block as a default. To remove this temporary block, simply activate your card by clicking ‘Activate’ below.
                                         </p>
                             </div>
                         </div>
@@ -297,10 +297,10 @@
                             <!-- you can hide and show <span> with class 'step-sub-text' according to data received from backend -->
                             <!-- remove 'hide' classs which ever set you want to show -->
 
-                            <span class="step-sub-text step-1 hide">E-mail ID Verified</span>
-                            <span class="step-sub-text  step-2 grey hide  ">E-mail ID not verified</span>
-                            <span class="step-sub-text step-3  ">E-mail ID Verified</span>
-                            <span class="step-sub-text grey step-4 hide">E-mail ID not Verified</span>
+                            <span class="step-sub-text set1 hide">E-mail ID Verified</span>
+                            <span class="step-sub-text  set2 grey hide  ">E-mail ID not verified</span>
+                            <span class="step-sub-text set3 hide ">E-mail ID Verified</span>
+                            <span class="step-sub-text grey set4 hide">E-mail ID not Verified</span>
                     </a>
                     <svg class="do-step-arrow" xmlns="http://www.w3.org/2000/svg" width="6" height="9" viewBox="0 0 8 11">
                         <path fill="none" fill-rule="evenodd" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M1 1l6 4.33L1 10"/>
@@ -310,7 +310,7 @@
                 <!-- add 'active' classs which ever set you want to show -->
 
                 <!-- Below is Case 1/Set 1  'Already subscribed and Verified E-mail ID'-->
-                <div class="sets set-1 "> 
+                <div class="sets set-1 active"> 
                 <div class="do-step-body  col-md-8 offset-4" id="body-before-subscription">
                    
                     <div class="flex row">
@@ -619,14 +619,14 @@
 
                     <!-- Below is Case 4/Set 4 For estatement   'Not subscribed and E-mail is not verified'-->
                 
-                        <div class="sets set-4 active"> 
+                        <div class="sets set-4 "> 
                                 <div class="do-step-body  col-md-8 offset-4" id="body-before-subscription-set4">
                                     <div class="flex row">
                                         <div class="section-col-5">
                                                 <h3 class="do-step-body-title">
                                                         E-statement Subscription
                                                 </h3>
-                                            <p>
+                                            <p style="margin-bottom:30px;">
                                                     Subscribe to e-statement and have your Credit Card statements delivered instantly to your registered e-mail ID <b>xxxxxxxkshmi@gmail.com</b>.
                                                     <br>
                                                     <br>
@@ -652,7 +652,7 @@
                                             </div>
                                         </div> -->
                                     </div>
-                                    <div class="do-button-group space-top vertical-sm" >
+                                    <div class="do-button-group space-top-20 vertical-sm" >
                                         <button class="do-button primary" disabled onClick="set4Subscribe()" id="set4-subscribe-button">
                                             Subscribe
                                         </button>
@@ -839,9 +839,9 @@
                 <div class="do-step-body  col-md-8 offset-4" id="body-do-confirmation">
                             <h3 class="do-step-body-title">
                                     Welcome Aboard
-                            <span class="step-sub-text">
+                            <!-- <span class="step-sub-text">
                                     <img src="./assets/icons/star.svg" alt=""> Claimed your 100 Reward Points
-                            </span>
+                            </span> -->
                             </h3>
                             <div class="section-col-full text-right named-card sm-visible">
                                     <img src="./assets/images/named-card.png" alt="" style="width:100%;">
@@ -945,7 +945,7 @@
                         </p> 
                         <div class="flex flex-ac flex-jc flex-col button-modal-space">
                             <!-- <a href="#knowMore" class="underlined">Know more</a> -->
-                            <button class="do-button primary noMargin" onClick="window.location.hash = ''" id="onboarded-button">Get Onboarded</button>
+                            <button class="do-button primary noMargin" onClick="window.location.hash = ''" id="onboarded-button">Get Started</button>
                             <!-- <a href="#skipOnboarding" class="underlined">Skip onboarding for now</a> -->
                         </div>
                         <p class="do-subtext">SBI Card will never ask you to ‘Redeem Reward Points’ through unsolicited calls, SMS, E-mails or Whatsapp. Never open/respond to suspicious SMS/links.</p>
@@ -989,7 +989,7 @@
     
                 <div id="skipOnboarding" class="modal " role="dialog" >
                         <div class="modal-body text-center">
-                                <img src="./assets/images/leaving_1x.png"  alt="">
+                                <img src="./assets/images/leaving-gif.gif"   alt="">
                       
                         <h2 class="modal-heading subheading">Leaving Already?</h2>
                         <p  class="modal-content ">
@@ -1061,11 +1061,12 @@
         <div id="doConfimation" class="modal flex flex-col" role="dialog" >
                 <div class="modal-body noPadding text-center">
                     <div class="modal-padding-wrapper">
-                            <img src="./assets/images/finish.jpg" alt="">
+                            <img style="width:100%" src="./assets/images/finish-gif.gif" alt="">
                             <h2 class="modal-heading">Congratulations!</h2>
                             <p  class="modal-content">
                                     You have been successfully onboarded.
-                                    Your <b>200</b> reward points have been credited to your account. 
+                                    <br>
+                                    You can access and modify all the settings from your dashboard. 
                                   </p> 
                             <div class="flex flex-ac flex-jc flex-col">
                                 <button class="do-button primary button-modal-space" onClick="window.location.hash = ''" >Done</button>

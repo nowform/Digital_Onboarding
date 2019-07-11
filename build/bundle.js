@@ -190,6 +190,10 @@
         document.querySelector('#body-update-email-' + value).classList.add('hidden');   
         document.querySelector('#body-after-update-email-' + value).classList.remove('hidden');
         // changeStep('4');   
+        if(value == 'set3' || value == 'set4'){
+            document.querySelector('.step-sub-text.' + value).innerHTML = "E-mail ID not Verified";
+            document.querySelector('.step-sub-text.' + value).classList.add('grey');
+        }
     }
     function cancelUpdate(value){
         if(value == 'set2'){
@@ -215,9 +219,7 @@
         const newPinEl = document.querySelector("#new-pin-input > input");
         const confirmPinEl = document.querySelector("#confirm-pin-input > input");
         
-        
-        console.log(this);
-        
+         
         if(newPinEl.value.length >= 4){
             if(newPinEl.value.length > 4){
                 newPinEl.value = newPinEl.value.slice(0,4);
