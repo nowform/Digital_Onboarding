@@ -18,9 +18,9 @@
         if(document.querySelector('.do-step-container.active')){
             document.querySelector('.do-step-container.active').classList.remove('active');
         }
-        if(document.querySelector('.do-step-container.in-progress')){
-            document.querySelector('.do-step-container.in-progress').classList.remove('in-progress');
-        }
+        // if(document.querySelector('.do-step-container.in-progress')){
+        //     document.querySelector('.do-step-container.in-progress').classList.remove('in-progress');
+        // }
         switch (num) {
             case '1':
                 // change to 1
@@ -43,6 +43,7 @@
                     document.querySelector("#step-card-activation").classList.remove('in-progress','active');
                     document.querySelector("#step-card-activation .do-step-heading-text").classList.add('clickable');
                     document.querySelector("#step-generate-pin").classList.add('in-progress','active');
+                    document.querySelector("#step-generate-pin .do-step-heading-text").classList.add('clickable');
                 }
 
                 break;
@@ -57,6 +58,8 @@
                     document.querySelector("#step-generate-pin").classList.remove('in-progress');
                     document.querySelector("#step-generate-pin .do-step-heading-text").classList.add('clickable');
                     document.querySelector("#step-estate-sub").classList.add('in-progress','active');
+                    document.querySelector("#step-estate-sub .do-step-heading-text").classList.add('clickable');
+                
                 }
                 break;
             
@@ -70,6 +73,8 @@
                     document.querySelector("#step-estate-sub").classList.remove('in-progress');
                     document.querySelector("#step-estate-sub .do-step-heading-text").classList.add('clickable');
                     document.querySelector("#step-international-usage").classList.add('in-progress','active');
+                    document.querySelector("#step-international-usage .do-step-heading-text").classList.add('clickable');
+                
                 }
                 break;
 
@@ -83,6 +88,8 @@
                     document.querySelector("#step-international-usage").classList.remove('in-progress');
                     document.querySelector("#step-international-usage .do-step-heading-text").classList.add('clickable');
                     document.querySelector("#step-do-confirmation").classList.add('in-progress','active');
+                    document.querySelector("#step-do-confirmation .do-step-heading-text").classList.add('clickable');
+                
                 }
                 document.querySelector('#finish-bottom-box').classList.add('show');
                 break;

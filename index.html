@@ -48,7 +48,12 @@
                         <span class="active"></span>
                     </div>
                     <a class="do-step-heading-text" id="card-activation-text" onClick="changeStep('1')">
+                        <span class="step-link not-activated ">
                             Card Activation
+                        </span>   
+                        <span  class="step-link activated hide">
+                                Card Activated
+                            </span>   
                     </a>
                     <svg class="do-step-arrow" xmlns="http://www.w3.org/2000/svg" width="6" height="9" viewBox="0 0 8 11">
                         <path fill="none" fill-rule="evenodd" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M1 1l6 4.33L1 10"/>
@@ -129,7 +134,7 @@
                 <!-- Below is Case 2/Set 2  'Card Activated but not confirmed'-->
                 <div class=" sets set-2  "> 
                         <div class="do-step-body col-md-8 offset-4" id="body-not-activated-set2">
-                            <h3 class="do-step-body-title">Card Activation</h3>
+                            <h3 class="do-step-body-title">Card Activated</h3>
                             <div class="flex row">
                                 <div class="section-col-5">
                                         <p>
@@ -827,11 +832,12 @@
                         <span class="done"></span>
                         <span class="active"></span>
                     </div>
-                    <span class="do-step-heading-text">
+                    <!-- <span class="do-step-heading-text">
                             Confirmation
-                            <!-- <span class="step-sub-text"> <img src="./assets/icons/star.svg" alt=""> 100 Reward points</span> -->
-
-                    </span>
+                    </span> -->
+                    <a class="do-step-heading-text" id="confirmation-text" onClick="changeStep('5')">
+                            Confirmation
+                    </a>
                     <svg class="do-step-arrow" xmlns="http://www.w3.org/2000/svg" width="6" height="9" viewBox="0 0 8 11">
                         <path fill="none" fill-rule="evenodd" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M1 1l6 4.33L1 10"/>
                     </svg>
@@ -1019,7 +1025,7 @@
                 <div id="generateOtp" class="modal " role="dialog" >
                     <div class="modal-body text-center">
                         <h2 class="modal-heading">One Time Verification</h2>
-                        <p  class="modal-content">Enter the four digit code sent on your mobile number 
+                        <p  class="modal-content">Enter the six digit code sent on your mobile number 
                             <br>
                                 <span class="text-blue">+91 9650585010</span>
                         </p> 
@@ -1040,7 +1046,7 @@
                 <div id="generateOtpEmail" class="modal " role="dialog" >
                         <div class="modal-body text-center">
                             <h2 class="modal-heading">One Time Verification</h2>
-                            <p  class="modal-content">Enter the four digit code sent on your mobile number 
+                            <p  class="modal-content">Enter the six digit code sent on your mobile number 
                                 <br>
                                     <span class="text-blue">+91 9650585010</span>
                             </p> 

@@ -1246,14 +1246,23 @@ input[type=number]::-webkit-outer-spin-button {
 .do-step-container {
   align-items: flex-start; }
   .do-step-container.in-progress .do-step-status {
-    border-color: #00b1f2; }
+    border-color: #8a8a96; }
     .do-step-container.in-progress .do-step-status .active {
       opacity: 1;
-      transition: .3s; }
-    .do-step-container.in-progress .do-step-status ~ .do-step-arrow {
+      transition: .3s;
+      background-color: #8a8a96; }
+  .do-step-container.in-progress .do-step-heading .do-step-heading-text {
+    color: #8a8a96; }
+  .do-step-container.in-progress.active .do-step-status {
+    border-color: #00b1f2; }
+    .do-step-container.in-progress.active .do-step-status .active {
+      opacity: 1;
+      transition: .3s;
+      background-color: #00b1f2; }
+    .do-step-container.in-progress.active .do-step-status ~ .do-step-arrow {
       opacity: 1;
       color: #00b1f2; }
-  .do-step-container.in-progress .do-step-heading .do-step-heading-text {
+  .do-step-container.in-progress.active .do-step-heading .do-step-heading-text {
     color: #00b1f2; }
   .do-step-container.done .do-step-status .done {
     opacity: 1;

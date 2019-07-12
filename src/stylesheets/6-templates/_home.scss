@@ -15,10 +15,34 @@
     // overflow: hidden;
     &.in-progress{
         .do-step-status{
+            border-color: $mid-grey;
+            .active{
+                opacity: 1;
+                transition: .3s;
+                background-color: $mid-grey;
+            }
+            ~.do-step-arrow{
+                // opacity: 1;
+                // color: $mid-grey;
+            }
+        }
+        .do-step-heading{
+            .do-step-heading-text{
+                color: $mid-grey;
+            }
+        }
+        // .do-step-body{
+        //     z-index: 1;
+        //     opacity: 1;
+        // }
+    }
+    &.in-progress.active{
+        .do-step-status{
             border-color: $brand-color;
             .active{
                 opacity: 1;
                 transition: .3s;
+                background-color: $brand-color;
     
             }
             ~.do-step-arrow{
