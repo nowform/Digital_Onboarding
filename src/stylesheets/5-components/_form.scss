@@ -325,3 +325,14 @@ $md-checkbox-label-padding: .75em;
   }
 }
 }
+
+@media (min-width: $screen-lg-min) {
+  .do-button-group{
+    &.vertical-lg{
+      flex-direction: column;
+      .do-button{
+        margin: 0px 0px 20px 0px;
+      }
+    }
+  }
+}
