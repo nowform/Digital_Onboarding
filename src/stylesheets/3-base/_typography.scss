@@ -21,9 +21,12 @@ a,a:hover{
 
 }
 .do-subtext{
-  font-size: 10px;
+  font-size: 12px;
   color: $mid-grey;
   // text-align: center;
+  &.black{
+    color: $text-color;
+  }
 }
 .do-text{
   font-size: 14px;

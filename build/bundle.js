@@ -21,6 +21,7 @@
         // if(document.querySelector('.do-step-container.in-progress')){
         //     document.querySelector('.do-step-container.in-progress').classList.remove('in-progress');
         // }
+        document.querySelector("#counter-number").innerHTML = num;
         switch (num) {
             case '1':
                 // change to 1
@@ -45,7 +46,6 @@
                     document.querySelector("#step-generate-pin").classList.add('in-progress','active');
                     document.querySelector("#step-generate-pin .do-step-heading-text").classList.add('clickable');
                 }
-
                 break;
             
             case '3':
@@ -117,10 +117,10 @@
         document.querySelector('#otp-email-input > input').value = '';
         window.location.hash = "generateOtpEmail";
     }
-    function swicthGeneratedPin(){
+    function switchGeneratedPin(){
         document.querySelector('#body-before-otp').classList.add('hidden');
         document.querySelector('#body-pin-generated').classList.add('hidden');
-        document.querySelector('#body-after-otp').classList.remove('hidden');
+        // document.querySelector('#body-after-otp').classList.remove('hidden');
         document.querySelector('#new-pin-input > input').value = '';
         document.querySelector('#confirm-pin-input > input').value = '';
     }
@@ -136,7 +136,8 @@
                 // replace true with otp condition as per your requirement
                 inputEl.blur();
                 window.location.hash = "#";
-                swicthGeneratedPin();
+                // switchGeneratedPin();
+                generatePin()
             }
             else{
                 // incase OTP is not correct
@@ -144,7 +145,7 @@
             }
         }
     }
-    function swicthToUpdateEmail(){
+    function switchToUpdateEmail(){
         document.querySelector('#body-before-subscription-set2').classList.add('hidden');
         document.querySelector('#body-after-subscription-set2').classList.add('hidden');
         document.querySelector('#body-update-email-set2').classList.remove('hidden');
@@ -169,7 +170,8 @@
                 // replace true with otp condition as per your requirement
                 inputEl.blur();
                 window.location.hash = "#";
-                swicthToUpdateEmail();
+                // switchToUpdateEmail();
+                emailUpdated()
             }
             else{
                 // incase OTP is not correct
@@ -180,7 +182,7 @@
     function validateUpdatedEmail(el){
         var re = /\S+@\S+\.\S+/;
         if(re.test(el.value)){
-            console.log(el);
+            // console.log(el);
             document.querySelector("#update-email-button").disabled = false;
             document.querySelector("#update-email-button-set4").disabled = false;
             document.querySelector("#update-email-button-set3").disabled = false;
@@ -190,8 +192,13 @@
             document.querySelector("#update-email-button-set3").disabled = true;
         }
     }
-    function emailUpdated(value){
-
+    function emailUpdated(){
+        let value = '';
+        if(document.querySelector('.sets.set-3').classList.contains('active')){
+            value = 'set3'
+        }else if(document.querySelector('.sets.set-4').classList.contains('active')){
+            value = 'set4'
+        }
         document.querySelector('#body-before-subscription-' + value).classList.add('hidden');
         document.querySelector('#body-after-subscription-' + value).classList.add('hidden');
         document.querySelector('#body-update-email-' + value).classList.add('hidden');   
@@ -245,17 +252,50 @@
             }else{
                 document.querySelector("#step2-pin-button").disabled = false;  
                 confirmPinEl.blur();
+            }   
+        }
+        else{
+            document.querySelector("#step2-pin-button").disabled = true;  
+        }
+    }
+    function validatePinReset(){
+        const newPinEl = document.querySelector("#new-pin-reset > input");
+        const confirmPinEl = document.querySelector("#confirm-pin-reset > input");
+        
+         
+        if(newPinEl.value.length >= 4){
+            if(newPinEl.value.length > 4){
+                newPinEl.value = newPinEl.value.slice(0,4);
             }
-            
+            confirmPinEl.focus();
+        }
+
+        if(confirmPinEl.value.length >= 4){
+            if(confirmPinEl.value.length > 4){
+                confirmPinEl.value = confirmPinEl.value.slice(0,4);
+            }
+        }
+        if(newPinEl.value.length == 4 && confirmPinEl.value.length == 4){
+            if(newPinEl.value != confirmPinEl.value){
+                document.querySelector("#step2-pin-button-reset").disabled = true;
+            }else{
+                document.querySelector("#step2-pin-button-reset").disabled = false;  
+                confirmPinEl.blur();
+            }
+        }else{
+            document.querySelector("#step2-pin-button-reset").disabled = true;  
         }
     }
 
     function generatePin(){
         // Generate Pin Code here
-        document.querySelector('#body-after-otp').classList.add('hidden');
+        document.querySelector('#body-before-otp').classList.add('hidden');
         document.querySelector('#body-pin-generated').classList.remove('hidden');
         document.querySelector('#generate-pin-text').innerHTML = 'PIN Generated';
-        changeStep('3');
+        // changeStep('3');
+        if(document.querySelector('#reset-pin-block').classList.contains('show')){
+            showResetFields();
+        }
     }
     function estateSubscription(){
 
@@ -307,7 +347,20 @@
     function callMeBack(){
 
     }
-
+    function showResetFields(){
+        el = document.querySelector("#reset-text");
+        if(el.innerHTML == 'Reset PIN'){
+            el.innerHTML = 'Cancel Reset'
+        }else{
+            el.innerHTML = 'Reset PIN'
+        }
+        document.querySelector('#new-pin-reset > input').value = '';
+        document.querySelector('#confirm-pin-reset  > input').value = '';
+        document.querySelector('#step2-pin-button-reset').disabled = true;
+        document.querySelector("#reset-pin-block").classList.toggle('show');
+        document.querySelector("#reset-buttons").classList.toggle('show');
+        document.querySelector("#not-reset-buttons").classList.toggle('show');
+    }
 
 
 
@@ -316,3 +369,12 @@
             window.location.href = "#";
         }
     })
+    window.onhashchange = function(e) { 
+    //    console.log( document.querySelector(".modal:target"))
+        if(document.querySelector(".modal:target")){
+            document.querySelector('.do-body-container').classList.add('do-modal-open');   
+        }
+        else{
+            document.querySelector('.do-body-container').classList.remove('do-modal-open');   
+        }
+    }

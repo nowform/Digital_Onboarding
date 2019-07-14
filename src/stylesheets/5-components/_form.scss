@@ -83,6 +83,9 @@ input[type=number]::-webkit-outer-spin-button {
 .space-top-20{
   margin-top: 20px;
 }
+.space-top-10{
+  margin-top: 10px;
+}
 
 /* Inputs */
 .do-input-group{
@@ -315,4 +318,10 @@ $md-checkbox-label-padding: .75em;
 // .do-input-label{
 //   font-size: 16px;
 // }
+.do-button{
+  height: 56px;
+  &.full-xs{
+    width: 100%;
+  }
+}
 }

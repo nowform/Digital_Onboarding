@@ -76,7 +76,7 @@
     }
     .modal-footer{
         background: #f2f7fd;
-        padding: 20px;
+        padding: 20px 60px;
         width: 100%;
         max-width: 590px;
     }
@@ -93,7 +93,14 @@
         transform: scale(1);
     }
 }
-
+.do-body-container.do-modal-open{
+    -webkit-filter: blur(1px);
+    -moz-filter: blur(1px);
+    -o-filter: blur(1px);
+    -ms-filter: blur(1px);
+    filter: blur(1px);
+    filter: blur(1.5px);
+}
 
 @media (max-width: $screen-sm-max){
     .modal{
@@ -107,6 +114,10 @@
                 padding: 40px 20px;
                 .back{
                     left: 20px;
+                }
+                .modal-heading{
+                    font-size: 20px;
+                    margin-bottom: 30px;
                 }
         }
         .modal-footer{
