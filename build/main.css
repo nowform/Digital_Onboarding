@@ -1323,9 +1323,15 @@ input[type=number]::-webkit-outer-spin-button {
   .do-step-container.active .do-step-body {
     opacity: 1;
     z-index: 1;
-    transition: 1s;
+    transition: -webkit-transform 1s;
+    transition: transform 1s;
+    transition: transform 1s, -webkit-transform 1s;
     -webkit-transform: translateX(0);
-            transform: translateX(0); }
+    transform: translateX(0);
+    transition-property: opacity,-webkit-transform;
+    transition-property: opacity,transform;
+    transition-property: opacity,transform,-webkit-transform;
+    transition-delay: 0s,0s; }
     .do-step-container.active .do-step-body.hidden {
       z-index: 0;
       opacity: 0; }
@@ -1411,6 +1417,10 @@ input[type=number]::-webkit-outer-spin-button {
   transition: 0s;
   transition-delay: 1s;
   z-index: 0;
+  transition-property: opacity,-webkit-transform;
+  transition-property: opacity,transform;
+  transition-property: opacity,transform,-webkit-transform;
+  transition-delay: 1s,1s;
   -webkit-transform: translateX(calc(100% + 30px));
           transform: translateX(calc(100% + 30px));
   background: #fff;
