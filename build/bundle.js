@@ -32,6 +32,8 @@
                     document.querySelector("#step-card-activation").classList.add('in-progress','active');
                     document.querySelector("#step-card-activation").classList.remove('done');
                 }
+                document.querySelector('#finish-bottom-box').classList.remove('show');
+
                 break;
             
             case '2':
@@ -46,6 +48,8 @@
                     document.querySelector("#step-generate-pin").classList.add('in-progress','active');
                     document.querySelector("#step-generate-pin .do-step-heading-text").classList.add('clickable');
                 }
+                document.querySelector('#finish-bottom-box').classList.remove('show');
+
                 break;
             
             case '3':
@@ -61,6 +65,8 @@
                     document.querySelector("#step-estate-sub .do-step-heading-text").classList.add('clickable');
                 
                 }
+                document.querySelector('#finish-bottom-box').classList.remove('show');
+
                 break;
             
             case '4':
@@ -76,6 +82,7 @@
                     document.querySelector("#step-international-usage .do-step-heading-text").classList.add('clickable');
                 
                 }
+                document.querySelector('#finish-bottom-box').classList.remove('show');
                 break;
 
             case '5':
