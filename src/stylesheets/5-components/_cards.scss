@@ -42,6 +42,11 @@
 
 @media (max-width: $screen-sm-max) {
     .do-card{
+        margin-right: 14px;
+        &.small{
+            width:calc(50% - 28px);
+            max-width: unset;
+        }
         &.sm-full{
             max-width: 100%;
             margin-right: 0px;

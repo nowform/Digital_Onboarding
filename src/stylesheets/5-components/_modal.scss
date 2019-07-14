@@ -119,12 +119,16 @@
                     font-size: 20px;
                     margin-bottom: 30px;
                 }
+                .modal-padding-wrapper{
+                    padding: 40px 20px;
+                }
         }
         .modal-footer{
-            position: absolute;
-            bottom: 0px;
-            width: 100%;
-            left: 0px;
+            // position: absolute;
+            // bottom: 0px;
+            // width: 100%;
+            // left: 0px;
+            position: relative;
         }
        
     }

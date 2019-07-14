@@ -128,7 +128,7 @@
             overflow-y: overlay;
             // height: 100%;
             // min-height: unset;
-            padding-right: 5px;
+            padding-right: 20px;
             &.hidden{
                 z-index: 0;
                 opacity: 0;
@@ -227,7 +227,7 @@
     z-index: 0;
     opacity: 0;
     top: 60px;
-    width: calc(66.666667% + 13px);
+    width: calc(66.666667% + 33px);
     max-width: unset;
     left: 0px;
     padding-bottom: 60px;
@@ -461,6 +461,12 @@
             margin-bottom: 40px;
         }
     }
+    .query-box{
+        width: 100%;
+        margin: 20px 0;
+        order: 3;
+        justify-content: center;
+    }
 }
 #finish-buttons{
     flex-direction: column-reverse;
@@ -471,15 +477,25 @@
         left: unset;
     }
     .do-steps-container{
-        padding: 60px 0px;
+        padding:0px;
+        padding-top: 40px;
+    }
+    .do-step-counter{
+        text-align: right;
+        top: 50px;
     }
     .do-step-container{
         border: none;
-        border-bottom: 1px solid $light-grey;
-        padding: 30px 15px;
+        border-top: 1px solid #f2f2fd;
+        
+        padding: 30px 0px;
         border-radius: 0px; 
+        width: 100vw;
+        margin-left: -20px;
 
         &.active{
+            border-top: 1px solid #d5d5ea;
+            border-bottom: 1px solid #d5d5ea;
             .do-step-body{
                 opacity: 1;
                 display: block;
@@ -490,17 +506,17 @@
             }
         }
         &.done{
-            border: none;
+            // border: none;
             // border-top: 1px solid $light-grey;
-            border-bottom: 1px solid $light-grey;
-            border-radius: 0px;
+            // border-bottom: 1px solid $light-grey;
+            // border-radius: 0px;
             &.active{
                 // border: 1px solid $light-grey;
             }
         }
         &.in-progress{
             // border: 1px solid $light-grey;
-            padding: 30px 0px;
+            // padding: 30px 0px;
             // border-radius: 4px; 
         }
     }
@@ -523,6 +539,10 @@
         padding-bottom: 0px;
         // max-width: 380px;
         margin: auto;
+        min-height: unset;
+        height: unset;
+        overflow: hidden;
+        max-height: unset;
         .section-col-5,.section-col-3,.section-col-full,.section-col-4{
             width: 100%;
         }
@@ -545,6 +565,15 @@
     //     font-size: 22px;
     // }
     .payment-options{
+        margin-bottom: 40px;
+        &:last-child{
+            margin-bottom: 10px;
+        }
+    }
+    .named-card>img{
+        width: 100%;
+        display: block;
+        max-width: unset;
         margin-bottom: 40px;
     }
 }

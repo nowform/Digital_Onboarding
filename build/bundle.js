@@ -105,9 +105,9 @@
             default:
                 break;
         }
-        const targetEle = document.querySelector(".do-step-container.in-progress");
+        const targetEle = document.querySelector(".do-step-container.active");
         if(targetEle  && window.outerWidth < 768){
-            document.querySelector("html").scrollTop = targetEle.offsetTop + 200;
+            document.querySelector("html").scrollTop = targetEle.offsetTop + 100;
         }
         // targetEle.style.marginTop = '20px';
         // targetEle.scrollIntoView({behaviour:"smooth"})
