@@ -18,7 +18,16 @@ a,a:hover{
 }
 
 .do-heading{
-
+  font-size: 22px;
+  font-weight: 600;
+  color: $text-color;
+}
+.do-subheading{
+  // font-family: OpenSans;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.43;
+  color: $text-color;
 }
 .do-subtext{
   font-size: 12px;
@@ -35,4 +44,16 @@ a,a:hover{
     color: $mid-grey;
   }
   // text-align: center;
+}
+.do-gold-text{
+  display: block;
+  font: $font-regular;
+  font-size: 10px;    
+  color: $gold;
+   &.grey{
+       color: #d5d5ea;
+   }
+   &.hide{
+       display: none;
+   }
 }

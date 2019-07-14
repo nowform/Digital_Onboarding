@@ -449,6 +449,17 @@ a, a:hover {
   font: 400 14px "Open Sans", sans-serif;
   color: #00b1f2; }
 
+.do-heading {
+  font-size: 22px;
+  font-weight: 600;
+  color: #2d2d2d; }
+
+.do-subheading {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.43;
+  color: #2d2d2d; }
+
 .do-subtext {
   font-size: 12px;
   color: #8a8a96; }
@@ -460,6 +471,16 @@ a, a:hover {
   color: #2d2d2d; }
   .do-text.gray {
     color: #8a8a96; }
+
+.do-gold-text {
+  display: block;
+  font: 400 14px "Open Sans", sans-serif;
+  font-size: 10px;
+  color: #ebb73a; }
+  .do-gold-text.grey {
+    color: #d5d5ea; }
+  .do-gold-text.hide {
+    display: none; }
 
 /**
  * Clear inner floats
@@ -1635,4 +1656,7 @@ input[type=number]::-webkit-outer-spin-button {
       display: none; }
   .payment-options {
     margin-bottom: 40px; } }
+
+.offers-box {
+  padding-bottom: 100px; }
 
