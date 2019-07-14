@@ -495,7 +495,7 @@ body {
   height: 100%; }
 
 body {
-  overflow: hidden; }
+  overflow-x: hidden; }
 
 /**
  * Main content containers
@@ -1279,7 +1279,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 .do-card {
   border-radius: 2px;
-  border: solid 1px #f2f2fd;
+  box-shadow: 0px 0px 0px 1px #d5d5ea inset;
   background-color: #ffffff;
   padding: 20px;
   text-align: left; }
@@ -1311,6 +1311,9 @@ input[type=number]::-webkit-outer-spin-button {
   .do-card.sm-full {
     max-width: 100%;
     margin-right: 0px; } }
+
+.do-body-container {
+  padding-bottom: 100px; }
 
 /* CSS for Steps */
 .do-steps-container {
@@ -1385,8 +1388,7 @@ input[type=number]::-webkit-outer-spin-button {
     transition-delay: 0s,0s;
     overflow-y: scroll;
     overflow-y: overlay;
-    height: calc(100vh - 300px);
-    min-height: unset; }
+    padding-right: 5px; }
     .do-step-container.active .do-step-body.hidden {
       z-index: 0;
       opacity: 0; }
@@ -1479,9 +1481,11 @@ input[type=number]::-webkit-outer-spin-button {
           transform: translateX(calc(100% + 30px));
   background: #fff;
   margin-left: calc(33.33% - 3px);
-  min-height: 580px;
-  height: 0px;
-  padding-right: 40px; }
+  height: 100vh;
+  max-height: calc(100vh - 372px);
+  min-height: 450px;
+  overflow-y: scroll;
+  overflow-y: overlay; }
   .do-step-body.hidden {
     z-index: 0;
     opacity: 0;
