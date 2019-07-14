@@ -245,6 +245,7 @@
     min-height: 450px;
     overflow-y: scroll;
     overflow-y: overlay;
+    overflow-x: hidden;
     &.hidden{
         z-index: 0;
         opacity: 0;

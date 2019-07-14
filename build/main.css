@@ -1485,7 +1485,8 @@ input[type=number]::-webkit-outer-spin-button {
   max-height: calc(100vh - 372px);
   min-height: 450px;
   overflow-y: scroll;
-  overflow-y: overlay; }
+  overflow-y: overlay;
+  overflow-x: hidden; }
   .do-step-body.hidden {
     z-index: 0;
     opacity: 0;
