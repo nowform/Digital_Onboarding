@@ -1642,6 +1642,8 @@ input[type=number]::-webkit-outer-spin-button {
   padding: 24px 20px; }
 
 @media (max-width: 767px) {
+  #body-do-confirmation {
+    padding-bottom: 0px; }
   .e-call-card {
     height: auto;
     width: 100%;
@@ -1684,7 +1686,7 @@ input[type=number]::-webkit-outer-spin-button {
   .do-step-container {
     border: none;
     border-top: 1px solid #f2f2fd;
-    padding: 30px 0px;
+    padding: 40px 10px;
     border-radius: 0px;
     width: 100vw;
     margin-left: -20px; }
@@ -1697,6 +1699,8 @@ input[type=number]::-webkit-outer-spin-button {
         .do-step-container.active .do-step-body.hidden {
           display: none;
           opacity: 1; }
+    .do-step-container:last-child {
+      border-bottom: 1px solid #f2f2fd; }
   .do-step-heading {
     margin-bottom: 0px; }
     .do-step-heading .do-step-heading-text {
@@ -1710,8 +1714,7 @@ input[type=number]::-webkit-outer-spin-button {
     min-height: unset;
     height: auto;
     display: none;
-    padding-top: 30px;
-    padding-bottom: 0px;
+    padding: 30px 10px 0px 10px;
     margin: auto;
     min-height: unset;
     height: unset;
@@ -1724,7 +1727,8 @@ input[type=number]::-webkit-outer-spin-button {
       opacity: 1; }
     .do-step-body.active {
       display: block;
-      opacity: 1; }
+      opacity: 1;
+      padding: 30px 10px 0px 10px; }
     .do-step-body .do-step-body-title {
       display: none; }
   .payment-options {

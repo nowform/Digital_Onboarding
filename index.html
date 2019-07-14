@@ -289,21 +289,25 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="do-button-group space-top vertical-sm do-inner-hidden show"  id="not-reset-buttons">
-                            <button class="do-button primary"  onClick="changeStep('3')" >
-                                Next
-                            </button>
-                            <!-- <a class="underlined" onClick="changeStep('3')" >
-                                Next
-                            </a> -->
+                        <div class="do-inner-hidden show" id="not-reset-buttons">
+                            <div class="do-button-group space-top vertical-sm "  >
+                                <button class="do-button primary"  onClick="changeStep('3')" >
+                                    Next
+                                </button>
+                                <!-- <a class="underlined" onClick="changeStep('3')" >
+                                    Next
+                                </a> -->
+                            </div>
                         </div>
-                        <div class="do-button-group space-top vertical-sm do-inner-hidden" id="reset-buttons">
-                            <button class="do-button primary" disabled id="step2-pin-button-reset" onClick="generateOtp()">
-                                Confirm with OTP
-                            </button>
-                            <a class="underlined" onClick="changeStep('3')" >
-                                    Skip this step
-                            </a>
+                        <div  class="do-inner-hidden" id="reset-buttons">
+                            <div class="do-button-group space-top vertical-sm ">
+                                <button class="do-button primary" disabled id="step2-pin-button-reset" onClick="generateOtp()">
+                                    Confirm with OTP
+                                </button>
+                                <a class="underlined" onClick="changeStep('3')" >
+                                        Skip this step
+                                </a>
+                            </div>
                         </div>
                         <!-- <p class="text-right noMargin skip-link sm-hidden"><a href="#skipOnboarding" class="underlined">Skip onboarding for now</a></p> -->
                     </div>
@@ -800,53 +804,85 @@
                             <path fill="none" fill-rule="evenodd" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M1 1l6 4.33L1 10"/>
                         </svg>
                     </div>
-                    <div class="do-step-body  col-md-8 offset-4" id="body-before-IUActivation">
-                        
-                            <div class="flex row">
-                                    <div class="section-col-5">
-                                            <h3 class="do-step-body-title">
-                                                    International Usage Activation
-                                            </h3>
-                                            <p>
-                                                    Online transactions like Netfix and itunes are classified as international.
-                                                    <br>
-                                                    <br>
-                                                    By clicking on ‘Activate’, you agree that your international limit will be equal to the current retail limit (permanent/temporary) of your SBI Card. Please note this will be the combined limit of your primary card and linked add-on card, if any. </p>
-                                    </div>
-                                </div>
-                                <div class="do-button-group space-top vertical-sm" >
-                                    <button class="do-button primary" onClick="activateInternational()" >
-                                        Activate
-                                    </button>
-                                    <a class="underlined" onClick="changeStep('5')" >
-                                            Skip this step
-                                    </a>
-                                </div>
-                                <!-- <p class="text-right noMargin skip-link sm-hidden"><a href="#skipOnboarding" class="underlined">Skip for now</a></p> -->
+                    <!-- Case1/Set1 when International Usage is not active -->
+                    <div class="sets set-1 active">
+                        <div class="do-step-body  col-md-8 offset-4" id="body-before-IUActivation">
                             
-                    </div>
-                    <div class="do-step-body hidden col-md-8 offset-4" id="body-after-IUActivation">
-                        
-                            <div class="flex row">
-                                    <div class="section-col-5">
-                                            <h3 class="do-step-body-title">
-                                                    International Usage has already been Activated
-                                            </h3>
-                                            <p>International Usage on your SBI card is already active.
-                                            </p>
+                                <div class="flex row">
+                                        <div class="section-col-5">
+                                                <h3 class="do-step-body-title">
+                                                        International Usage Activation
+                                                </h3>
+                                                <p>
+                                                        Online transactions like Netfix and itunes are classified as international.
+                                                        <br>
+                                                        <br>
+                                                        By clicking on ‘Activate’, you agree that your international limit will be equal to the current retail limit (permanent/temporary) of your SBI Card. Please note this will be the combined limit of your primary card and linked add-on card, if any. </p>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="do-button-group space-top vertical-sm" >
-                                    <button class="do-button primary" onClick="changeStep('5')" >
+                                    <div class="do-button-group space-top vertical-sm" >
+                                        <button class="do-button primary" onClick="activateInternational()" >
+                                            Activate
+                                        </button>
+                                        <a class="underlined" onClick="changeStep('5')" >
+                                                Skip this step
+                                        </a>
+                                    </div>
+                                    <!-- <p class="text-right noMargin skip-link sm-hidden"><a href="#skipOnboarding" class="underlined">Skip for now</a></p> -->
+                                
+                        </div>
+                        <div class="do-step-body hidden col-md-8 offset-4" id="body-after-IUActivation">
+                            
+                                <div class="flex row">
+                                        <div class="section-col-5">
+                                                <h3 class="do-step-body-title">
+                                                        International Usage Activated
+                                                </h3>
+                                                <p>International Usage on your SBI card is active. 
+                                                    <br>
+                                                        Service Request Number for international usage activation is <b>987654321</b>.
+                                                </p>
+                                        </div>
+                                    </div>
+                                    <div class="do-button-group space-top vertical-sm" >
+                                        <button class="do-button primary" onClick="changeStep('5')" >
+                                                Next
+                                        </button>
+                                        <!-- <a class="underlined" onClick="changeStep('5')" >
                                             Next
-                                    </button>
-                                    <!-- <a class="underlined" onClick="changeStep('5')" >
-                                        Next
-                                    </a> -->
-                                </div>
-                                <!-- <p class="text-right noMargin skip-link sm-hidden"><a href="#skipOnboarding" class="underlined">Skip for now</a></p> -->
-                            
+                                        </a> -->
+                                    </div>
+                                    <!-- <p class="text-right noMargin skip-link sm-hidden"><a href="#skipOnboarding" class="underlined">Skip for now</a></p> -->
+                                
+                        </div>
                     </div>
+                    <!-- Case1/Set1 when International Usage is already active -->
+
+                    <div class="sets set-2 ">
+                            <div class="do-step-body hidden col-md-8 offset-4" id="body-after-IUActivation">
+                                
+                                    <div class="flex row">
+                                            <div class="section-col-5">
+                                                    <h3 class="do-step-body-title">
+                                                            International Usage has already been Activated                                                    </h3>
+                                                    <p>International Usage on your SBI card is active. 
+                                                        <br>
+                                                        International Usage on your SBI card is already active.
+                                                    </p>
+                                            </div>
+                                        </div>
+                                        <div class="do-button-group space-top vertical-sm" >
+                                            <button class="do-button primary" onClick="changeStep('5')" >
+                                                    Next
+                                            </button>
+                                            <!-- <a class="underlined" onClick="changeStep('5')" >
+                                                Next
+                                            </a> -->
+                                        </div>
+                                        <!-- <p class="text-right noMargin skip-link sm-hidden"><a href="#skipOnboarding" class="underlined">Skip for now</a></p> -->
+                                    
+                            </div>
+                        </div>
                 </section>
                 <section class="do-step-container row " id="step-do-confirmation">
                         <div class="do-step-heading col-md-3">
@@ -1035,8 +1071,8 @@
                         <p  class="modal-content ">
                                 You can come back any time to complete the onboarding by clicking ‘Digital Onboarding’ from your dashboard.
                         </p>
-                        <div class="do-button-group space-top vertical-sm">
-                            <button class="do-button primary button-modal-space" onClick="window.location.hash = ''" >I’ll do it later</button>
+                        <div class="flex flex-ac flex-jc flex-col">
+                            <button class="do-button primary full-xs button-modal-space" onClick="window.location.hash = ''" >I’ll do it later</button>
                             <a href="#" class="underlined">I want to continue</a>
                         </div>
                     </div>
@@ -1109,7 +1145,7 @@
                                             You can access and modify all the settings from your dashboard. 
                                         </p> 
                                     <div class="flex flex-ac flex-jc flex-col">
-                                        <button class="do-button primary button-modal-space" onClick="window.location.hash = ''" >Done</button>
+                                        <button class="do-button primary full-xs button-modal-space" onClick="window.location.hash = ''" >Done</button>
                                     </div>
                             </div>
                             <div class="modal-footer text-center">
