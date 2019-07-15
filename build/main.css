@@ -1319,7 +1319,8 @@ input[type=number]::-webkit-outer-spin-button {
       margin-right: 0px; } }
 
 .do-body-container {
-  padding-bottom: 100px; }
+  padding-bottom: 100px;
+  overflow: hidden; }
 
 /* CSS for Steps */
 .do-steps-container {
