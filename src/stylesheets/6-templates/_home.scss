@@ -245,7 +245,7 @@
     height: 100vh;
     
     max-height: calc(100vh - 422px);
-    // min-height: 450px;
+    min-height: 450px;
     overflow-y: scroll;
     overflow-y: overlay;
     overflow-x: hidden;
@@ -416,6 +416,7 @@
 }
 #body-do-confirmation{
     padding-bottom: 160px;
+    min-height: unset;
 }
 .card-error-text{
     position: absolute;
