@@ -24,6 +24,8 @@
     overflow-y: scroll;
     overflow-y: overlay;
     transition-delay: .1s;
+    max-width: 100vw;
+    max-height: 100vh;
     .modal-body{
         width: auto;
         position: relative;
