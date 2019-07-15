@@ -5,6 +5,7 @@
 .do-body-container{
     padding-bottom: 100px;
     overflow: hidden;
+    min-height: 100vh;
 }
 /* CSS for Steps */
 .do-steps-container{
@@ -93,8 +94,8 @@
                 transition: .3s;
             }
             ~.do-step-arrow{
-                color: $text-color;
                 opacity: 1;
+                color: $text-color;
             }
         }
         .do-step-heading{
@@ -242,8 +243,9 @@
     background: #fff;
     margin-left: calc(33.33% - 3px);
     height: 100vh;
-    max-height: calc(100vh - 372px);
-    min-height: 450px;
+    
+    max-height: calc(100vh - 422px);
+    // min-height: 450px;
     overflow-y: scroll;
     overflow-y: overlay;
     overflow-x: hidden;
@@ -379,6 +381,7 @@
 .payment-options{
     img{
         margin-right: 20px;
+        margin-bottom: 20px;
         width: 80px;
     }
 }
