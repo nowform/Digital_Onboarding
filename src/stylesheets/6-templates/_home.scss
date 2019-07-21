@@ -10,13 +10,13 @@
 /* CSS for Steps */
 .do-steps-container{
     position: relative;
-    padding: 60px 0px;
+    padding: 40px 0px;
     // overflow-x: hidden;
 }
 .do-step-counter{
     position: absolute;
     z-index: 1;
-    top: 35px;
+    top: 15px;
     font-size: 10px;
     color: #d5d5ea;
     left: 0;
@@ -228,17 +228,15 @@
     position: absolute;
     z-index: 0;
     opacity: 0;
-    top: 60px;
+    top: 40px;
     width: calc(66.666667% + 33px);
     max-width: unset;
     left: 0px;
     padding-bottom: 60px;
-    transition: 0s;
-    transition-delay: 1s;
+    
     z-index: 0;
     // opacity: 0;
-    transition-property: opacity,transform;
-    transition-delay: 1s,1s;
+    transition: opacity .5s .2s, transform 1s 1s;
     transform: translateX(calc(100% + 30px));
     background: #fff;
     margin-left: calc(33.33% - 3px);
@@ -416,7 +414,7 @@
 }
 #body-do-confirmation{
     padding-bottom: 160px;
-    min-height: unset;
+    // min-height: unset;
 }
 .card-error-text{
     position: absolute;

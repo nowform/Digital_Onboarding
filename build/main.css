@@ -858,7 +858,7 @@ footer {
   background: pink; }
 
 .do-header {
-  height: 80px;
+  height: 60px;
   display: flex;
   align-items: center; }
   .do-header > img {
@@ -866,17 +866,17 @@ footer {
 
 .do-reward-header {
   background-color: #f2f7fd;
-  height: 150px;
+  height: 100px;
   overflow-x: hidden; }
   .do-reward-header img {
-    height: 150px;
-    padding-top: 20px;
+    height: 100px;
+    padding-top: 10px;
     max-width: 201px;
     position: absolute;
     bottom: 0px; }
   .do-reward-header h2, .do-reward-header .do-reward-header-text {
     font: 600 14px "Open Sans", sans-serif;
-    font-size: 28px;
+    font-size: 22px;
     color: #2d2d2d; }
   .do-reward-header button {
     background-color: #2a2988; }
@@ -908,7 +908,7 @@ footer {
     position: relative; }
 
 #reward-header-container {
-  height: 150px; }
+  height: 100px; }
 
 @media (max-width: 767px) {
   .reward-points-subtext {
@@ -942,7 +942,7 @@ footer {
 
 @media (max-width: 460px) {
   .do-reward-header img {
-    width: 150px;
+    width: 100px;
     height: auto; }
   .do-reward-header h2, .do-reward-header .do-reward-header-text {
     font-size: 24px; } }
@@ -1326,12 +1326,12 @@ input[type=number]::-webkit-outer-spin-button {
 /* CSS for Steps */
 .do-steps-container {
   position: relative;
-  padding: 60px 0px; }
+  padding: 40px 0px; }
 
 .do-step-counter {
   position: absolute;
   z-index: 1;
-  top: 35px;
+  top: 15px;
   font-size: 10px;
   color: #d5d5ea;
   left: 0; }
@@ -1473,18 +1473,15 @@ input[type=number]::-webkit-outer-spin-button {
   position: absolute;
   z-index: 0;
   opacity: 0;
-  top: 60px;
+  top: 40px;
   width: calc(66.666667% + 33px);
   max-width: unset;
   left: 0px;
   padding-bottom: 60px;
-  transition: 0s;
-  transition-delay: 1s;
   z-index: 0;
-  transition-property: opacity,-webkit-transform;
-  transition-property: opacity,transform;
-  transition-property: opacity,transform,-webkit-transform;
-  transition-delay: 1s,1s;
+  transition: opacity .5s .2s, -webkit-transform 1s 1s;
+  transition: opacity .5s .2s, transform 1s 1s;
+  transition: opacity .5s .2s, transform 1s 1s, -webkit-transform 1s 1s;
   -webkit-transform: translateX(calc(100% + 30px));
           transform: translateX(calc(100% + 30px));
   background: #fff;
@@ -1627,8 +1624,7 @@ input[type=number]::-webkit-outer-spin-button {
   max-width: 276px; }
 
 #body-do-confirmation {
-  padding-bottom: 160px;
-  min-height: unset; }
+  padding-bottom: 160px; }
 
 .card-error-text {
   position: absolute;

@@ -2,7 +2,7 @@
 // This file contains all styles related to the header of the site/application.
 // -----------------------------------------------------------------------------
 .do-header{
-    height: 80px;
+    height: 60px;
     display: flex;
     align-items: center;
     >img{
@@ -11,18 +11,18 @@
 }
 .do-reward-header{
     background-color: #f2f7fd;
-    height: 150px;
+    height: 100px;
     overflow-x: hidden;
     img{
-        height: 150px;
-        padding-top: 20px;
+        height: 100px;
+        padding-top: 10px;
         max-width: 201px;
         position: absolute;
         bottom: 0px;
     }
     h2,.do-reward-header-text{
         font: $font-semibold;
-        font-size: 28px;
+        font-size: 22px;
         color: $text-color;
 
     }
@@ -59,7 +59,7 @@
     }
 }
 #reward-header-container{
-    height: 150px;
+    height: 100px;
 }
 @media (max-width: $screen-sm-max) {
     .reward-points-subtext{
@@ -105,7 +105,7 @@
 }
 @media (max-width: 460px) {
     .do-reward-header img{
-        width: 150px;
+        width: 100px;
         height: auto;
     }   
     .do-reward-header h2, .do-reward-header .do-reward-header-text{

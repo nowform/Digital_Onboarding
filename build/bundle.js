@@ -98,7 +98,7 @@
                     document.querySelector("#step-do-confirmation .do-step-heading-text").classList.add('clickable');
                 
                 }
-                document.querySelector('#finish-bottom-box').classList.add('show');
+                hangleFinishSticky();
                 break;
                     
                 
@@ -113,7 +113,23 @@
         // targetEle.scrollIntoView({behaviour:"smooth"})
         
     }
+    function hangleFinishSticky(){
+        if(window.innerWidth > 768){
+            document.querySelector('#body-do-confirmation').addEventListener('scroll',function(){
+                if(this.scrollTop > ( this.scrollHeight - this.getBoundingClientRect().height) - 30){
+                    document.querySelector('#finish-bottom-box').classList.add('show');
+                }    
+            })
+        }
+            else{
+                window.addEventListener('scroll',function(){
 
+                if(document.scrollingElement.scrollTop > ( document.scrollingElement.scrollHeight - document.scrollingElement.clientHeight - 30)){
+                    document.querySelector('#finish-bottom-box').classList.add('show');
+                }
+            })
+        }
+    }
     function generateOtp(){
         // Generate Otp Here
         document.querySelector('#otp-input > input').value = '';
