@@ -914,7 +914,10 @@ footer {
   .reward-points-subtext {
     font-size: 16px; }
   .do-header {
-    padding: 0px 30px; }
+    padding: 0px 30px;
+    height: 40px; }
+    .do-header img {
+      height: 18px; }
   #reward-header-container {
     height: auto; }
   .do-reward-header {
@@ -926,7 +929,8 @@ footer {
     .do-reward-header h2, .do-reward-header .do-reward-header-text {
       width: auto;
       margin: 0px;
-      flex: 1; }
+      flex: 1;
+      font-size: 20px; }
     .do-reward-header button {
       background-color: #2a2988; }
   .reward-points {
@@ -945,7 +949,7 @@ footer {
     width: 100px;
     height: auto; }
   .do-reward-header h2, .do-reward-header .do-reward-header-text {
-    font-size: 24px; } }
+    font-size: 20px; } }
 
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
@@ -1274,7 +1278,8 @@ input[type=number]::-webkit-outer-spin-button {
         font-size: 20px;
         margin-bottom: 30px; }
       .modal .modal-body .modal-padding-wrapper {
-        padding: 40px 20px; }
+        padding: 40px 20px;
+        background: #fff; }
     .modal .modal-footer {
       position: relative; } }
 

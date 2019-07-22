@@ -67,6 +67,10 @@
     }
     .do-header{
         padding: 0px 30px;
+        height: 40px;
+        img{
+            height: 18px;
+        }
     }
     #reward-header-container{
         height: auto;
@@ -83,6 +87,7 @@
          width: auto;
          margin: 0px;
          flex: 1;   
+            font-size: 20px;
         }
         button{
             background-color: $brand-purple;
@@ -109,6 +114,6 @@
         height: auto;
     }   
     .do-reward-header h2, .do-reward-header .do-reward-header-text{
-        font-size: 24px;
+        font-size: 20px;
     }
 }

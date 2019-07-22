@@ -120,7 +120,9 @@
                     document.querySelector('#finish-bottom-box').classList.add('show');
                 }    
             })
-            if(document.querySelector('#body-do-confirmation').getBoundingClientRect().height  == document.querySelector('#body-do-confirmation').scrollHeight){
+            if(
+                document.querySelector('#body-do-confirmation').getBoundingClientRect().height  == document.querySelector('#body-do-confirmation').scrollHeight || 
+                (document.querySelector('#body-do-confirmation').scrollHeight - document.querySelector('#body-do-confirmation').scrollTop) == document.querySelector('#body-do-confirmation').getBoundingClientRect().height) {
                 document.querySelector('#finish-bottom-box').classList.add('show');
             }
         }
@@ -368,7 +370,7 @@
         document.querySelector('#international-usage-text').innerHTML =  `International Usage Activated`;
         window.location.hash = '';
         changeStep('5');
-        document.querySelector('#finish-bottom-box').classList.add('show');
+        // document.querySelector('#finish-bottom-box').classList.add('show');
     }
     function callMeBack(){
 
