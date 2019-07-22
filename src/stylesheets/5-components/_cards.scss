@@ -44,8 +44,11 @@
     .do-card{
         margin-right: 14px;
         &.small{
-            width:calc(50% - 28px);
+            width:calc(50% - 10px);
             max-width: unset;
+            &:nth-child(even){
+                margin-right: 0px;
+            }
         }
         &.sm-full{
             max-width: 100%;

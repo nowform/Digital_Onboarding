@@ -130,7 +130,9 @@
                 window.addEventListener('scroll',function(){
 
                 if(document.scrollingElement.scrollTop > ( document.scrollingElement.scrollHeight - document.scrollingElement.clientHeight - 30)){
-                    document.querySelector('#finish-bottom-box').classList.add('show');
+                    if(document.querySelector('#step-do-confirmation').classList.contains('active')){
+                        document.querySelector('#finish-bottom-box').classList.add('show');
+                    }
                 }
             })
         }
