@@ -120,6 +120,9 @@
                     document.querySelector('#finish-bottom-box').classList.add('show');
                 }    
             })
+            if(document.querySelector('#body-do-confirmation').getBoundingClientRect().height  == document.querySelector('#body-do-confirmation').scrollHeight){
+                document.querySelector('#finish-bottom-box').classList.add('show');
+            }
         }
             else{
                 window.addEventListener('scroll',function(){
