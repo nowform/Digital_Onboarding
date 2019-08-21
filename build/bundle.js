@@ -366,7 +366,7 @@
 
         document.querySelector('#body-before-IUActivation').classList.add('hidden');
         document.querySelector('#body-after-IUActivation').classList.remove('hidden');
-        document.querySelector('#international-usage-text').innerHTML =  `International Usage Activated`;
+        document.querySelector('#international-usage-text').innerHTML =  "International Usage Activated";
         window.location.hash = '';
         changeStep('5');
         // document.querySelector('#finish-bottom-box').classList.add('show');
