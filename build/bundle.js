@@ -63,7 +63,8 @@
                     document.querySelector("#step-generate-pin").classList.add('done');
                     document.querySelector("#step-generate-pin").classList.remove('in-progress');
                     document.querySelector("#step-generate-pin .do-step-heading-text").classList.add('clickable');
-                    document.querySelector("#step-estate-sub").classList.add('in-progress','active');
+                    document.querySelector("#step-estate-sub").classList.add('active');
+                    document.querySelector("#step-estate-sub").classList.add('in-progress');
                     document.querySelector("#step-estate-sub .do-step-heading-text").classList.add('clickable');
                 
                 }
@@ -80,7 +81,8 @@
                     document.querySelector("#step-estate-sub").classList.add('done');
                     document.querySelector("#step-estate-sub").classList.remove('in-progress');
                     document.querySelector("#step-estate-sub .do-step-heading-text").classList.add('clickable');
-                    document.querySelector("#step-international-usage").classList.add('in-progress','active');
+                    document.querySelector("#step-international-usage").classList.add('in-progress');
+                    document.querySelector("#step-international-usage").classList.add('active');
                     document.querySelector("#step-international-usage .do-step-heading-text").classList.add('clickable');
                 
                 }
@@ -96,7 +98,8 @@
                     document.querySelector("#step-international-usage").classList.add('done');
                     document.querySelector("#step-international-usage").classList.remove('in-progress');
                     document.querySelector("#step-international-usage .do-step-heading-text").classList.add('clickable');
-                    document.querySelector("#step-do-confirmation").classList.add('in-progress','active');
+                    document.querySelector("#step-do-confirmation").classList.add('in-progress');
+                    document.querySelector("#step-do-confirmation").classList.add('active');
                     document.querySelector("#step-do-confirmation .do-step-heading-text").classList.add('clickable');
                 
                 }
