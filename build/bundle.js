@@ -105,7 +105,7 @@
             default:
                 break;
         }
-        const targetEle = document.querySelector(".do-step-container.active");
+        var targetEle = document.querySelector(".do-step-container.active");
         if(targetEle  && window.outerWidth < 768){
             document.querySelector("html").scrollTop = targetEle.offsetTop + 100;
         }
@@ -260,8 +260,8 @@
         }
     }
     function validatePin(){
-        const newPinEl = document.querySelector("#new-pin-input > input");
-        const confirmPinEl = document.querySelector("#confirm-pin-input > input");
+        var newPinEl = document.querySelector("#new-pin-input > input");
+        var confirmPinEl = document.querySelector("#confirm-pin-input > input");
         
          
         if(newPinEl.value.length >= 4){
@@ -289,8 +289,8 @@
         }
     }
     function validatePinReset(){
-        const newPinEl = document.querySelector("#new-pin-reset > input");
-        const confirmPinEl = document.querySelector("#confirm-pin-reset > input");
+        var newPinEl = document.querySelector("#new-pin-reset > input");
+        var confirmPinEl = document.querySelector("#confirm-pin-reset > input");
         
          
         if(newPinEl.value.length >= 4){
