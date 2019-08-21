@@ -223,7 +223,7 @@
         }
     }
     function emailUpdated(){
-        let value = '';
+        var value = '';
         if(document.querySelector('.sets.set-3').classList.contains('active')){
             value = 'set3'
         }else if(document.querySelector('.sets.set-4').classList.contains('active')){
