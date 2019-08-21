@@ -335,10 +335,7 @@
         document.querySelector('#body-before-subscription').classList.add('hidden');
         document.querySelector('#body-after-subscription').classList.remove('hidden');
         document.querySelector('#estate-sub-text').innerHTML = 
-        `
-            E-Statement Subscribed 
-            <span class="reward-sub-text grey"> <img src="./assets/icons/star-grey.svg" alt=""> 100 Reward points claimed</span>
-        `;
+        "E-Statement Subscribed  <span class='reward-sub-text grey'> <img src='./assets/icons/star-grey.svg' alt=''> 100 Reward points claimed</span>";
         window.location.hash = '';
         changeStep('4');
     }
