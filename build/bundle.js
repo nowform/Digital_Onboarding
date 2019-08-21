@@ -391,7 +391,7 @@
 
 
 
-    window.addEventListener('keyup',(e)=>{
+    window.addEventListener('keyup',function(e){
         if(e.keyCode == 27){
             window.location.href = "#";
         }
