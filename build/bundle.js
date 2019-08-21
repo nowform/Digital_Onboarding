@@ -43,9 +43,11 @@
                 }
                 else{
                     document.querySelector("#step-card-activation").classList.add('done');
-                    document.querySelector("#step-card-activation").classList.remove('in-progress','active');
+                    document.querySelector("#step-card-activation").classList.remove('in-progress');
+                    document.querySelector("#step-card-activation").classList.remove('active');
                     document.querySelector("#step-card-activation .do-step-heading-text").classList.add('clickable');
-                    document.querySelector("#step-generate-pin").classList.add('in-progress','active');
+                    document.querySelector("#step-generate-pin").classList.add('in-progress')
+                    document.querySelector("#step-generate-pin").classList.add('active')
                     document.querySelector("#step-generate-pin .do-step-heading-text").classList.add('clickable');
                 }
                 document.querySelector('#finish-bottom-box').classList.remove('show');
